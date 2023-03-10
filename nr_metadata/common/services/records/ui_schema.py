@@ -10,6 +10,7 @@ from marshmallow import fields as ma_fields
 from marshmallow import validate as ma_validate
 from marshmallow_utils import fields as mu_fields
 from marshmallow_utils import schemas as mu_schemas
+from marshmallow_utils.fields import edtfdatestring as mu_fields_edtf
 from oarepo_runtime.ui import marshmallow as l10n
 from oarepo_runtime.validation import validate_date
 

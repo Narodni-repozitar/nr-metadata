@@ -2,15 +2,15 @@
 
 set -e
 
-rm -rf .venv-builder
+# rm -rf .venv-builder
 
-python3 -m venv .venv-builder
+# python3 -m venv .venv-builder
 
-.venv-builder/bin/pip install -U setuptools pip wheel
-.venv-builder/bin/pip install oarepo-model-builder-nr
+# .venv-builder/bin/pip install -U setuptools pip wheel
+# .venv-builder/bin/pip install oarepo-model-builder-nr
 
 
-rm -rf nr-metadata
+rm -rf nr_metadata
 .venv-builder/bin/oarepo-compile-model nr-metadata.yaml -vvv
 .venv-builder/bin/oarepo-compile-model nr-theses.yaml -vvv
 

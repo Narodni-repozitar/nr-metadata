@@ -4,10 +4,10 @@
             "marshmallow": {
                 "generate": true,
                 "field-class": "ma_fields.Nested",
+                "schema-class": "nr_metadata.common.services.records.ui_schema.NRCommonMetadataUISchema",
                 "base-classes": [
                     "ma.Schema"
-                ],
-                "schema-class": "nr_metadata.common.services.records.ui_schema.NRCommonMetadataUISchema"
+                ]
             },
             "detail": "metadatum",
             "input": "metadatum",
@@ -127,14 +127,14 @@
                                         "title": {
                                             "marshmallow": {
                                                 "validators": [],
+                                                "field": "i18n_strings",
                                                 "imports": [
                                                     {
                                                         "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                     }
                                                 ],
                                                 "field-class": "ma_fields.Nested",
-                                                "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                                "field": "i18n_strings"
+                                                "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema"
                                             },
                                             "detail": "string",
                                             "input": "string",
@@ -283,14 +283,14 @@
                                     "title": {
                                         "marshmallow": {
                                             "validators": [],
+                                            "field": "i18n_strings",
                                             "imports": [
                                                 {
                                                     "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                 }
                                             ],
                                             "field-class": "ma_fields.Nested",
-                                            "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                            "field": "i18n_strings"
+                                            "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema"
                                         },
                                         "detail": "string",
                                         "input": "string",
@@ -348,14 +348,14 @@
                                         "title": {
                                             "marshmallow": {
                                                 "validators": [],
+                                                "field": "i18n_strings",
                                                 "imports": [
                                                     {
                                                         "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                     }
                                                 ],
                                                 "field-class": "ma_fields.Nested",
-                                                "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                                "field": "i18n_strings"
+                                                "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema"
                                             },
                                             "detail": "string",
                                             "input": "string",
@@ -482,14 +482,14 @@
                         "title": {
                             "marshmallow": {
                                 "validators": [],
+                                "field": "i18n_strings",
                                 "imports": [
                                     {
                                         "import": "invenio_vocabularies.services.schema.i18n_strings"
                                     }
                                 ],
                                 "field-class": "ma_fields.Nested",
-                                "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                "field": "i18n_strings"
+                                "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema"
                             },
                             "detail": "string",
                             "input": "string",
@@ -649,14 +649,14 @@
                             "title": {
                                 "marshmallow": {
                                     "validators": [],
+                                    "field": "i18n_strings",
                                     "imports": [
                                         {
                                             "import": "invenio_vocabularies.services.schema.i18n_strings"
                                         }
                                     ],
                                     "field-class": "ma_fields.Nested",
-                                    "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                    "field": "i18n_strings"
+                                    "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema"
                                 },
                                 "detail": "string",
                                 "input": "string",
@@ -715,14 +715,14 @@
                             "title": {
                                 "marshmallow": {
                                     "validators": [],
+                                    "field": "i18n_strings",
                                     "imports": [
                                         {
                                             "import": "invenio_vocabularies.services.schema.i18n_strings"
                                         }
                                     ],
                                     "field-class": "ma_fields.Nested",
-                                    "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                    "field": "i18n_strings"
+                                    "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema"
                                 },
                                 "detail": "string",
                                 "input": "string",
@@ -828,14 +828,14 @@
                             "title": {
                                 "marshmallow": {
                                     "validators": [],
+                                    "field": "i18n_strings",
                                     "imports": [
                                         {
                                             "import": "invenio_vocabularies.services.schema.i18n_strings"
                                         }
                                     ],
                                     "field-class": "ma_fields.Nested",
-                                    "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                    "field": "i18n_strings"
+                                    "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema"
                                 },
                                 "detail": "string",
                                 "input": "string",
@@ -888,14 +888,14 @@
                         "title": {
                             "marshmallow": {
                                 "validators": [],
+                                "field": "i18n_strings",
                                 "imports": [
                                     {
                                         "import": "invenio_vocabularies.services.schema.i18n_strings"
                                     }
                                 ],
                                 "field-class": "ma_fields.Nested",
-                                "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                "field": "i18n_strings"
+                                "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema"
                             },
                             "detail": "string",
                             "input": "string",
@@ -1007,14 +1007,14 @@
                                                     "title": {
                                                         "marshmallow": {
                                                             "validators": [],
+                                                            "field": "i18n_strings",
                                                             "imports": [
                                                                 {
                                                                     "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                                 }
                                                             ],
                                                             "field-class": "ma_fields.Nested",
-                                                            "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                                            "field": "i18n_strings"
+                                                            "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema"
                                                         },
                                                         "detail": "string",
                                                         "input": "string",
@@ -1163,14 +1163,14 @@
                                                 "title": {
                                                     "marshmallow": {
                                                         "validators": [],
+                                                        "field": "i18n_strings",
                                                         "imports": [
                                                             {
                                                                 "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                             }
                                                         ],
                                                         "field-class": "ma_fields.Nested",
-                                                        "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                                        "field": "i18n_strings"
+                                                        "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema"
                                                     },
                                                     "detail": "string",
                                                     "input": "string",
@@ -1228,14 +1228,14 @@
                                                     "title": {
                                                         "marshmallow": {
                                                             "validators": [],
+                                                            "field": "i18n_strings",
                                                             "imports": [
                                                                 {
                                                                     "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                                 }
                                                             ],
                                                             "field-class": "ma_fields.Nested",
-                                                            "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                                            "field": "i18n_strings"
+                                                            "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema"
                                                         },
                                                         "detail": "string",
                                                         "input": "string",
@@ -1480,14 +1480,14 @@
                                     "title": {
                                         "marshmallow": {
                                             "validators": [],
+                                            "field": "i18n_strings",
                                             "imports": [
                                                 {
                                                     "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                 }
                                             ],
                                             "field-class": "ma_fields.Nested",
-                                            "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                            "field": "i18n_strings"
+                                            "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema"
                                         },
                                         "detail": "string",
                                         "input": "string",
@@ -1539,14 +1539,14 @@
                                     "title": {
                                         "marshmallow": {
                                             "validators": [],
+                                            "field": "i18n_strings",
                                             "imports": [
                                                 {
                                                     "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                 }
                                             ],
                                             "field-class": "ma_fields.Nested",
-                                            "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                            "field": "i18n_strings"
+                                            "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema"
                                         },
                                         "detail": "string",
                                         "input": "string",
@@ -1653,14 +1653,14 @@
                                     "title": {
                                         "marshmallow": {
                                             "validators": [],
+                                            "field": "i18n_strings",
                                             "imports": [
                                                 {
                                                     "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                 }
                                             ],
                                             "field-class": "ma_fields.Nested",
-                                            "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                            "field": "i18n_strings"
+                                            "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema"
                                         },
                                         "detail": "string",
                                         "input": "string",
@@ -2082,14 +2082,14 @@
                                             "title": {
                                                 "marshmallow": {
                                                     "validators": [],
+                                                    "field": "i18n_strings",
                                                     "imports": [
                                                         {
                                                             "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                         }
                                                     ],
                                                     "field-class": "ma_fields.Nested",
-                                                    "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                                    "field": "i18n_strings"
+                                                    "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema"
                                                 },
                                                 "detail": "string",
                                                 "input": "string",

@@ -10,6 +10,7 @@ from marshmallow import fields as ma_fields
 from marshmallow import validate as ma_validate
 from marshmallow_utils import fields as mu_fields
 from marshmallow_utils import schemas as mu_schemas
+from marshmallow_utils.fields import edtfdatestring as mu_fields_edtf
 from oarepo_runtime.ui import marshmallow as l10n
 from oarepo_runtime.validation import validate_date
 
@@ -207,7 +208,9 @@ class NREventSchema(ma.Schema):
 
     eventNameOriginal = ma_fields.String()
     eventNameAlternate = ma_fields.List(ma_fields.String())
-    eventDate = ma_fields.String(validate=[mu_fields.EDTFValidator(types=EDTFInterval)])
+    eventDate = ma_fields.String(
+        validate=[mu_fields_edtf.EDTFValidator(types=EDTFInterval)]
+    )
     eventLocation = ma_fields.Nested(lambda: NRLocationSchema())
 
 
@@ -221,8 +224,12 @@ class NRCommonMetadataSchema(ma.Schema):
     creators = ma_fields.List(ma_fields.Nested(lambda: NRAuthoritySchema()))
     contributors = ma_fields.List(ma_fields.Nested(lambda: NRAuthoritySchema()))
     resourceType = ma_fields.Nested(lambda: NRResourceTypeVocabularySchema())
-    dateAvailable = ma_fields.String(validate=[mu_fields.EDTFValidator(types=EDTFDate)])
-    dateModified = ma_fields.String(validate=[mu_fields.EDTFValidator(types=EDTFDate)])
+    dateAvailable = ma_fields.String(
+        validate=[mu_fields_edtf.EDTFValidator(types=EDTFDate)]
+    )
+    dateModified = ma_fields.String(
+        validate=[mu_fields_edtf.EDTFValidator(types=EDTFDate)]
+    )
     subjects = ma_fields.List(ma_fields.Nested(lambda: NRSubjectSchema()))
     publishers = ma_fields.List(ma_fields.String())
     subjectCategories = ma_fields.List(
