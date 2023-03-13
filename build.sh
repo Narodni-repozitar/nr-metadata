@@ -12,5 +12,5 @@ python3 -m venv .venv-builder
 
 rm -rf nr_metadata
 .venv-builder/bin/oarepo-compile-model nr-metadata.yaml -vvv
-.venv-builder/bin/oarepo-compile-model nr-theses.yaml -vvv
+.venv-builder/bin/oarepo-compile-model nr-documents.yaml -vvv
 

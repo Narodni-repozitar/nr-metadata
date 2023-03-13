@@ -19,7 +19,7 @@ class AdditionalTitlesUISchema(ma.Schema):
     """AdditionalTitlesUISchema schema."""
 
     title = ma_fields.String()
-    titleType = l10n.LocalizedEnum(value_prefix="nr_metadata.theses")
+    titleType = l10n.LocalizedEnum(value_prefix="nr_metadata.documents")
 
 
 class NRAffiliationVocabularyUISchema(ma.Schema):
@@ -34,7 +34,7 @@ class NRAuthorityIdentifierUISchema(ma.Schema):
     """NRAuthorityIdentifierUISchema schema."""
 
     identifier = ma_fields.String()
-    scheme = l10n.LocalizedEnum(value_prefix="nr_metadata.theses")
+    scheme = l10n.LocalizedEnum(value_prefix="nr_metadata.documents")
 
 
 class NRAuthorityUIUISchema(ma.Schema):
@@ -43,7 +43,7 @@ class NRAuthorityUIUISchema(ma.Schema):
     affiliations = ma_fields.List(
         ma_fields.Nested(lambda: NRAffiliationVocabularyUISchema())
     )
-    nameType = l10n.LocalizedEnum(value_prefix="nr_metadata.theses")
+    nameType = l10n.LocalizedEnum(value_prefix="nr_metadata.documents")
     fullName = ma_fields.String()
     authorityIdentifiers = ma_fields.List(
         ma_fields.Nested(lambda: NRAuthorityIdentifierUISchema())
@@ -103,7 +103,7 @@ class NRObjectPIDUISchema(ma.Schema):
     """NRObjectPIDUISchema schema."""
 
     identifier = ma_fields.String()
-    scheme = l10n.LocalizedEnum(value_prefix="nr_metadata.theses")
+    scheme = l10n.LocalizedEnum(value_prefix="nr_metadata.documents")
 
 
 class NRItemRelationTypeVocabularyUISchema(ma.Schema):
@@ -181,7 +181,7 @@ class NRSystemIdentifierUISchema(ma.Schema):
     """NRSystemIdentifierUISchema schema."""
 
     identifier = ma_fields.String()
-    scheme = l10n.LocalizedEnum(value_prefix="nr_metadata.theses")
+    scheme = l10n.LocalizedEnum(value_prefix="nr_metadata.documents")
 
 
 class NRCountryVocabularyUISchema(ma.Schema):
@@ -249,7 +249,6 @@ class NRCommonMetadataUISchema(ma.Schema):
         ma_fields.Nested(lambda: NRSystemIdentifierUISchema())
     )
     events = ma_fields.List(ma_fields.Nested(lambda: NREventUISchema()))
-    extent = ma_fields.List(ma_fields.String())
 
 
 class NRCommonRecordUISchema(ma.Schema):

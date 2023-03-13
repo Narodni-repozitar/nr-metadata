@@ -257,7 +257,6 @@ class NRCommonMetadataSchema(ma.Schema):
         ma_fields.Nested(lambda: NRSystemIdentifierSchema())
     )
     events = ma_fields.List(ma_fields.Nested(lambda: NREventSchema()))
-    extent = ma_fields.List(ma_fields.String())
 
 
 class NRCommonRecordSchema(InvenioBaseRecordSchema):
