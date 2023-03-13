@@ -2,12 +2,12 @@
     "children": {
         "metadata": {
             "marshmallow": {
-                "schema-class": "nr_metadata.theses.services.records.ui_schema.NRThesesMetadataUISchema",
                 "generate": true,
+                "schema-class": "nr_metadata.theses.services.records.ui_schema.NRThesesMetadataUISchema",
+                "field-class": "ma_fields.Nested",
                 "base-classes": [
                     "ma.Schema"
-                ],
-                "field-class": "ma_fields.Nested"
+                ]
             },
             "detail": "metadatum",
             "input": "metadatum",
@@ -38,12 +38,12 @@
                 "degreeGrantor": {
                     "marshmallow": {
                         "schema-class": "nr_metadata.theses.services.records.ui_schema.NRDegreeGrantorUISchema",
+                        "field-class": "ma_fields.Nested",
                         "imports": [
                             {
                                 "import": "nr_metadata.theses.services.records.ui_schema.NRDegreeGrantorUISchema"
                             }
-                        ],
-                        "field-class": "ma_fields.Nested"
+                        ]
                     },
                     "detail": "nr_degree_grantor",
                     "input": "relation",
@@ -53,9 +53,9 @@
                     "children": {
                         "id": {
                             "marshmallow": {
+                                "field-class": "ma_fields.String",
                                 "validators": [],
-                                "imports": [],
-                                "field-class": "ma_fields.String"
+                                "imports": []
                             },
                             "detail": "keyword",
                             "input": "keyword",
@@ -65,15 +65,15 @@
                         },
                         "title": {
                             "marshmallow": {
+                                "field": "i18n_strings",
                                 "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
+                                "field-class": "ma_fields.Nested",
                                 "validators": [],
                                 "imports": [
                                     {
                                         "import": "invenio_vocabularies.services.schema.i18n_strings"
                                     }
-                                ],
-                                "field": "i18n_strings",
-                                "field-class": "ma_fields.Nested"
+                                ]
                             },
                             "detail": "string",
                             "input": "string",
@@ -83,8 +83,8 @@
                         },
                         "hierarchy": {
                             "marshmallow": {
-                                "schema-class": "oarepo_vocabularies.services.ui_schemas.HierarchyUISchema",
                                 "generate": false,
+                                "schema-class": "oarepo_vocabularies.services.ui_schemas.HierarchyUISchema",
                                 "field-class": "ma_fields.Nested"
                             },
                             "detail": false,
@@ -124,8 +124,8 @@
                                     "hint": "metadata/degreeGrantor/hierarchy/title.hint",
                                     "child": {
                                         "marshmallow": {
-                                            "schema-class": "nr_metadata.theses.services.records.ui_schema.TitleItemUISchema",
                                             "field": "i18n_strings",
+                                            "schema-class": "nr_metadata.theses.services.records.ui_schema.TitleItemUISchema",
                                             "field-class": "ma_fields.Nested"
                                         },
                                         "detail": "string",
@@ -256,12 +256,12 @@
                     "child": {
                         "marshmallow": {
                             "schema-class": "nr_metadata.common.services.records.ui_schema.NRAuthorityUIUISchema",
+                            "field-class": "ma_fields.Nested",
                             "imports": [
                                 {
                                     "import": "nr_metadata.common.services.records.ui_schema.NRAuthorityUIUISchema"
                                 }
-                            ],
-                            "field-class": "ma_fields.Nested"
+                            ]
                         },
                         "detail": "creator",
                         "input": "creator",
@@ -278,21 +278,21 @@
                                 "child": {
                                     "marshmallow": {
                                         "schema-class": "nr_metadata.common.services.records.ui_schema.NRAffiliationVocabularyUISchema",
+                                        "field-class": "ma_fields.Nested",
                                         "imports": [
                                             {
                                                 "import": "nr_metadata.common.services.records.ui_schema.NRAffiliationVocabularyUISchema"
                                             }
-                                        ],
-                                        "field-class": "ma_fields.Nested"
+                                        ]
                                     },
                                     "detail": "affiliation",
                                     "input": "relation",
                                     "children": {
                                         "id": {
                                             "marshmallow": {
+                                                "field-class": "ma_fields.String",
                                                 "validators": [],
-                                                "imports": [],
-                                                "field-class": "ma_fields.String"
+                                                "imports": []
                                             },
                                             "detail": "keyword",
                                             "input": "keyword",
@@ -302,15 +302,15 @@
                                         },
                                         "title": {
                                             "marshmallow": {
+                                                "field": "i18n_strings",
                                                 "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
+                                                "field-class": "ma_fields.Nested",
                                                 "validators": [],
                                                 "imports": [
                                                     {
                                                         "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                     }
-                                                ],
-                                                "field": "i18n_strings",
-                                                "field-class": "ma_fields.Nested"
+                                                ]
                                             },
                                             "detail": "string",
                                             "input": "string",
@@ -367,12 +367,12 @@
                                 "child": {
                                     "marshmallow": {
                                         "schema-class": "nr_metadata.common.services.records.ui_schema.NRAuthorityIdentifierUISchema",
+                                        "field-class": "ma_fields.Nested",
                                         "imports": [
                                             {
                                                 "import": "nr_metadata.common.services.records.ui_schema.NRAuthorityIdentifierUISchema"
                                             }
-                                        ],
-                                        "field-class": "ma_fields.Nested"
+                                        ]
                                     },
                                     "detail": "nr_authority_identifier",
                                     "input": "authorityidentifier",
@@ -418,12 +418,12 @@
                     "child": {
                         "marshmallow": {
                             "schema-class": "nr_metadata.common.services.records.ui_schema.NRAuthorityUIUISchema",
+                            "field-class": "ma_fields.Nested",
                             "imports": [
                                 {
                                     "import": "nr_metadata.common.services.records.ui_schema.NRAuthorityUIUISchema"
                                 }
-                            ],
-                            "field-class": "ma_fields.Nested"
+                            ]
                         },
                         "detail": "contributor",
                         "input": "contributor",
@@ -431,12 +431,12 @@
                             "role": {
                                 "marshmallow": {
                                     "schema-class": "nr_metadata.common.services.records.ui_schema.NRAuthorityVocabularyUISchema",
+                                    "field-class": "ma_fields.Nested",
                                     "imports": [
                                         {
                                             "import": "nr_metadata.common.services.records.ui_schema.NRAuthorityVocabularyUISchema"
                                         }
-                                    ],
-                                    "field-class": "ma_fields.Nested"
+                                    ]
                                 },
                                 "detail": "authority",
                                 "input": "relation",
@@ -446,9 +446,9 @@
                                 "children": {
                                     "id": {
                                         "marshmallow": {
+                                            "field-class": "ma_fields.String",
                                             "validators": [],
-                                            "imports": [],
-                                            "field-class": "ma_fields.String"
+                                            "imports": []
                                         },
                                         "detail": "keyword",
                                         "input": "keyword",
@@ -458,15 +458,15 @@
                                     },
                                     "title": {
                                         "marshmallow": {
+                                            "field": "i18n_strings",
                                             "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
+                                            "field-class": "ma_fields.Nested",
                                             "validators": [],
                                             "imports": [
                                                 {
                                                     "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                 }
-                                            ],
-                                            "field": "i18n_strings",
-                                            "field-class": "ma_fields.Nested"
+                                            ]
                                         },
                                         "detail": "string",
                                         "input": "string",
@@ -499,21 +499,21 @@
                                 "child": {
                                     "marshmallow": {
                                         "schema-class": "nr_metadata.common.services.records.ui_schema.NRAffiliationVocabularyUISchema",
+                                        "field-class": "ma_fields.Nested",
                                         "imports": [
                                             {
                                                 "import": "nr_metadata.common.services.records.ui_schema.NRAffiliationVocabularyUISchema"
                                             }
-                                        ],
-                                        "field-class": "ma_fields.Nested"
+                                        ]
                                     },
                                     "detail": "affiliation",
                                     "input": "relation",
                                     "children": {
                                         "id": {
                                             "marshmallow": {
+                                                "field-class": "ma_fields.String",
                                                 "validators": [],
-                                                "imports": [],
-                                                "field-class": "ma_fields.String"
+                                                "imports": []
                                             },
                                             "detail": "keyword",
                                             "input": "keyword",
@@ -523,15 +523,15 @@
                                         },
                                         "title": {
                                             "marshmallow": {
+                                                "field": "i18n_strings",
                                                 "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
+                                                "field-class": "ma_fields.Nested",
                                                 "validators": [],
                                                 "imports": [
                                                     {
                                                         "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                     }
-                                                ],
-                                                "field": "i18n_strings",
-                                                "field-class": "ma_fields.Nested"
+                                                ]
                                             },
                                             "detail": "string",
                                             "input": "string",
@@ -588,12 +588,12 @@
                                 "child": {
                                     "marshmallow": {
                                         "schema-class": "nr_metadata.common.services.records.ui_schema.NRAuthorityIdentifierUISchema",
+                                        "field-class": "ma_fields.Nested",
                                         "imports": [
                                             {
                                                 "import": "nr_metadata.common.services.records.ui_schema.NRAuthorityIdentifierUISchema"
                                             }
-                                        ],
-                                        "field-class": "ma_fields.Nested"
+                                        ]
                                     },
                                     "detail": "nr_authority_identifier",
                                     "input": "authorityidentifier",
@@ -630,12 +630,12 @@
                 "resourceType": {
                     "marshmallow": {
                         "schema-class": "nr_metadata.common.services.records.ui_schema.NRResourceTypeVocabularyUISchema",
+                        "field-class": "ma_fields.Nested",
                         "imports": [
                             {
                                 "import": "nr_metadata.common.services.records.ui_schema.NRResourceTypeVocabularyUISchema"
                             }
-                        ],
-                        "field-class": "ma_fields.Nested"
+                        ]
                     },
                     "detail": "resource_type",
                     "input": "relation",
@@ -645,9 +645,9 @@
                     "children": {
                         "id": {
                             "marshmallow": {
+                                "field-class": "ma_fields.String",
                                 "validators": [],
-                                "imports": [],
-                                "field-class": "ma_fields.String"
+                                "imports": []
                             },
                             "detail": "keyword",
                             "input": "keyword",
@@ -657,15 +657,15 @@
                         },
                         "title": {
                             "marshmallow": {
+                                "field": "i18n_strings",
                                 "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
+                                "field-class": "ma_fields.Nested",
                                 "validators": [],
                                 "imports": [
                                     {
                                         "import": "invenio_vocabularies.services.schema.i18n_strings"
                                     }
-                                ],
-                                "field": "i18n_strings",
-                                "field-class": "ma_fields.Nested"
+                                ]
                             },
                             "detail": "string",
                             "input": "string",
@@ -718,12 +718,12 @@
                     "child": {
                         "marshmallow": {
                             "schema-class": "nr_metadata.common.services.records.ui_schema.NRSubjectUISchema",
+                            "field-class": "ma_fields.Nested",
                             "imports": [
                                 {
                                     "import": "nr_metadata.common.services.records.ui_schema.NRSubjectUISchema"
                                 }
-                            ],
-                            "field-class": "ma_fields.Nested"
+                            ]
                         },
                         "detail": "subject",
                         "input": "subject",
@@ -800,21 +800,21 @@
                     "child": {
                         "marshmallow": {
                             "schema-class": "nr_metadata.common.services.records.ui_schema.NRSubjectCategoryVocabularyUISchema",
+                            "field-class": "ma_fields.Nested",
                             "imports": [
                                 {
                                     "import": "nr_metadata.common.services.records.ui_schema.NRSubjectCategoryVocabularyUISchema"
                                 }
-                            ],
-                            "field-class": "ma_fields.Nested"
+                            ]
                         },
                         "detail": "subject",
                         "input": "relation",
                         "children": {
                             "id": {
                                 "marshmallow": {
+                                    "field-class": "ma_fields.String",
                                     "validators": [],
-                                    "imports": [],
-                                    "field-class": "ma_fields.String"
+                                    "imports": []
                                 },
                                 "detail": "keyword",
                                 "input": "keyword",
@@ -824,15 +824,15 @@
                             },
                             "title": {
                                 "marshmallow": {
+                                    "field": "i18n_strings",
                                     "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
+                                    "field-class": "ma_fields.Nested",
                                     "validators": [],
                                     "imports": [
                                         {
                                             "import": "invenio_vocabularies.services.schema.i18n_strings"
                                         }
-                                    ],
-                                    "field": "i18n_strings",
-                                    "field-class": "ma_fields.Nested"
+                                    ]
                                 },
                                 "detail": "string",
                                 "input": "string",
@@ -866,21 +866,21 @@
                     "child": {
                         "marshmallow": {
                             "schema-class": "nr_metadata.common.services.records.ui_schema.NRLanguageVocabularyUISchema",
+                            "field-class": "ma_fields.Nested",
                             "imports": [
                                 {
                                     "import": "nr_metadata.common.services.records.ui_schema.NRLanguageVocabularyUISchema"
                                 }
-                            ],
-                            "field-class": "ma_fields.Nested"
+                            ]
                         },
                         "detail": "language",
                         "input": "relation",
                         "children": {
                             "id": {
                                 "marshmallow": {
+                                    "field-class": "ma_fields.String",
                                     "validators": [],
-                                    "imports": [],
-                                    "field-class": "ma_fields.String"
+                                    "imports": []
                                 },
                                 "detail": "keyword",
                                 "input": "keyword",
@@ -890,15 +890,15 @@
                             },
                             "title": {
                                 "marshmallow": {
+                                    "field": "i18n_strings",
                                     "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
+                                    "field-class": "ma_fields.Nested",
                                     "validators": [],
                                     "imports": [
                                         {
                                             "import": "invenio_vocabularies.services.schema.i18n_strings"
                                         }
-                                    ],
-                                    "field": "i18n_strings",
-                                    "field-class": "ma_fields.Nested"
+                                    ]
                                 },
                                 "detail": "string",
                                 "input": "string",
@@ -979,21 +979,21 @@
                     "child": {
                         "marshmallow": {
                             "schema-class": "nr_metadata.common.services.records.ui_schema.NRAccessRightsVocabularyUISchema",
+                            "field-class": "ma_fields.Nested",
                             "imports": [
                                 {
                                     "import": "nr_metadata.common.services.records.ui_schema.NRAccessRightsVocabularyUISchema"
                                 }
-                            ],
-                            "field-class": "ma_fields.Nested"
+                            ]
                         },
                         "detail": "access_rights",
                         "input": "relation",
                         "children": {
                             "id": {
                                 "marshmallow": {
+                                    "field-class": "ma_fields.String",
                                     "validators": [],
-                                    "imports": [],
-                                    "field-class": "ma_fields.String"
+                                    "imports": []
                                 },
                                 "detail": "keyword",
                                 "input": "keyword",
@@ -1003,15 +1003,15 @@
                             },
                             "title": {
                                 "marshmallow": {
+                                    "field": "i18n_strings",
                                     "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
+                                    "field-class": "ma_fields.Nested",
                                     "validators": [],
                                     "imports": [
                                         {
                                             "import": "invenio_vocabularies.services.schema.i18n_strings"
                                         }
-                                    ],
-                                    "field": "i18n_strings",
-                                    "field-class": "ma_fields.Nested"
+                                    ]
                                 },
                                 "detail": "string",
                                 "input": "string",
@@ -1036,12 +1036,12 @@
                 "accessRights": {
                     "marshmallow": {
                         "schema-class": "nr_metadata.common.services.records.ui_schema.NRAccessRightsVocabularyUISchema",
+                        "field-class": "ma_fields.Nested",
                         "imports": [
                             {
                                 "import": "nr_metadata.common.services.records.ui_schema.NRAccessRightsVocabularyUISchema"
                             }
-                        ],
-                        "field-class": "ma_fields.Nested"
+                        ]
                     },
                     "detail": "access_rights",
                     "input": "relation",
@@ -1051,9 +1051,9 @@
                     "children": {
                         "id": {
                             "marshmallow": {
+                                "field-class": "ma_fields.String",
                                 "validators": [],
-                                "imports": [],
-                                "field-class": "ma_fields.String"
+                                "imports": []
                             },
                             "detail": "keyword",
                             "input": "keyword",
@@ -1063,15 +1063,15 @@
                         },
                         "title": {
                             "marshmallow": {
+                                "field": "i18n_strings",
                                 "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
+                                "field-class": "ma_fields.Nested",
                                 "validators": [],
                                 "imports": [
                                     {
                                         "import": "invenio_vocabularies.services.schema.i18n_strings"
                                     }
-                                ],
-                                "field": "i18n_strings",
-                                "field-class": "ma_fields.Nested"
+                                ]
                             },
                             "detail": "string",
                             "input": "string",
@@ -1104,12 +1104,12 @@
                     "child": {
                         "marshmallow": {
                             "schema-class": "nr_metadata.common.services.records.ui_schema.NRRelatedItemUISchema",
+                            "field-class": "ma_fields.Nested",
                             "imports": [
                                 {
                                     "import": "nr_metadata.common.services.records.ui_schema.NRRelatedItemUISchema"
                                 }
-                            ],
-                            "field-class": "ma_fields.Nested"
+                            ]
                         },
                         "detail": "related_item",
                         "input": "relateditem",
@@ -1136,12 +1136,12 @@
                                 "child": {
                                     "marshmallow": {
                                         "schema-class": "nr_metadata.common.services.records.ui_schema.NRAuthorityUIUISchema",
+                                        "field-class": "ma_fields.Nested",
                                         "imports": [
                                             {
                                                 "import": "nr_metadata.common.services.records.ui_schema.NRAuthorityUIUISchema"
                                             }
-                                        ],
-                                        "field-class": "ma_fields.Nested"
+                                        ]
                                     },
                                     "detail": "creator",
                                     "input": "itemcreator",
@@ -1158,21 +1158,21 @@
                                             "child": {
                                                 "marshmallow": {
                                                     "schema-class": "nr_metadata.common.services.records.ui_schema.NRAffiliationVocabularyUISchema",
+                                                    "field-class": "ma_fields.Nested",
                                                     "imports": [
                                                         {
                                                             "import": "nr_metadata.common.services.records.ui_schema.NRAffiliationVocabularyUISchema"
                                                         }
-                                                    ],
-                                                    "field-class": "ma_fields.Nested"
+                                                    ]
                                                 },
                                                 "detail": "affiliation",
                                                 "input": "relation",
                                                 "children": {
                                                     "id": {
                                                         "marshmallow": {
+                                                            "field-class": "ma_fields.String",
                                                             "validators": [],
-                                                            "imports": [],
-                                                            "field-class": "ma_fields.String"
+                                                            "imports": []
                                                         },
                                                         "detail": "keyword",
                                                         "input": "keyword",
@@ -1182,15 +1182,15 @@
                                                     },
                                                     "title": {
                                                         "marshmallow": {
+                                                            "field": "i18n_strings",
                                                             "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
+                                                            "field-class": "ma_fields.Nested",
                                                             "validators": [],
                                                             "imports": [
                                                                 {
                                                                     "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                                 }
-                                                            ],
-                                                            "field": "i18n_strings",
-                                                            "field-class": "ma_fields.Nested"
+                                                            ]
                                                         },
                                                         "detail": "string",
                                                         "input": "string",
@@ -1247,12 +1247,12 @@
                                             "child": {
                                                 "marshmallow": {
                                                     "schema-class": "nr_metadata.common.services.records.ui_schema.NRAuthorityIdentifierUISchema",
+                                                    "field-class": "ma_fields.Nested",
                                                     "imports": [
                                                         {
                                                             "import": "nr_metadata.common.services.records.ui_schema.NRAuthorityIdentifierUISchema"
                                                         }
-                                                    ],
-                                                    "field-class": "ma_fields.Nested"
+                                                    ]
                                                 },
                                                 "detail": "nr_authority_identifier",
                                                 "input": "authorityidentifier",
@@ -1298,12 +1298,12 @@
                                 "child": {
                                     "marshmallow": {
                                         "schema-class": "nr_metadata.common.services.records.ui_schema.NRAuthorityUIUISchema",
+                                        "field-class": "ma_fields.Nested",
                                         "imports": [
                                             {
                                                 "import": "nr_metadata.common.services.records.ui_schema.NRAuthorityUIUISchema"
                                             }
-                                        ],
-                                        "field-class": "ma_fields.Nested"
+                                        ]
                                     },
                                     "detail": "contributor",
                                     "input": "itemcontributor",
@@ -1311,12 +1311,12 @@
                                         "role": {
                                             "marshmallow": {
                                                 "schema-class": "nr_metadata.common.services.records.ui_schema.NRAuthorityVocabularyUISchema",
+                                                "field-class": "ma_fields.Nested",
                                                 "imports": [
                                                     {
                                                         "import": "nr_metadata.common.services.records.ui_schema.NRAuthorityVocabularyUISchema"
                                                     }
-                                                ],
-                                                "field-class": "ma_fields.Nested"
+                                                ]
                                             },
                                             "detail": "authority",
                                             "input": "relation",
@@ -1326,9 +1326,9 @@
                                             "children": {
                                                 "id": {
                                                     "marshmallow": {
+                                                        "field-class": "ma_fields.String",
                                                         "validators": [],
-                                                        "imports": [],
-                                                        "field-class": "ma_fields.String"
+                                                        "imports": []
                                                     },
                                                     "detail": "keyword",
                                                     "input": "keyword",
@@ -1338,15 +1338,15 @@
                                                 },
                                                 "title": {
                                                     "marshmallow": {
+                                                        "field": "i18n_strings",
                                                         "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
+                                                        "field-class": "ma_fields.Nested",
                                                         "validators": [],
                                                         "imports": [
                                                             {
                                                                 "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                             }
-                                                        ],
-                                                        "field": "i18n_strings",
-                                                        "field-class": "ma_fields.Nested"
+                                                        ]
                                                     },
                                                     "detail": "string",
                                                     "input": "string",
@@ -1379,21 +1379,21 @@
                                             "child": {
                                                 "marshmallow": {
                                                     "schema-class": "nr_metadata.common.services.records.ui_schema.NRAffiliationVocabularyUISchema",
+                                                    "field-class": "ma_fields.Nested",
                                                     "imports": [
                                                         {
                                                             "import": "nr_metadata.common.services.records.ui_schema.NRAffiliationVocabularyUISchema"
                                                         }
-                                                    ],
-                                                    "field-class": "ma_fields.Nested"
+                                                    ]
                                                 },
                                                 "detail": "affiliation",
                                                 "input": "relation",
                                                 "children": {
                                                     "id": {
                                                         "marshmallow": {
+                                                            "field-class": "ma_fields.String",
                                                             "validators": [],
-                                                            "imports": [],
-                                                            "field-class": "ma_fields.String"
+                                                            "imports": []
                                                         },
                                                         "detail": "keyword",
                                                         "input": "keyword",
@@ -1403,15 +1403,15 @@
                                                     },
                                                     "title": {
                                                         "marshmallow": {
+                                                            "field": "i18n_strings",
                                                             "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
+                                                            "field-class": "ma_fields.Nested",
                                                             "validators": [],
                                                             "imports": [
                                                                 {
                                                                     "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                                 }
-                                                            ],
-                                                            "field": "i18n_strings",
-                                                            "field-class": "ma_fields.Nested"
+                                                            ]
                                                         },
                                                         "detail": "string",
                                                         "input": "string",
@@ -1468,12 +1468,12 @@
                                             "child": {
                                                 "marshmallow": {
                                                     "schema-class": "nr_metadata.common.services.records.ui_schema.NRAuthorityIdentifierUISchema",
+                                                    "field-class": "ma_fields.Nested",
                                                     "imports": [
                                                         {
                                                             "import": "nr_metadata.common.services.records.ui_schema.NRAuthorityIdentifierUISchema"
                                                         }
-                                                    ],
-                                                    "field-class": "ma_fields.Nested"
+                                                    ]
                                                 },
                                                 "detail": "nr_authority_identifier",
                                                 "input": "authorityidentifier",
@@ -1519,12 +1519,12 @@
                                 "child": {
                                     "marshmallow": {
                                         "schema-class": "nr_metadata.common.services.records.ui_schema.NRObjectPIDUISchema",
+                                        "field-class": "ma_fields.Nested",
                                         "imports": [
                                             {
                                                 "import": "nr_metadata.common.services.records.ui_schema.NRObjectPIDUISchema"
                                             }
-                                        ],
-                                        "field-class": "ma_fields.Nested"
+                                        ]
                                     },
                                     "detail": "nr_object_pid",
                                     "input": "itempid",
@@ -1628,12 +1628,12 @@
                             "itemRelationType": {
                                 "marshmallow": {
                                     "schema-class": "nr_metadata.common.services.records.ui_schema.NRItemRelationTypeVocabularyUISchema",
+                                    "field-class": "ma_fields.Nested",
                                     "imports": [
                                         {
                                             "import": "nr_metadata.common.services.records.ui_schema.NRItemRelationTypeVocabularyUISchema"
                                         }
-                                    ],
-                                    "field-class": "ma_fields.Nested"
+                                    ]
                                 },
                                 "detail": "item_relation_type",
                                 "input": "relation",
@@ -1643,9 +1643,9 @@
                                 "children": {
                                     "id": {
                                         "marshmallow": {
+                                            "field-class": "ma_fields.String",
                                             "validators": [],
-                                            "imports": [],
-                                            "field-class": "ma_fields.String"
+                                            "imports": []
                                         },
                                         "detail": "keyword",
                                         "input": "keyword",
@@ -1655,15 +1655,15 @@
                                     },
                                     "title": {
                                         "marshmallow": {
+                                            "field": "i18n_strings",
                                             "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
+                                            "field-class": "ma_fields.Nested",
                                             "validators": [],
                                             "imports": [
                                                 {
                                                     "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                 }
-                                            ],
-                                            "field": "i18n_strings",
-                                            "field-class": "ma_fields.Nested"
+                                            ]
                                         },
                                         "detail": "string",
                                         "input": "string",
@@ -1687,12 +1687,12 @@
                             "itemResourceType": {
                                 "marshmallow": {
                                     "schema-class": "nr_metadata.common.services.records.ui_schema.NRResourceTypeVocabularyUISchema",
+                                    "field-class": "ma_fields.Nested",
                                     "imports": [
                                         {
                                             "import": "nr_metadata.common.services.records.ui_schema.NRResourceTypeVocabularyUISchema"
                                         }
-                                    ],
-                                    "field-class": "ma_fields.Nested"
+                                    ]
                                 },
                                 "detail": "resource_type",
                                 "input": "relation",
@@ -1702,9 +1702,9 @@
                                 "children": {
                                     "id": {
                                         "marshmallow": {
+                                            "field-class": "ma_fields.String",
                                             "validators": [],
-                                            "imports": [],
-                                            "field-class": "ma_fields.String"
+                                            "imports": []
                                         },
                                         "detail": "keyword",
                                         "input": "keyword",
@@ -1714,15 +1714,15 @@
                                     },
                                     "title": {
                                         "marshmallow": {
+                                            "field": "i18n_strings",
                                             "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
+                                            "field-class": "ma_fields.Nested",
                                             "validators": [],
                                             "imports": [
                                                 {
                                                     "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                 }
-                                            ],
-                                            "field": "i18n_strings",
-                                            "field-class": "ma_fields.Nested"
+                                            ]
                                         },
                                         "detail": "string",
                                         "input": "string",
@@ -1758,12 +1758,12 @@
                     "child": {
                         "marshmallow": {
                             "schema-class": "nr_metadata.common.services.records.ui_schema.NRFundingReferenceUISchema",
+                            "field-class": "ma_fields.Nested",
                             "imports": [
                                 {
                                     "import": "nr_metadata.common.services.records.ui_schema.NRFundingReferenceUISchema"
                                 }
-                            ],
-                            "field-class": "ma_fields.Nested"
+                            ]
                         },
                         "detail": "funding_reference",
                         "input": "fundingreference",
@@ -1801,12 +1801,12 @@
                             "funder": {
                                 "marshmallow": {
                                     "schema-class": "nr_metadata.common.services.records.ui_schema.NRFunderVocabularyUISchema",
+                                    "field-class": "ma_fields.Nested",
                                     "imports": [
                                         {
                                             "import": "nr_metadata.common.services.records.ui_schema.NRFunderVocabularyUISchema"
                                         }
-                                    ],
-                                    "field-class": "ma_fields.Nested"
+                                    ]
                                 },
                                 "detail": "funder",
                                 "input": "relation",
@@ -1816,9 +1816,9 @@
                                 "children": {
                                     "id": {
                                         "marshmallow": {
+                                            "field-class": "ma_fields.String",
                                             "validators": [],
-                                            "imports": [],
-                                            "field-class": "ma_fields.String"
+                                            "imports": []
                                         },
                                         "detail": "keyword",
                                         "input": "keyword",
@@ -1828,15 +1828,15 @@
                                     },
                                     "title": {
                                         "marshmallow": {
+                                            "field": "i18n_strings",
                                             "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
+                                            "field-class": "ma_fields.Nested",
                                             "validators": [],
                                             "imports": [
                                                 {
                                                     "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                 }
-                                            ],
-                                            "field": "i18n_strings",
-                                            "field-class": "ma_fields.Nested"
+                                            ]
                                         },
                                         "detail": "string",
                                         "input": "string",
@@ -1882,12 +1882,12 @@
                     "child": {
                         "marshmallow": {
                             "schema-class": "nr_metadata.common.services.records.ui_schema.NRGeoLocationUISchema",
+                            "field-class": "ma_fields.Nested",
                             "imports": [
                                 {
                                     "import": "nr_metadata.common.services.records.ui_schema.NRGeoLocationUISchema"
                                 }
-                            ],
-                            "field-class": "ma_fields.Nested"
+                            ]
                         },
                         "detail": "geolocation",
                         "input": "geolocation",
@@ -1905,12 +1905,12 @@
                             "geoLocationPoint": {
                                 "marshmallow": {
                                     "schema-class": "nr_metadata.common.services.records.ui_schema.NRGeoLocationPointUISchema",
+                                    "field-class": "ma_fields.Nested",
                                     "imports": [
                                         {
                                             "import": "nr_metadata.common.services.records.ui_schema.NRGeoLocationPointUISchema"
                                         }
-                                    ],
-                                    "field-class": "ma_fields.Nested"
+                                    ]
                                 },
                                 "detail": "geolocation_point",
                                 "input": false,
@@ -1965,12 +1965,12 @@
                     "child": {
                         "marshmallow": {
                             "schema-class": "nr_metadata.common.services.records.ui_schema.NRSeriesUISchema",
+                            "field-class": "ma_fields.Nested",
                             "imports": [
                                 {
                                     "import": "nr_metadata.common.services.records.ui_schema.NRSeriesUISchema"
                                 }
-                            ],
-                            "field-class": "ma_fields.Nested"
+                            ]
                         },
                         "detail": "series",
                         "input": "series",
@@ -2001,12 +2001,12 @@
                 "externalLocation": {
                     "marshmallow": {
                         "schema-class": "nr_metadata.common.services.records.ui_schema.NRExternalLocationUISchema",
+                        "field-class": "ma_fields.Nested",
                         "imports": [
                             {
                                 "import": "nr_metadata.common.services.records.ui_schema.NRExternalLocationUISchema"
                             }
-                        ],
-                        "field-class": "ma_fields.Nested"
+                        ]
                     },
                     "detail": "external_location",
                     "input": false,
@@ -2058,12 +2058,12 @@
                     "child": {
                         "marshmallow": {
                             "schema-class": "nr_metadata.common.services.records.ui_schema.NRObjectPIDUISchema",
+                            "field-class": "ma_fields.Nested",
                             "imports": [
                                 {
                                     "import": "nr_metadata.common.services.records.ui_schema.NRObjectPIDUISchema"
                                 }
-                            ],
-                            "field-class": "ma_fields.Nested"
+                            ]
                         },
                         "detail": "nr_object_pid",
                         "input": "objectidentifier",
@@ -2106,12 +2106,12 @@
                     "child": {
                         "marshmallow": {
                             "schema-class": "nr_metadata.common.services.records.ui_schema.NRSystemIdentifierUISchema",
+                            "field-class": "ma_fields.Nested",
                             "imports": [
                                 {
                                     "import": "nr_metadata.common.services.records.ui_schema.NRSystemIdentifierUISchema"
                                 }
-                            ],
-                            "field-class": "ma_fields.Nested"
+                            ]
                         },
                         "detail": "identifier",
                         "input": "systemidentifier",
@@ -2154,12 +2154,12 @@
                     "child": {
                         "marshmallow": {
                             "schema-class": "nr_metadata.common.services.records.ui_schema.NREventUISchema",
+                            "field-class": "ma_fields.Nested",
                             "imports": [
                                 {
                                     "import": "nr_metadata.common.services.records.ui_schema.NREventUISchema"
                                 }
-                            ],
-                            "field-class": "ma_fields.Nested"
+                            ]
                         },
                         "detail": "identifier",
                         "input": "event",
@@ -2204,12 +2204,12 @@
                             "eventLocation": {
                                 "marshmallow": {
                                     "schema-class": "nr_metadata.common.services.records.ui_schema.NRLocationUISchema",
+                                    "field-class": "ma_fields.Nested",
                                     "imports": [
                                         {
                                             "import": "nr_metadata.common.services.records.ui_schema.NRLocationUISchema"
                                         }
-                                    ],
-                                    "field-class": "ma_fields.Nested"
+                                    ]
                                 },
                                 "detail": "location",
                                 "input": false,
@@ -2230,12 +2230,12 @@
                                     "country": {
                                         "marshmallow": {
                                             "schema-class": "nr_metadata.common.services.records.ui_schema.NRCountryVocabularyUISchema",
+                                            "field-class": "ma_fields.Nested",
                                             "imports": [
                                                 {
                                                     "import": "nr_metadata.common.services.records.ui_schema.NRCountryVocabularyUISchema"
                                                 }
-                                            ],
-                                            "field-class": "ma_fields.Nested"
+                                            ]
                                         },
                                         "detail": "country",
                                         "input": "relation",
@@ -2245,9 +2245,9 @@
                                         "children": {
                                             "id": {
                                                 "marshmallow": {
+                                                    "field-class": "ma_fields.String",
                                                     "validators": [],
-                                                    "imports": [],
-                                                    "field-class": "ma_fields.String"
+                                                    "imports": []
                                                 },
                                                 "detail": "keyword",
                                                 "input": "keyword",
@@ -2257,15 +2257,15 @@
                                             },
                                             "title": {
                                                 "marshmallow": {
+                                                    "field": "i18n_strings",
                                                     "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
+                                                    "field-class": "ma_fields.Nested",
                                                     "validators": [],
                                                     "imports": [
                                                         {
                                                             "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                         }
-                                                    ],
-                                                    "field": "i18n_strings",
-                                                    "field-class": "ma_fields.Nested"
+                                                    ]
                                                 },
                                                 "detail": "string",
                                                 "input": "string",
