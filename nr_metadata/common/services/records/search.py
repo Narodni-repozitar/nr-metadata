@@ -179,6 +179,7 @@ class CommonSearchOptions(InvenioSearchOptions):
         "metadata_events_eventLocation_country__version": (
             facets.metadata_events_eventLocation_country__version
         ),
+        "metadata_extent": facets.metadata_extent,
         "_id": facets._id,
         "created": facets.created,
         "updated": facets.updated,

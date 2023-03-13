@@ -329,6 +329,9 @@ metadata_events_eventLocation_country__version = TermsFacet(
 )
 
 
+metadata_extent = TermsFacet(field="metadata.extent")
+
+
 _id = TermsFacet(field="id")
 
 

@@ -209,7 +209,7 @@ class NREventSchema(ma.Schema):
     eventNameOriginal = ma_fields.String()
     eventNameAlternate = ma_fields.List(ma_fields.String())
     eventDate = ma_fields.String(
-        validate=[mu_fields_edtf.EDTFValidator(types=EDTFInterval)]
+        validate=[mu_fields_edtf.EDTFValidator(types=(EDTFInterval,))]
     )
     eventLocation = ma_fields.Nested(lambda: NRLocationSchema())
 
@@ -225,10 +225,10 @@ class NRCommonMetadataSchema(ma.Schema):
     contributors = ma_fields.List(ma_fields.Nested(lambda: NRAuthoritySchema()))
     resourceType = ma_fields.Nested(lambda: NRResourceTypeVocabularySchema())
     dateAvailable = ma_fields.String(
-        validate=[mu_fields_edtf.EDTFValidator(types=EDTFDate)]
+        validate=[mu_fields_edtf.EDTFValidator(types=(EDTFDate,))]
     )
     dateModified = ma_fields.String(
-        validate=[mu_fields_edtf.EDTFValidator(types=EDTFDate)]
+        validate=[mu_fields_edtf.EDTFValidator(types=(EDTFDate,))]
     )
     subjects = ma_fields.List(ma_fields.Nested(lambda: NRSubjectSchema()))
     publishers = ma_fields.List(ma_fields.String())
@@ -257,6 +257,7 @@ class NRCommonMetadataSchema(ma.Schema):
         ma_fields.Nested(lambda: NRSystemIdentifierSchema())
     )
     events = ma_fields.List(ma_fields.Nested(lambda: NREventSchema()))
+    extent = ma_fields.List(ma_fields.String())
 
 
 class NRCommonRecordSchema(InvenioBaseRecordSchema):

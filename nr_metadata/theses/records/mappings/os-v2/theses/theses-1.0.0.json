@@ -742,6 +742,9 @@
                             }
                         },
                         "type": "object"
+                    },
+                    "extent": {
+                        "type": "keyword"
                     }
                 },
                 "type": "object"

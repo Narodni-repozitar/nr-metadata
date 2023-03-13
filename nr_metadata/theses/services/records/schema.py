@@ -67,10 +67,10 @@ class NRThesesMetadataSchema(ma.Schema):
     contributors = ma_fields.List(ma_fields.Nested(lambda: NRAuthoritySchema()))
     resourceType = ma_fields.Nested(lambda: NRResourceTypeVocabularySchema())
     dateAvailable = ma_fields.String(
-        validate=[mu_fields_edtf.EDTFValidator(types=EDTFDate)]
+        validate=[mu_fields_edtf.EDTFValidator(types=(EDTFDate,))]
     )
     dateModified = ma_fields.String(
-        validate=[mu_fields_edtf.EDTFValidator(types=EDTFDate)]
+        validate=[mu_fields_edtf.EDTFValidator(types=(EDTFDate,))]
     )
     subjects = ma_fields.List(ma_fields.Nested(lambda: NRSubjectSchema()))
     publishers = ma_fields.List(ma_fields.String())
@@ -99,6 +99,7 @@ class NRThesesMetadataSchema(ma.Schema):
         ma_fields.Nested(lambda: NRSystemIdentifierSchema())
     )
     events = ma_fields.List(ma_fields.Nested(lambda: NREventSchema()))
+    extent = ma_fields.List(ma_fields.String())
 
 
 class NRThesesRecordSchema(InvenioBaseRecordSchema):

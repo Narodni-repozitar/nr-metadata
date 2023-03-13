@@ -97,6 +97,7 @@ class NRThesesMetadataUISchema(ma.Schema):
         ma_fields.Nested(lambda: NRSystemIdentifierUISchema())
     )
     events = ma_fields.List(ma_fields.Nested(lambda: NREventUISchema()))
+    extent = ma_fields.List(ma_fields.String())
 
 
 class NRThesesRecordUISchema(ma.Schema):

@@ -68,7 +68,7 @@ class CommonRecord(Record):
         affiliations_item_2=PIDRelation(
             "metadata.relatedItems.itemCreators.affiliations",
             keys=["id", "title"],
-            pid_field=Vocabulary.pid.with_type_ctx("item-creator-affiliations"),
+            pid_field=Vocabulary.pid.with_type_ctx("affiliations"),
         ),
         role_1=PIDRelation(
             "metadata.relatedItems.itemContributors.role",
@@ -78,7 +78,7 @@ class CommonRecord(Record):
         affiliations_item_3=PIDRelation(
             "metadata.relatedItems.itemContributors.affiliations",
             keys=["id", "title"],
-            pid_field=Vocabulary.pid.with_type_ctx("item-creator-affiliations"),
+            pid_field=Vocabulary.pid.with_type_ctx("affiliations"),
         ),
         itemRelationType=PIDRelation(
             "metadata.relatedItems.itemRelationType",
