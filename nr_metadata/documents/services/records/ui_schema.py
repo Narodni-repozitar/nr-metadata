@@ -19,7 +19,6 @@ from nr_metadata.common.services.records.ui_schema import (
     AdditionalTitlesUISchema,
     NRAccessRightsVocabularyUISchema,
     NRAffiliationVocabularyUISchema,
-    NRAuthorityIdentifierUISchema,
     NRAuthorityUIUISchema,
     NRAuthorityVocabularyUISchema,
     NRCountryVocabularyUISchema,
@@ -32,12 +31,15 @@ from nr_metadata.common.services.records.ui_schema import (
     NRItemRelationTypeVocabularyUISchema,
     NRLanguageVocabularyUISchema,
     NRLocationUISchema,
-    NRObjectPIDUISchema,
     NRRelatedItemUISchema,
     NRResourceTypeVocabularyUISchema,
     NRSeriesUISchema,
     NRSubjectCategoryVocabularyUISchema,
     NRSubjectUISchema,
+)
+from nr_metadata.ui_schema.identifiers import (
+    NRAuthorityIdentifierUISchema,
+    NRObjectIdentifierUISchema,
     NRSystemIdentifierUISchema,
 )
 
@@ -98,7 +100,9 @@ class NRDocumentMetadataUISchema(ma.Schema):
     series = ma_fields.List(ma_fields.Nested(lambda: NRSeriesUISchema()))
     externalLocation = ma_fields.Nested(lambda: NRExternalLocationUISchema())
     originalRecord = ma_fields.String()
-    objectIdentifiers = ma_fields.List(ma_fields.Nested(lambda: NRObjectPIDUISchema()))
+    objectIdentifiers = ma_fields.List(
+        ma_fields.Nested(lambda: NRObjectIdentifierUISchema())
+    )
     systemIdentifiers = ma_fields.List(
         ma_fields.Nested(lambda: NRSystemIdentifierUISchema())
     )
