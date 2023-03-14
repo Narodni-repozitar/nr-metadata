@@ -34,7 +34,7 @@ class DocumentsRecord(Record):
         affiliations_item=PIDRelation(
             "metadata.creators.affiliations",
             keys=["id", "title"],
-            pid_field=Vocabulary.pid.with_type_ctx("creator_affiliations"),
+            pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
         role=PIDRelation(
             "metadata.contributors.role",
@@ -44,7 +44,7 @@ class DocumentsRecord(Record):
         affiliations_item_1=PIDRelation(
             "metadata.contributors.affiliations",
             keys=["id", "title"],
-            pid_field=Vocabulary.pid.with_type_ctx("contributor_affiliations"),
+            pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
         resourceType=PIDRelation(
             "metadata.resourceType",

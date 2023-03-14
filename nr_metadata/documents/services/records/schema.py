@@ -20,8 +20,9 @@ from nr_metadata.common.services.records.schema import (
     AdditionalTitlesSchema,
     NRAccessRightsVocabularySchema,
     NRAffiliationVocabularySchema,
+    NRAuthorityRoleVocabularySchema,
     NRAuthoritySchema,
-    NRAuthorityVocabularySchema,
+    NRContributorSchema,
     NRCountryVocabularySchema,
     NREventSchema,
     NRExternalLocationSchema,
@@ -73,7 +74,7 @@ class NRDocumentMetadataSchema(ma.Schema):
         ma_fields.Nested(lambda: AdditionalTitlesSchema())
     )
     creators = ma_fields.List(ma_fields.Nested(lambda: NRAuthoritySchema()))
-    contributors = ma_fields.List(ma_fields.Nested(lambda: NRAuthoritySchema()))
+    contributors = ma_fields.List(ma_fields.Nested(lambda: NRContributorSchema()))
     resourceType = ma_fields.Nested(lambda: NRResourceTypeVocabularySchema())
     dateAvailable = ma_fields.String(
         validate=[mu_fields_edtf.EDTFValidator(types=(EDTFDate,))]

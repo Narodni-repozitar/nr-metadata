@@ -20,8 +20,9 @@ from nr_metadata.common.services.records.ui_schema import (
     AdditionalTitlesUISchema,
     NRAccessRightsVocabularyUISchema,
     NRAffiliationVocabularyUISchema,
+    NRAuthorityRoleVocabularyUISchema,
     NRAuthorityUIUISchema,
-    NRAuthorityVocabularyUISchema,
+    NRContributorUISchema,
     NRCountryVocabularyUISchema,
     NREventUISchema,
     NRExternalLocationUISchema,
@@ -73,7 +74,7 @@ class NRDocumentMetadataUISchema(ma.Schema):
         ma_fields.Nested(lambda: AdditionalTitlesUISchema())
     )
     creators = ma_fields.List(ma_fields.Nested(lambda: NRAuthorityUIUISchema()))
-    contributors = ma_fields.List(ma_fields.Nested(lambda: NRAuthorityUIUISchema()))
+    contributors = ma_fields.List(ma_fields.Nested(lambda: NRContributorUISchema()))
     resourceType = ma_fields.Nested(lambda: NRResourceTypeVocabularyUISchema())
     dateAvailable = l10n.LocalizedEDTF()
     dateModified = l10n.LocalizedEDTF()

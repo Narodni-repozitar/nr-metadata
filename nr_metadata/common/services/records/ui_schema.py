@@ -50,12 +50,26 @@ class NRAuthorityUIUISchema(ma.Schema):
     )
 
 
-class NRAuthorityVocabularyUISchema(ma.Schema):
-    """NRAuthorityVocabularyUISchema schema."""
+class NRAuthorityRoleVocabularyUISchema(ma.Schema):
+    """NRAuthorityRoleVocabularyUISchema schema."""
 
     _id = ma_fields.String(data_key="id", attribute="id")
     title = i18n_strings
     _version = ma_fields.String(data_key="@v", attribute="@v")
+
+
+class NRContributorUISchema(ma.Schema):
+    """NRContributorUISchema schema."""
+
+    role = ma_fields.Nested(lambda: NRAuthorityRoleVocabularyUISchema())
+    affiliations = ma_fields.List(
+        ma_fields.Nested(lambda: NRAffiliationVocabularyUISchema())
+    )
+    nameType = l10n.LocalizedEnum(value_prefix="nr_metadata.documents")
+    fullName = ma_fields.String()
+    authorityIdentifiers = ma_fields.List(
+        ma_fields.Nested(lambda: NRAuthorityIdentifierUISchema())
+    )
 
 
 class NRResourceTypeVocabularyUISchema(ma.Schema):
@@ -202,7 +216,7 @@ class NRCommonMetadataUISchema(ma.Schema):
         ma_fields.Nested(lambda: AdditionalTitlesUISchema())
     )
     creators = ma_fields.List(ma_fields.Nested(lambda: NRAuthorityUIUISchema()))
-    contributors = ma_fields.List(ma_fields.Nested(lambda: NRAuthorityUIUISchema()))
+    contributors = ma_fields.List(ma_fields.Nested(lambda: NRContributorUISchema()))
     resourceType = ma_fields.Nested(lambda: NRResourceTypeVocabularyUISchema())
     dateAvailable = l10n.LocalizedEDTF()
     dateModified = l10n.LocalizedEDTF()
