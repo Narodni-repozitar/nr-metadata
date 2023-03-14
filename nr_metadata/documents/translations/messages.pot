@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2023-03-14T12:49:17.494999\n"
-"PO-Revision-Date: 2023-03-14T12:49:17.495000\n"
+"POT-Creation-Date: 2023-03-14T15:03:37.752878\n"
+"PO-Revision-Date: 2023-03-14T15:03:37.752879\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -168,6 +168,24 @@ msgid "metadata/additionalTitles/title.label"
 msgstr ""
 
 msgid "metadata/additionalTitles/title.hint"
+msgstr ""
+
+msgid "metadata/additionalTitles/title/lang.help"
+msgstr ""
+
+msgid "metadata/additionalTitles/title/lang.label"
+msgstr ""
+
+msgid "metadata/additionalTitles/title/lang.hint"
+msgstr ""
+
+msgid "metadata/additionalTitles/title/value.help"
+msgstr ""
+
+msgid "metadata/additionalTitles/title/value.label"
+msgstr ""
+
+msgid "metadata/additionalTitles/title/value.hint"
 msgstr ""
 
 msgid "metadata/additionalTitles/titleType.help"
@@ -458,6 +476,24 @@ msgstr ""
 msgid "metadata/subjects/subject.hint"
 msgstr ""
 
+msgid "metadata/subjects/subject/lang.help"
+msgstr ""
+
+msgid "metadata/subjects/subject/lang.label"
+msgstr ""
+
+msgid "metadata/subjects/subject/lang.hint"
+msgstr ""
+
+msgid "metadata/subjects/subject/value.help"
+msgstr ""
+
+msgid "metadata/subjects/subject/value.label"
+msgstr ""
+
+msgid "metadata/subjects/subject/value.hint"
+msgstr ""
+
 msgid "metadata/subjects/valueURI.help"
 msgstr ""
 
@@ -575,6 +611,24 @@ msgstr ""
 msgid "metadata/abstract.hint"
 msgstr ""
 
+msgid "metadata/abstract/lang.help"
+msgstr ""
+
+msgid "metadata/abstract/lang.label"
+msgstr ""
+
+msgid "metadata/abstract/lang.hint"
+msgstr ""
+
+msgid "metadata/abstract/value.help"
+msgstr ""
+
+msgid "metadata/abstract/value.label"
+msgstr ""
+
+msgid "metadata/abstract/value.hint"
+msgstr ""
+
 msgid "metadata/methods.label"
 msgstr ""
 
@@ -584,6 +638,24 @@ msgstr ""
 msgid "metadata/methods.hint"
 msgstr ""
 
+msgid "metadata/methods/lang.help"
+msgstr ""
+
+msgid "metadata/methods/lang.label"
+msgstr ""
+
+msgid "metadata/methods/lang.hint"
+msgstr ""
+
+msgid "metadata/methods/value.help"
+msgstr ""
+
+msgid "metadata/methods/value.label"
+msgstr ""
+
+msgid "metadata/methods/value.hint"
+msgstr ""
+
 msgid "metadata/technicalInfo.label"
 msgstr ""
 
@@ -591,6 +663,24 @@ msgid "metadata/technicalInfo.help"
 msgstr ""
 
 msgid "metadata/technicalInfo.hint"
+msgstr ""
+
+msgid "metadata/technicalInfo/lang.help"
+msgstr ""
+
+msgid "metadata/technicalInfo/lang.label"
+msgstr ""
+
+msgid "metadata/technicalInfo/lang.hint"
+msgstr ""
+
+msgid "metadata/technicalInfo/value.help"
+msgstr ""
+
+msgid "metadata/technicalInfo/value.label"
+msgstr ""
+
+msgid "metadata/technicalInfo/value.hint"
 msgstr ""
 
 msgid "metadata/rights.help"
@@ -1158,6 +1248,24 @@ msgid "metadata/accessibility.help"
 msgstr ""
 
 msgid "metadata/accessibility.hint"
+msgstr ""
+
+msgid "metadata/accessibility/lang.help"
+msgstr ""
+
+msgid "metadata/accessibility/lang.label"
+msgstr ""
+
+msgid "metadata/accessibility/lang.hint"
+msgstr ""
+
+msgid "metadata/accessibility/value.help"
+msgstr ""
+
+msgid "metadata/accessibility/value.label"
+msgstr ""
+
+msgid "metadata/accessibility/value.hint"
 msgstr ""
 
 msgid "metadata/series.help"

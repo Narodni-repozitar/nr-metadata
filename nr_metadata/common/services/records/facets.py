@@ -7,6 +7,18 @@ from oarepo_runtime.facets.nested_facet import NestedLabeledFacet
 metadata_title_keyword = TermsFacet(field="metadata.title.keyword")
 
 
+metadata_additionalTitles_title_lang = NestedLabeledFacet(
+    path="metadata.additionalTitles.title",
+    nested_facet=TermsFacet(field="metadata.additionalTitles.title.lang"),
+)
+
+
+metadata_additionalTitles_title_value_keyword = NestedLabeledFacet(
+    path="metadata.additionalTitles.title",
+    nested_facet=TermsFacet(field="metadata.additionalTitles.title.value.keyword"),
+)
+
+
 metadata_additionalTitles_titleType = TermsFacet(
     field="metadata.additionalTitles.titleType"
 )
@@ -85,6 +97,18 @@ metadata_dateModified = TermsFacet(field="metadata.dateModified")
 metadata_subjects_subjectScheme = TermsFacet(field="metadata.subjects.subjectScheme")
 
 
+metadata_subjects_subject_lang = NestedLabeledFacet(
+    path="metadata.subjects.subject",
+    nested_facet=TermsFacet(field="metadata.subjects.subject.lang"),
+)
+
+
+metadata_subjects_subject_value_keyword = NestedLabeledFacet(
+    path="metadata.subjects.subject",
+    nested_facet=TermsFacet(field="metadata.subjects.subject.value.keyword"),
+)
+
+
 metadata_subjects_valueURI = TermsFacet(field="metadata.subjects.valueURI")
 
 
@@ -103,6 +127,40 @@ metadata_languages_id = TermsFacet(field="metadata.languages.id")
 
 
 metadata_languages__version = TermsFacet(field="metadata.languages.@v")
+
+
+metadata_abstract_lang = NestedLabeledFacet(
+    path="metadata.abstract", nested_facet=TermsFacet(field="metadata.abstract.lang")
+)
+
+
+metadata_abstract_value_keyword = NestedLabeledFacet(
+    path="metadata.abstract",
+    nested_facet=TermsFacet(field="metadata.abstract.value.keyword"),
+)
+
+
+metadata_methods_lang = NestedLabeledFacet(
+    path="metadata.methods", nested_facet=TermsFacet(field="metadata.methods.lang")
+)
+
+
+metadata_methods_value_keyword = NestedLabeledFacet(
+    path="metadata.methods",
+    nested_facet=TermsFacet(field="metadata.methods.value.keyword"),
+)
+
+
+metadata_technicalInfo_lang = NestedLabeledFacet(
+    path="metadata.technicalInfo",
+    nested_facet=TermsFacet(field="metadata.technicalInfo.lang"),
+)
+
+
+metadata_technicalInfo_value_keyword = NestedLabeledFacet(
+    path="metadata.technicalInfo",
+    nested_facet=TermsFacet(field="metadata.technicalInfo.value.keyword"),
+)
 
 
 metadata_rights_id = TermsFacet(field="metadata.rights.id")
@@ -274,6 +332,18 @@ metadata_geoLocations_geoLocationPoint_pointLongitude = TermsFacet(
 
 metadata_geoLocations_geoLocationPoint_pointLatitude = TermsFacet(
     field="metadata.geoLocations.geoLocationPoint.pointLatitude"
+)
+
+
+metadata_accessibility_lang = NestedLabeledFacet(
+    path="metadata.accessibility",
+    nested_facet=TermsFacet(field="metadata.accessibility.lang"),
+)
+
+
+metadata_accessibility_value_keyword = NestedLabeledFacet(
+    path="metadata.accessibility",
+    nested_facet=TermsFacet(field="metadata.accessibility.value.keyword"),
 )
 
 

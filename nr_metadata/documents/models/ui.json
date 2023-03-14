@@ -2,12 +2,12 @@
     "children": {
         "metadata": {
             "marshmallow": {
-                "generate": true,
+                "field-class": "ma_fields.Nested",
                 "schema-class": "nr_metadata.documents.services.records.ui_schema.NRDocumentMetadataUISchema",
                 "base-classes": [
                     "ma.Schema"
                 ],
-                "field-class": "ma_fields.Nested"
+                "generate": true
             },
             "detail": "metadatum",
             "input": "metadatum",
@@ -16,16 +16,16 @@
             "hint": "metadata.hint",
             "children": {
                 "thesis": {
-                    "detail": "thesis",
                     "marshmallow": {
+                        "field-class": "ma_fields.Nested",
+                        "schema-class": "nr_metadata.documents.services.records.ui_schema.NRThesisUISchema",
                         "imports": [
                             {
                                 "import": "nr_metadata.documents.services.records.ui_schema.NRThesisUISchema"
                             }
-                        ],
-                        "schema-class": "nr_metadata.documents.services.records.ui_schema.NRThesisUISchema",
-                        "field-class": "ma_fields.Nested"
+                        ]
                     },
+                    "detail": "thesis",
                     "input": "thesi",
                     "help": "metadata/thesis.help",
                     "label": "metadata/thesis.label",
@@ -52,16 +52,16 @@
                             "hint": "metadata/thesis/defended.hint"
                         },
                         "degreeGrantor": {
-                            "detail": "nr_degree_grantor",
                             "marshmallow": {
+                                "field-class": "ma_fields.Nested",
+                                "schema-class": "nr_metadata.documents.services.records.ui_schema.NRDegreeGrantorUISchema",
                                 "imports": [
                                     {
                                         "import": "nr_metadata.documents.services.records.ui_schema.NRDegreeGrantorUISchema"
                                     }
-                                ],
-                                "schema-class": "nr_metadata.documents.services.records.ui_schema.NRDegreeGrantorUISchema",
-                                "field-class": "ma_fields.Nested"
+                                ]
                             },
+                            "detail": "nr_degree_grantor",
                             "input": "relation",
                             "help": "metadata/thesis/degreeGrantor.help",
                             "label": "metadata/thesis/degreeGrantor.label",
@@ -69,9 +69,9 @@
                             "children": {
                                 "id": {
                                     "marshmallow": {
-                                        "imports": [],
+                                        "field-class": "ma_fields.String",
                                         "validators": [],
-                                        "field-class": "ma_fields.String"
+                                        "imports": []
                                     },
                                     "detail": "keyword",
                                     "input": "keyword",
@@ -81,15 +81,15 @@
                                 },
                                 "title": {
                                     "marshmallow": {
+                                        "field-class": "ma_fields.Nested",
+                                        "validators": [],
+                                        "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
                                         "imports": [
                                             {
                                                 "import": "invenio_vocabularies.services.schema.i18n_strings"
                                             }
                                         ],
-                                        "field": "i18n_strings",
-                                        "validators": [],
-                                        "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                        "field-class": "ma_fields.Nested"
+                                        "field": "i18n_strings"
                                     },
                                     "detail": "string",
                                     "input": "string",
@@ -99,9 +99,9 @@
                                 },
                                 "hierarchy": {
                                     "marshmallow": {
-                                        "generate": false,
+                                        "field-class": "ma_fields.Nested",
                                         "schema-class": "oarepo_vocabularies.services.ui_schemas.HierarchyUISchema",
-                                        "field-class": "ma_fields.Nested"
+                                        "generate": false
                                     },
                                     "detail": false,
                                     "input": false,
@@ -140,9 +140,9 @@
                                             "hint": "metadata/thesis/degreeGrantor/hierarchy/title.hint",
                                             "child": {
                                                 "marshmallow": {
-                                                    "field": "i18n_strings",
+                                                    "field-class": "ma_fields.Nested",
                                                     "schema-class": "nr_metadata.documents.services.records.ui_schema.TitleItemUISchema",
-                                                    "field-class": "ma_fields.Nested"
+                                                    "field": "i18n_strings"
                                                 },
                                                 "detail": "string",
                                                 "input": "string"
@@ -229,22 +229,51 @@
                     "label": "metadata/additionalTitles.label",
                     "hint": "metadata/additionalTitles.hint",
                     "child": {
-                        "detail": "additionalTitle",
                         "marshmallow": {
-                            "schema-class": "nr_metadata.common.services.records.ui_schema.AdditionalTitlesUISchema",
-                            "field-class": "ma_fields.Nested"
+                            "field-class": "ma_fields.Nested",
+                            "schema-class": "nr_metadata.common.services.records.ui_schema.AdditionalTitlesUISchema"
                         },
+                        "detail": "additionalTitle",
                         "input": "additionaltitle",
                         "children": {
                             "title": {
                                 "marshmallow": {
-                                    "field-class": "ma_fields.String"
+                                    "field-class": "ma_fields.Nested",
+                                    "schema-class": "oarepo_runtime.i18n.schema.MultilingualUISchema",
+                                    "imports": [
+                                        {
+                                            "import": "oarepo_runtime.i18n.schema.MultilingualUISchema"
+                                        }
+                                    ],
+                                    "generate": false
                                 },
-                                "detail": "fulltext",
-                                "input": "fulltext",
+                                "detail": "multilingual",
+                                "input": "i18nStr",
                                 "help": "metadata/additionalTitles/title.help",
                                 "label": "metadata/additionalTitles/title.label",
-                                "hint": "metadata/additionalTitles/title.hint"
+                                "hint": "metadata/additionalTitles/title.hint",
+                                "children": {
+                                    "lang": {
+                                        "marshmallow": {
+                                            "field-class": "ma_fields.String"
+                                        },
+                                        "detail": "keyword",
+                                        "input": "keyword",
+                                        "help": "metadata/additionalTitles/title/lang.help",
+                                        "label": "metadata/additionalTitles/title/lang.label",
+                                        "hint": "metadata/additionalTitles/title/lang.hint"
+                                    },
+                                    "value": {
+                                        "marshmallow": {
+                                            "field-class": "ma_fields.String"
+                                        },
+                                        "detail": "fulltext+keyword",
+                                        "input": "fulltext+keyword",
+                                        "help": "metadata/additionalTitles/title/value.help",
+                                        "label": "metadata/additionalTitles/title/value.label",
+                                        "hint": "metadata/additionalTitles/title/value.hint"
+                                    }
+                                }
                             },
                             "titleType": {
                                 "marshmallow": {
@@ -272,16 +301,16 @@
                     "label": "metadata/creators.label",
                     "hint": "metadata/creators.hint",
                     "child": {
-                        "detail": "creator",
                         "marshmallow": {
+                            "field-class": "ma_fields.Nested",
+                            "schema-class": "nr_metadata.common.services.records.ui_schema.NRAuthorityUIUISchema",
                             "imports": [
                                 {
                                     "import": "nr_metadata.common.services.records.ui_schema.NRAuthorityUIUISchema"
                                 }
-                            ],
-                            "schema-class": "nr_metadata.common.services.records.ui_schema.NRAuthorityUIUISchema",
-                            "field-class": "ma_fields.Nested"
+                            ]
                         },
+                        "detail": "creator",
                         "input": "creator",
                         "children": {
                             "affiliations": {
@@ -294,23 +323,23 @@
                                 "label": "metadata/creators/affiliations.label",
                                 "hint": "metadata/creators/affiliations.hint",
                                 "child": {
-                                    "detail": "affiliation",
                                     "marshmallow": {
+                                        "field-class": "ma_fields.Nested",
+                                        "schema-class": "nr_metadata.common.services.records.ui_schema.NRAffiliationVocabularyUISchema",
                                         "imports": [
                                             {
                                                 "import": "nr_metadata.common.services.records.ui_schema.NRAffiliationVocabularyUISchema"
                                             }
-                                        ],
-                                        "schema-class": "nr_metadata.common.services.records.ui_schema.NRAffiliationVocabularyUISchema",
-                                        "field-class": "ma_fields.Nested"
+                                        ]
                                     },
+                                    "detail": "affiliation",
                                     "input": "relation",
                                     "children": {
                                         "id": {
                                             "marshmallow": {
-                                                "imports": [],
+                                                "field-class": "ma_fields.String",
                                                 "validators": [],
-                                                "field-class": "ma_fields.String"
+                                                "imports": []
                                             },
                                             "detail": "keyword",
                                             "input": "keyword",
@@ -320,15 +349,15 @@
                                         },
                                         "title": {
                                             "marshmallow": {
+                                                "field-class": "ma_fields.Nested",
+                                                "validators": [],
+                                                "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
                                                 "imports": [
                                                     {
                                                         "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                     }
                                                 ],
-                                                "field": "i18n_strings",
-                                                "validators": [],
-                                                "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                                "field-class": "ma_fields.Nested"
+                                                "field": "i18n_strings"
                                             },
                                             "detail": "string",
                                             "input": "string",
@@ -383,17 +412,17 @@
                                 "label": "metadata/creators/authorityIdentifiers.label",
                                 "hint": "metadata/creators/authorityIdentifiers.hint",
                                 "child": {
-                                    "detail": "nr_authority_identifier",
                                     "marshmallow": {
-                                        "generate": false,
+                                        "field-class": "ma_fields.Nested",
+                                        "schema-class": "nr_metadata.ui_schema.identifiers.NRAuthorityIdentifierUISchema",
                                         "imports": [
                                             {
                                                 "import": "nr_metadata.ui_schema.identifiers.NRAuthorityIdentifierUISchema"
                                             }
                                         ],
-                                        "schema-class": "nr_metadata.ui_schema.identifiers.NRAuthorityIdentifierUISchema",
-                                        "field-class": "ma_fields.Nested"
+                                        "generate": false
                                     },
+                                    "detail": "nr_authority_identifier",
                                     "input": "authorityidentifier",
                                     "children": {
                                         "identifier": {
@@ -435,29 +464,29 @@
                     "label": "metadata/contributors.label",
                     "hint": "metadata/contributors.hint",
                     "child": {
-                        "detail": "contributor",
                         "marshmallow": {
+                            "field-class": "ma_fields.Nested",
+                            "schema-class": "nr_metadata.common.services.records.ui_schema.NRAuthorityUIUISchema",
                             "imports": [
                                 {
                                     "import": "nr_metadata.common.services.records.ui_schema.NRAuthorityUIUISchema"
                                 }
-                            ],
-                            "schema-class": "nr_metadata.common.services.records.ui_schema.NRAuthorityUIUISchema",
-                            "field-class": "ma_fields.Nested"
+                            ]
                         },
+                        "detail": "contributor",
                         "input": "contributor",
                         "children": {
                             "role": {
-                                "detail": "authority",
                                 "marshmallow": {
+                                    "field-class": "ma_fields.Nested",
+                                    "schema-class": "nr_metadata.common.services.records.ui_schema.NRAuthorityVocabularyUISchema",
                                     "imports": [
                                         {
                                             "import": "nr_metadata.common.services.records.ui_schema.NRAuthorityVocabularyUISchema"
                                         }
-                                    ],
-                                    "schema-class": "nr_metadata.common.services.records.ui_schema.NRAuthorityVocabularyUISchema",
-                                    "field-class": "ma_fields.Nested"
+                                    ]
                                 },
+                                "detail": "authority",
                                 "input": "relation",
                                 "help": "metadata/contributors/role.help",
                                 "label": "metadata/contributors/role.label",
@@ -465,9 +494,9 @@
                                 "children": {
                                     "id": {
                                         "marshmallow": {
-                                            "imports": [],
+                                            "field-class": "ma_fields.String",
                                             "validators": [],
-                                            "field-class": "ma_fields.String"
+                                            "imports": []
                                         },
                                         "detail": "keyword",
                                         "input": "keyword",
@@ -477,15 +506,15 @@
                                     },
                                     "title": {
                                         "marshmallow": {
+                                            "field-class": "ma_fields.Nested",
+                                            "validators": [],
+                                            "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
                                             "imports": [
                                                 {
                                                     "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                 }
                                             ],
-                                            "field": "i18n_strings",
-                                            "validators": [],
-                                            "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                            "field-class": "ma_fields.Nested"
+                                            "field": "i18n_strings"
                                         },
                                         "detail": "string",
                                         "input": "string",
@@ -516,23 +545,23 @@
                                 "label": "metadata/contributors/affiliations.label",
                                 "hint": "metadata/contributors/affiliations.hint",
                                 "child": {
-                                    "detail": "affiliation",
                                     "marshmallow": {
+                                        "field-class": "ma_fields.Nested",
+                                        "schema-class": "nr_metadata.common.services.records.ui_schema.NRAffiliationVocabularyUISchema",
                                         "imports": [
                                             {
                                                 "import": "nr_metadata.common.services.records.ui_schema.NRAffiliationVocabularyUISchema"
                                             }
-                                        ],
-                                        "schema-class": "nr_metadata.common.services.records.ui_schema.NRAffiliationVocabularyUISchema",
-                                        "field-class": "ma_fields.Nested"
+                                        ]
                                     },
+                                    "detail": "affiliation",
                                     "input": "relation",
                                     "children": {
                                         "id": {
                                             "marshmallow": {
-                                                "imports": [],
+                                                "field-class": "ma_fields.String",
                                                 "validators": [],
-                                                "field-class": "ma_fields.String"
+                                                "imports": []
                                             },
                                             "detail": "keyword",
                                             "input": "keyword",
@@ -542,15 +571,15 @@
                                         },
                                         "title": {
                                             "marshmallow": {
+                                                "field-class": "ma_fields.Nested",
+                                                "validators": [],
+                                                "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
                                                 "imports": [
                                                     {
                                                         "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                     }
                                                 ],
-                                                "field": "i18n_strings",
-                                                "validators": [],
-                                                "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                                "field-class": "ma_fields.Nested"
+                                                "field": "i18n_strings"
                                             },
                                             "detail": "string",
                                             "input": "string",
@@ -605,17 +634,17 @@
                                 "label": "metadata/contributors/authorityIdentifiers.label",
                                 "hint": "metadata/contributors/authorityIdentifiers.hint",
                                 "child": {
-                                    "detail": "nr_authority_identifier",
                                     "marshmallow": {
-                                        "generate": false,
+                                        "field-class": "ma_fields.Nested",
+                                        "schema-class": "nr_metadata.ui_schema.identifiers.NRAuthorityIdentifierUISchema",
                                         "imports": [
                                             {
                                                 "import": "nr_metadata.ui_schema.identifiers.NRAuthorityIdentifierUISchema"
                                             }
                                         ],
-                                        "schema-class": "nr_metadata.ui_schema.identifiers.NRAuthorityIdentifierUISchema",
-                                        "field-class": "ma_fields.Nested"
+                                        "generate": false
                                     },
+                                    "detail": "nr_authority_identifier",
                                     "input": "authorityidentifier",
                                     "children": {
                                         "identifier": {
@@ -648,16 +677,16 @@
                     }
                 },
                 "resourceType": {
-                    "detail": "resource_type",
                     "marshmallow": {
+                        "field-class": "ma_fields.Nested",
+                        "schema-class": "nr_metadata.common.services.records.ui_schema.NRResourceTypeVocabularyUISchema",
                         "imports": [
                             {
                                 "import": "nr_metadata.common.services.records.ui_schema.NRResourceTypeVocabularyUISchema"
                             }
-                        ],
-                        "schema-class": "nr_metadata.common.services.records.ui_schema.NRResourceTypeVocabularyUISchema",
-                        "field-class": "ma_fields.Nested"
+                        ]
                     },
+                    "detail": "resource_type",
                     "input": "relation",
                     "help": "metadata/resourceType.help",
                     "label": "metadata/resourceType.label",
@@ -665,9 +694,9 @@
                     "children": {
                         "id": {
                             "marshmallow": {
-                                "imports": [],
+                                "field-class": "ma_fields.String",
                                 "validators": [],
-                                "field-class": "ma_fields.String"
+                                "imports": []
                             },
                             "detail": "keyword",
                             "input": "keyword",
@@ -677,15 +706,15 @@
                         },
                         "title": {
                             "marshmallow": {
+                                "field-class": "ma_fields.Nested",
+                                "validators": [],
+                                "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
                                 "imports": [
                                     {
                                         "import": "invenio_vocabularies.services.schema.i18n_strings"
                                     }
                                 ],
-                                "field": "i18n_strings",
-                                "validators": [],
-                                "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                "field-class": "ma_fields.Nested"
+                                "field": "i18n_strings"
                             },
                             "detail": "string",
                             "input": "string",
@@ -736,16 +765,16 @@
                     "label": "metadata/subjects.label",
                     "hint": "metadata/subjects.hint",
                     "child": {
-                        "detail": "subject",
                         "marshmallow": {
+                            "field-class": "ma_fields.Nested",
+                            "schema-class": "nr_metadata.common.services.records.ui_schema.NRSubjectUISchema",
                             "imports": [
                                 {
                                     "import": "nr_metadata.common.services.records.ui_schema.NRSubjectUISchema"
                                 }
-                            ],
-                            "schema-class": "nr_metadata.common.services.records.ui_schema.NRSubjectUISchema",
-                            "field-class": "ma_fields.Nested"
+                            ]
                         },
+                        "detail": "subject",
                         "input": "subject",
                         "children": {
                             "subjectScheme": {
@@ -760,13 +789,42 @@
                             },
                             "subject": {
                                 "marshmallow": {
-                                    "field-class": "ma_fields.String"
+                                    "field-class": "ma_fields.Nested",
+                                    "schema-class": "oarepo_runtime.i18n.schema.MultilingualUISchema",
+                                    "imports": [
+                                        {
+                                            "import": "oarepo_runtime.i18n.schema.MultilingualUISchema"
+                                        }
+                                    ],
+                                    "generate": false
                                 },
-                                "detail": "fulltext",
-                                "input": "fulltext",
+                                "detail": "multilingual",
+                                "input": "i18nStr",
                                 "help": "metadata/subjects/subject.help",
                                 "label": "metadata/subjects/subject.label",
-                                "hint": "metadata/subjects/subject.hint"
+                                "hint": "metadata/subjects/subject.hint",
+                                "children": {
+                                    "lang": {
+                                        "marshmallow": {
+                                            "field-class": "ma_fields.String"
+                                        },
+                                        "detail": "keyword",
+                                        "input": "keyword",
+                                        "help": "metadata/subjects/subject/lang.help",
+                                        "label": "metadata/subjects/subject/lang.label",
+                                        "hint": "metadata/subjects/subject/lang.hint"
+                                    },
+                                    "value": {
+                                        "marshmallow": {
+                                            "field-class": "ma_fields.String"
+                                        },
+                                        "detail": "fulltext+keyword",
+                                        "input": "fulltext+keyword",
+                                        "help": "metadata/subjects/subject/value.help",
+                                        "label": "metadata/subjects/subject/value.label",
+                                        "hint": "metadata/subjects/subject/value.hint"
+                                    }
+                                }
                             },
                             "valueURI": {
                                 "marshmallow": {
@@ -818,23 +876,23 @@
                     "label": "metadata/subjectCategories.label",
                     "hint": "metadata/subjectCategories.hint",
                     "child": {
-                        "detail": "subject",
                         "marshmallow": {
+                            "field-class": "ma_fields.Nested",
+                            "schema-class": "nr_metadata.common.services.records.ui_schema.NRSubjectCategoryVocabularyUISchema",
                             "imports": [
                                 {
                                     "import": "nr_metadata.common.services.records.ui_schema.NRSubjectCategoryVocabularyUISchema"
                                 }
-                            ],
-                            "schema-class": "nr_metadata.common.services.records.ui_schema.NRSubjectCategoryVocabularyUISchema",
-                            "field-class": "ma_fields.Nested"
+                            ]
                         },
+                        "detail": "subject",
                         "input": "relation",
                         "children": {
                             "id": {
                                 "marshmallow": {
-                                    "imports": [],
+                                    "field-class": "ma_fields.String",
                                     "validators": [],
-                                    "field-class": "ma_fields.String"
+                                    "imports": []
                                 },
                                 "detail": "keyword",
                                 "input": "keyword",
@@ -844,15 +902,15 @@
                             },
                             "title": {
                                 "marshmallow": {
+                                    "field-class": "ma_fields.Nested",
+                                    "validators": [],
+                                    "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
                                     "imports": [
                                         {
                                             "import": "invenio_vocabularies.services.schema.i18n_strings"
                                         }
                                     ],
-                                    "field": "i18n_strings",
-                                    "validators": [],
-                                    "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                    "field-class": "ma_fields.Nested"
+                                    "field": "i18n_strings"
                                 },
                                 "detail": "string",
                                 "input": "string",
@@ -884,23 +942,23 @@
                     "label": "metadata/languages.label",
                     "hint": "metadata/languages.hint",
                     "child": {
-                        "detail": "language",
                         "marshmallow": {
+                            "field-class": "ma_fields.Nested",
+                            "schema-class": "nr_metadata.common.services.records.ui_schema.NRLanguageVocabularyUISchema",
                             "imports": [
                                 {
                                     "import": "nr_metadata.common.services.records.ui_schema.NRLanguageVocabularyUISchema"
                                 }
-                            ],
-                            "schema-class": "nr_metadata.common.services.records.ui_schema.NRLanguageVocabularyUISchema",
-                            "field-class": "ma_fields.Nested"
+                            ]
                         },
+                        "detail": "language",
                         "input": "relation",
                         "children": {
                             "id": {
                                 "marshmallow": {
-                                    "imports": [],
+                                    "field-class": "ma_fields.String",
                                     "validators": [],
-                                    "field-class": "ma_fields.String"
+                                    "imports": []
                                 },
                                 "detail": "keyword",
                                 "input": "keyword",
@@ -910,15 +968,15 @@
                             },
                             "title": {
                                 "marshmallow": {
+                                    "field-class": "ma_fields.Nested",
+                                    "validators": [],
+                                    "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
                                     "imports": [
                                         {
                                             "import": "invenio_vocabularies.services.schema.i18n_strings"
                                         }
                                     ],
-                                    "field": "i18n_strings",
-                                    "validators": [],
-                                    "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                    "field-class": "ma_fields.Nested"
+                                    "field": "i18n_strings"
                                 },
                                 "detail": "string",
                                 "input": "string",
@@ -959,33 +1017,141 @@
                 },
                 "abstract": {
                     "marshmallow": {
-                        "field-class": "ma_fields.String"
+                        "field-class": "ma_fields.List"
                     },
-                    "detail": "fulltext",
-                    "input": "fulltext",
+                    "detail": "array",
+                    "input": "array",
                     "help": "metadata/abstract.help",
                     "label": "metadata/abstract.label",
-                    "hint": "metadata/abstract.hint"
+                    "hint": "metadata/abstract.hint",
+                    "child": {
+                        "marshmallow": {
+                            "field-class": "ma_fields.Nested",
+                            "schema-class": "oarepo_runtime.i18n.schema.MultilingualUISchema",
+                            "imports": [
+                                {
+                                    "import": "oarepo_runtime.i18n.schema.MultilingualUISchema"
+                                }
+                            ],
+                            "generate": false
+                        },
+                        "detail": "multilingual",
+                        "input": "i18nStr",
+                        "children": {
+                            "lang": {
+                                "marshmallow": {
+                                    "field-class": "ma_fields.String"
+                                },
+                                "detail": "keyword",
+                                "input": "keyword",
+                                "help": "metadata/abstract/lang.help",
+                                "label": "metadata/abstract/lang.label",
+                                "hint": "metadata/abstract/lang.hint"
+                            },
+                            "value": {
+                                "marshmallow": {
+                                    "field-class": "ma_fields.String"
+                                },
+                                "detail": "fulltext+keyword",
+                                "input": "fulltext+keyword",
+                                "help": "metadata/abstract/value.help",
+                                "label": "metadata/abstract/value.label",
+                                "hint": "metadata/abstract/value.hint"
+                            }
+                        }
+                    }
                 },
                 "methods": {
                     "marshmallow": {
-                        "field-class": "ma_fields.String"
+                        "field-class": "ma_fields.List"
                     },
-                    "detail": "fulltext",
-                    "input": "fulltext",
+                    "detail": "array",
+                    "input": "array",
                     "help": "metadata/methods.help",
                     "label": "metadata/methods.label",
-                    "hint": "metadata/methods.hint"
+                    "hint": "metadata/methods.hint",
+                    "child": {
+                        "marshmallow": {
+                            "field-class": "ma_fields.Nested",
+                            "schema-class": "oarepo_runtime.i18n.schema.MultilingualUISchema",
+                            "imports": [
+                                {
+                                    "import": "oarepo_runtime.i18n.schema.MultilingualUISchema"
+                                }
+                            ],
+                            "generate": false
+                        },
+                        "detail": "multilingual",
+                        "input": "i18nStr",
+                        "children": {
+                            "lang": {
+                                "marshmallow": {
+                                    "field-class": "ma_fields.String"
+                                },
+                                "detail": "keyword",
+                                "input": "keyword",
+                                "help": "metadata/methods/lang.help",
+                                "label": "metadata/methods/lang.label",
+                                "hint": "metadata/methods/lang.hint"
+                            },
+                            "value": {
+                                "marshmallow": {
+                                    "field-class": "ma_fields.String"
+                                },
+                                "detail": "fulltext+keyword",
+                                "input": "fulltext+keyword",
+                                "help": "metadata/methods/value.help",
+                                "label": "metadata/methods/value.label",
+                                "hint": "metadata/methods/value.hint"
+                            }
+                        }
+                    }
                 },
                 "technicalInfo": {
                     "marshmallow": {
-                        "field-class": "ma_fields.String"
+                        "field-class": "ma_fields.List"
                     },
-                    "detail": "fulltext",
-                    "input": "fulltext",
+                    "detail": "array",
+                    "input": "array",
                     "help": "metadata/technicalInfo.help",
                     "label": "metadata/technicalInfo.label",
-                    "hint": "metadata/technicalInfo.hint"
+                    "hint": "metadata/technicalInfo.hint",
+                    "child": {
+                        "marshmallow": {
+                            "field-class": "ma_fields.Nested",
+                            "schema-class": "oarepo_runtime.i18n.schema.MultilingualUISchema",
+                            "imports": [
+                                {
+                                    "import": "oarepo_runtime.i18n.schema.MultilingualUISchema"
+                                }
+                            ],
+                            "generate": false
+                        },
+                        "detail": "multilingual",
+                        "input": "i18nStr",
+                        "children": {
+                            "lang": {
+                                "marshmallow": {
+                                    "field-class": "ma_fields.String"
+                                },
+                                "detail": "keyword",
+                                "input": "keyword",
+                                "help": "metadata/technicalInfo/lang.help",
+                                "label": "metadata/technicalInfo/lang.label",
+                                "hint": "metadata/technicalInfo/lang.hint"
+                            },
+                            "value": {
+                                "marshmallow": {
+                                    "field-class": "ma_fields.String"
+                                },
+                                "detail": "fulltext+keyword",
+                                "input": "fulltext+keyword",
+                                "help": "metadata/technicalInfo/value.help",
+                                "label": "metadata/technicalInfo/value.label",
+                                "hint": "metadata/technicalInfo/value.hint"
+                            }
+                        }
+                    }
                 },
                 "rights": {
                     "marshmallow": {
@@ -997,23 +1163,23 @@
                     "label": "metadata/rights.label",
                     "hint": "metadata/rights.hint",
                     "child": {
-                        "detail": "access_rights",
                         "marshmallow": {
+                            "field-class": "ma_fields.Nested",
+                            "schema-class": "nr_metadata.common.services.records.ui_schema.NRAccessRightsVocabularyUISchema",
                             "imports": [
                                 {
                                     "import": "nr_metadata.common.services.records.ui_schema.NRAccessRightsVocabularyUISchema"
                                 }
-                            ],
-                            "schema-class": "nr_metadata.common.services.records.ui_schema.NRAccessRightsVocabularyUISchema",
-                            "field-class": "ma_fields.Nested"
+                            ]
                         },
+                        "detail": "access_rights",
                         "input": "relation",
                         "children": {
                             "id": {
                                 "marshmallow": {
-                                    "imports": [],
+                                    "field-class": "ma_fields.String",
                                     "validators": [],
-                                    "field-class": "ma_fields.String"
+                                    "imports": []
                                 },
                                 "detail": "keyword",
                                 "input": "keyword",
@@ -1023,15 +1189,15 @@
                             },
                             "title": {
                                 "marshmallow": {
+                                    "field-class": "ma_fields.Nested",
+                                    "validators": [],
+                                    "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
                                     "imports": [
                                         {
                                             "import": "invenio_vocabularies.services.schema.i18n_strings"
                                         }
                                     ],
-                                    "field": "i18n_strings",
-                                    "validators": [],
-                                    "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                    "field-class": "ma_fields.Nested"
+                                    "field": "i18n_strings"
                                 },
                                 "detail": "string",
                                 "input": "string",
@@ -1054,16 +1220,16 @@
                     }
                 },
                 "accessRights": {
-                    "detail": "access_rights",
                     "marshmallow": {
+                        "field-class": "ma_fields.Nested",
+                        "schema-class": "nr_metadata.common.services.records.ui_schema.NRAccessRightsVocabularyUISchema",
                         "imports": [
                             {
                                 "import": "nr_metadata.common.services.records.ui_schema.NRAccessRightsVocabularyUISchema"
                             }
-                        ],
-                        "schema-class": "nr_metadata.common.services.records.ui_schema.NRAccessRightsVocabularyUISchema",
-                        "field-class": "ma_fields.Nested"
+                        ]
                     },
+                    "detail": "access_rights",
                     "input": "relation",
                     "help": "metadata/accessRights.help",
                     "label": "metadata/accessRights.label",
@@ -1071,9 +1237,9 @@
                     "children": {
                         "id": {
                             "marshmallow": {
-                                "imports": [],
+                                "field-class": "ma_fields.String",
                                 "validators": [],
-                                "field-class": "ma_fields.String"
+                                "imports": []
                             },
                             "detail": "keyword",
                             "input": "keyword",
@@ -1083,15 +1249,15 @@
                         },
                         "title": {
                             "marshmallow": {
+                                "field-class": "ma_fields.Nested",
+                                "validators": [],
+                                "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
                                 "imports": [
                                     {
                                         "import": "invenio_vocabularies.services.schema.i18n_strings"
                                     }
                                 ],
-                                "field": "i18n_strings",
-                                "validators": [],
-                                "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                "field-class": "ma_fields.Nested"
+                                "field": "i18n_strings"
                             },
                             "detail": "string",
                             "input": "string",
@@ -1122,16 +1288,16 @@
                     "label": "metadata/relatedItems.label",
                     "hint": "metadata/relatedItems.hint",
                     "child": {
-                        "detail": "related_item",
                         "marshmallow": {
+                            "field-class": "ma_fields.Nested",
+                            "schema-class": "nr_metadata.common.services.records.ui_schema.NRRelatedItemUISchema",
                             "imports": [
                                 {
                                     "import": "nr_metadata.common.services.records.ui_schema.NRRelatedItemUISchema"
                                 }
-                            ],
-                            "schema-class": "nr_metadata.common.services.records.ui_schema.NRRelatedItemUISchema",
-                            "field-class": "ma_fields.Nested"
+                            ]
                         },
+                        "detail": "related_item",
                         "input": "relateditem",
                         "children": {
                             "itemTitle": {
@@ -1154,16 +1320,16 @@
                                 "label": "metadata/relatedItems/itemCreators.label",
                                 "hint": "metadata/relatedItems/itemCreators.hint",
                                 "child": {
-                                    "detail": "creator",
                                     "marshmallow": {
+                                        "field-class": "ma_fields.Nested",
+                                        "schema-class": "nr_metadata.common.services.records.ui_schema.NRAuthorityUIUISchema",
                                         "imports": [
                                             {
                                                 "import": "nr_metadata.common.services.records.ui_schema.NRAuthorityUIUISchema"
                                             }
-                                        ],
-                                        "schema-class": "nr_metadata.common.services.records.ui_schema.NRAuthorityUIUISchema",
-                                        "field-class": "ma_fields.Nested"
+                                        ]
                                     },
+                                    "detail": "creator",
                                     "input": "itemcreator",
                                     "children": {
                                         "affiliations": {
@@ -1176,23 +1342,23 @@
                                             "label": "metadata/relatedItems/itemCreators/affiliations.label",
                                             "hint": "metadata/relatedItems/itemCreators/affiliations.hint",
                                             "child": {
-                                                "detail": "affiliation",
                                                 "marshmallow": {
+                                                    "field-class": "ma_fields.Nested",
+                                                    "schema-class": "nr_metadata.common.services.records.ui_schema.NRAffiliationVocabularyUISchema",
                                                     "imports": [
                                                         {
                                                             "import": "nr_metadata.common.services.records.ui_schema.NRAffiliationVocabularyUISchema"
                                                         }
-                                                    ],
-                                                    "schema-class": "nr_metadata.common.services.records.ui_schema.NRAffiliationVocabularyUISchema",
-                                                    "field-class": "ma_fields.Nested"
+                                                    ]
                                                 },
+                                                "detail": "affiliation",
                                                 "input": "relation",
                                                 "children": {
                                                     "id": {
                                                         "marshmallow": {
-                                                            "imports": [],
+                                                            "field-class": "ma_fields.String",
                                                             "validators": [],
-                                                            "field-class": "ma_fields.String"
+                                                            "imports": []
                                                         },
                                                         "detail": "keyword",
                                                         "input": "keyword",
@@ -1202,15 +1368,15 @@
                                                     },
                                                     "title": {
                                                         "marshmallow": {
+                                                            "field-class": "ma_fields.Nested",
+                                                            "validators": [],
+                                                            "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
                                                             "imports": [
                                                                 {
                                                                     "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                                 }
                                                             ],
-                                                            "field": "i18n_strings",
-                                                            "validators": [],
-                                                            "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                                            "field-class": "ma_fields.Nested"
+                                                            "field": "i18n_strings"
                                                         },
                                                         "detail": "string",
                                                         "input": "string",
@@ -1265,17 +1431,17 @@
                                             "label": "metadata/relatedItems/itemCreators/authorityIdentifiers.label",
                                             "hint": "metadata/relatedItems/itemCreators/authorityIdentifiers.hint",
                                             "child": {
-                                                "detail": "nr_authority_identifier",
                                                 "marshmallow": {
-                                                    "generate": false,
+                                                    "field-class": "ma_fields.Nested",
+                                                    "schema-class": "nr_metadata.ui_schema.identifiers.NRAuthorityIdentifierUISchema",
                                                     "imports": [
                                                         {
                                                             "import": "nr_metadata.ui_schema.identifiers.NRAuthorityIdentifierUISchema"
                                                         }
                                                     ],
-                                                    "schema-class": "nr_metadata.ui_schema.identifiers.NRAuthorityIdentifierUISchema",
-                                                    "field-class": "ma_fields.Nested"
+                                                    "generate": false
                                                 },
+                                                "detail": "nr_authority_identifier",
                                                 "input": "authorityidentifier",
                                                 "children": {
                                                     "identifier": {
@@ -1317,29 +1483,29 @@
                                 "label": "metadata/relatedItems/itemContributors.label",
                                 "hint": "metadata/relatedItems/itemContributors.hint",
                                 "child": {
-                                    "detail": "contributor",
                                     "marshmallow": {
+                                        "field-class": "ma_fields.Nested",
+                                        "schema-class": "nr_metadata.common.services.records.ui_schema.NRAuthorityUIUISchema",
                                         "imports": [
                                             {
                                                 "import": "nr_metadata.common.services.records.ui_schema.NRAuthorityUIUISchema"
                                             }
-                                        ],
-                                        "schema-class": "nr_metadata.common.services.records.ui_schema.NRAuthorityUIUISchema",
-                                        "field-class": "ma_fields.Nested"
+                                        ]
                                     },
+                                    "detail": "contributor",
                                     "input": "itemcontributor",
                                     "children": {
                                         "role": {
-                                            "detail": "authority",
                                             "marshmallow": {
+                                                "field-class": "ma_fields.Nested",
+                                                "schema-class": "nr_metadata.common.services.records.ui_schema.NRAuthorityVocabularyUISchema",
                                                 "imports": [
                                                     {
                                                         "import": "nr_metadata.common.services.records.ui_schema.NRAuthorityVocabularyUISchema"
                                                     }
-                                                ],
-                                                "schema-class": "nr_metadata.common.services.records.ui_schema.NRAuthorityVocabularyUISchema",
-                                                "field-class": "ma_fields.Nested"
+                                                ]
                                             },
+                                            "detail": "authority",
                                             "input": "relation",
                                             "help": "metadata/relatedItems/itemContributors/role.help",
                                             "label": "metadata/relatedItems/itemContributors/role.label",
@@ -1347,9 +1513,9 @@
                                             "children": {
                                                 "id": {
                                                     "marshmallow": {
-                                                        "imports": [],
+                                                        "field-class": "ma_fields.String",
                                                         "validators": [],
-                                                        "field-class": "ma_fields.String"
+                                                        "imports": []
                                                     },
                                                     "detail": "keyword",
                                                     "input": "keyword",
@@ -1359,15 +1525,15 @@
                                                 },
                                                 "title": {
                                                     "marshmallow": {
+                                                        "field-class": "ma_fields.Nested",
+                                                        "validators": [],
+                                                        "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
                                                         "imports": [
                                                             {
                                                                 "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                             }
                                                         ],
-                                                        "field": "i18n_strings",
-                                                        "validators": [],
-                                                        "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                                        "field-class": "ma_fields.Nested"
+                                                        "field": "i18n_strings"
                                                     },
                                                     "detail": "string",
                                                     "input": "string",
@@ -1398,23 +1564,23 @@
                                             "label": "metadata/relatedItems/itemContributors/affiliations.label",
                                             "hint": "metadata/relatedItems/itemContributors/affiliations.hint",
                                             "child": {
-                                                "detail": "affiliation",
                                                 "marshmallow": {
+                                                    "field-class": "ma_fields.Nested",
+                                                    "schema-class": "nr_metadata.common.services.records.ui_schema.NRAffiliationVocabularyUISchema",
                                                     "imports": [
                                                         {
                                                             "import": "nr_metadata.common.services.records.ui_schema.NRAffiliationVocabularyUISchema"
                                                         }
-                                                    ],
-                                                    "schema-class": "nr_metadata.common.services.records.ui_schema.NRAffiliationVocabularyUISchema",
-                                                    "field-class": "ma_fields.Nested"
+                                                    ]
                                                 },
+                                                "detail": "affiliation",
                                                 "input": "relation",
                                                 "children": {
                                                     "id": {
                                                         "marshmallow": {
-                                                            "imports": [],
+                                                            "field-class": "ma_fields.String",
                                                             "validators": [],
-                                                            "field-class": "ma_fields.String"
+                                                            "imports": []
                                                         },
                                                         "detail": "keyword",
                                                         "input": "keyword",
@@ -1424,15 +1590,15 @@
                                                     },
                                                     "title": {
                                                         "marshmallow": {
+                                                            "field-class": "ma_fields.Nested",
+                                                            "validators": [],
+                                                            "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
                                                             "imports": [
                                                                 {
                                                                     "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                                 }
                                                             ],
-                                                            "field": "i18n_strings",
-                                                            "validators": [],
-                                                            "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                                            "field-class": "ma_fields.Nested"
+                                                            "field": "i18n_strings"
                                                         },
                                                         "detail": "string",
                                                         "input": "string",
@@ -1487,17 +1653,17 @@
                                             "label": "metadata/relatedItems/itemContributors/authorityIdentifiers.label",
                                             "hint": "metadata/relatedItems/itemContributors/authorityIdentifiers.hint",
                                             "child": {
-                                                "detail": "nr_authority_identifier",
                                                 "marshmallow": {
-                                                    "generate": false,
+                                                    "field-class": "ma_fields.Nested",
+                                                    "schema-class": "nr_metadata.ui_schema.identifiers.NRAuthorityIdentifierUISchema",
                                                     "imports": [
                                                         {
                                                             "import": "nr_metadata.ui_schema.identifiers.NRAuthorityIdentifierUISchema"
                                                         }
                                                     ],
-                                                    "schema-class": "nr_metadata.ui_schema.identifiers.NRAuthorityIdentifierUISchema",
-                                                    "field-class": "ma_fields.Nested"
+                                                    "generate": false
                                                 },
+                                                "detail": "nr_authority_identifier",
                                                 "input": "authorityidentifier",
                                                 "children": {
                                                     "identifier": {
@@ -1539,17 +1705,17 @@
                                 "label": "metadata/relatedItems/itemPIDs.label",
                                 "hint": "metadata/relatedItems/itemPIDs.hint",
                                 "child": {
-                                    "detail": "nr_object_pid",
                                     "marshmallow": {
-                                        "generate": false,
+                                        "field-class": "ma_fields.Nested",
+                                        "schema-class": "nr_metadata.ui_schema.identifiers.NRObjectIdentifierUISchema",
                                         "imports": [
                                             {
                                                 "import": "nr_metadata.ui_schema.identifiers.NRObjectIdentifierUISchema"
                                             }
                                         ],
-                                        "schema-class": "nr_metadata.ui_schema.identifiers.NRObjectIdentifierUISchema",
-                                        "field-class": "ma_fields.Nested"
+                                        "generate": false
                                     },
+                                    "detail": "nr_object_pid",
                                     "input": "itempid",
                                     "children": {
                                         "identifier": {
@@ -1649,16 +1815,16 @@
                                 "hint": "metadata/relatedItems/itemPublisher.hint"
                             },
                             "itemRelationType": {
-                                "detail": "item_relation_type",
                                 "marshmallow": {
+                                    "field-class": "ma_fields.Nested",
+                                    "schema-class": "nr_metadata.common.services.records.ui_schema.NRItemRelationTypeVocabularyUISchema",
                                     "imports": [
                                         {
                                             "import": "nr_metadata.common.services.records.ui_schema.NRItemRelationTypeVocabularyUISchema"
                                         }
-                                    ],
-                                    "schema-class": "nr_metadata.common.services.records.ui_schema.NRItemRelationTypeVocabularyUISchema",
-                                    "field-class": "ma_fields.Nested"
+                                    ]
                                 },
+                                "detail": "item_relation_type",
                                 "input": "relation",
                                 "help": "metadata/relatedItems/itemRelationType.help",
                                 "label": "metadata/relatedItems/itemRelationType.label",
@@ -1666,9 +1832,9 @@
                                 "children": {
                                     "id": {
                                         "marshmallow": {
-                                            "imports": [],
+                                            "field-class": "ma_fields.String",
                                             "validators": [],
-                                            "field-class": "ma_fields.String"
+                                            "imports": []
                                         },
                                         "detail": "keyword",
                                         "input": "keyword",
@@ -1678,15 +1844,15 @@
                                     },
                                     "title": {
                                         "marshmallow": {
+                                            "field-class": "ma_fields.Nested",
+                                            "validators": [],
+                                            "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
                                             "imports": [
                                                 {
                                                     "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                 }
                                             ],
-                                            "field": "i18n_strings",
-                                            "validators": [],
-                                            "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                            "field-class": "ma_fields.Nested"
+                                            "field": "i18n_strings"
                                         },
                                         "detail": "string",
                                         "input": "string",
@@ -1708,16 +1874,16 @@
                                 }
                             },
                             "itemResourceType": {
-                                "detail": "resource_type",
                                 "marshmallow": {
+                                    "field-class": "ma_fields.Nested",
+                                    "schema-class": "nr_metadata.common.services.records.ui_schema.NRResourceTypeVocabularyUISchema",
                                     "imports": [
                                         {
                                             "import": "nr_metadata.common.services.records.ui_schema.NRResourceTypeVocabularyUISchema"
                                         }
-                                    ],
-                                    "schema-class": "nr_metadata.common.services.records.ui_schema.NRResourceTypeVocabularyUISchema",
-                                    "field-class": "ma_fields.Nested"
+                                    ]
                                 },
+                                "detail": "resource_type",
                                 "input": "relation",
                                 "help": "metadata/relatedItems/itemResourceType.help",
                                 "label": "metadata/relatedItems/itemResourceType.label",
@@ -1725,9 +1891,9 @@
                                 "children": {
                                     "id": {
                                         "marshmallow": {
-                                            "imports": [],
+                                            "field-class": "ma_fields.String",
                                             "validators": [],
-                                            "field-class": "ma_fields.String"
+                                            "imports": []
                                         },
                                         "detail": "keyword",
                                         "input": "keyword",
@@ -1737,15 +1903,15 @@
                                     },
                                     "title": {
                                         "marshmallow": {
+                                            "field-class": "ma_fields.Nested",
+                                            "validators": [],
+                                            "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
                                             "imports": [
                                                 {
                                                     "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                 }
                                             ],
-                                            "field": "i18n_strings",
-                                            "validators": [],
-                                            "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                            "field-class": "ma_fields.Nested"
+                                            "field": "i18n_strings"
                                         },
                                         "detail": "string",
                                         "input": "string",
@@ -1779,16 +1945,16 @@
                     "label": "metadata/fundingReferences.label",
                     "hint": "metadata/fundingReferences.hint",
                     "child": {
-                        "detail": "funding_reference",
                         "marshmallow": {
+                            "field-class": "ma_fields.Nested",
+                            "schema-class": "nr_metadata.common.services.records.ui_schema.NRFundingReferenceUISchema",
                             "imports": [
                                 {
                                     "import": "nr_metadata.common.services.records.ui_schema.NRFundingReferenceUISchema"
                                 }
-                            ],
-                            "schema-class": "nr_metadata.common.services.records.ui_schema.NRFundingReferenceUISchema",
-                            "field-class": "ma_fields.Nested"
+                            ]
                         },
+                        "detail": "funding_reference",
                         "input": "fundingreference",
                         "children": {
                             "projectID": {
@@ -1822,16 +1988,16 @@
                                 "hint": "metadata/fundingReferences/fundingProgram.hint"
                             },
                             "funder": {
-                                "detail": "funder",
                                 "marshmallow": {
+                                    "field-class": "ma_fields.Nested",
+                                    "schema-class": "nr_metadata.common.services.records.ui_schema.NRFunderVocabularyUISchema",
                                     "imports": [
                                         {
                                             "import": "nr_metadata.common.services.records.ui_schema.NRFunderVocabularyUISchema"
                                         }
-                                    ],
-                                    "schema-class": "nr_metadata.common.services.records.ui_schema.NRFunderVocabularyUISchema",
-                                    "field-class": "ma_fields.Nested"
+                                    ]
                                 },
+                                "detail": "funder",
                                 "input": "relation",
                                 "help": "metadata/fundingReferences/funder.help",
                                 "label": "metadata/fundingReferences/funder.label",
@@ -1839,9 +2005,9 @@
                                 "children": {
                                     "id": {
                                         "marshmallow": {
-                                            "imports": [],
+                                            "field-class": "ma_fields.String",
                                             "validators": [],
-                                            "field-class": "ma_fields.String"
+                                            "imports": []
                                         },
                                         "detail": "keyword",
                                         "input": "keyword",
@@ -1851,15 +2017,15 @@
                                     },
                                     "title": {
                                         "marshmallow": {
+                                            "field-class": "ma_fields.Nested",
+                                            "validators": [],
+                                            "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
                                             "imports": [
                                                 {
                                                     "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                 }
                                             ],
-                                            "field": "i18n_strings",
-                                            "validators": [],
-                                            "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                            "field-class": "ma_fields.Nested"
+                                            "field": "i18n_strings"
                                         },
                                         "detail": "string",
                                         "input": "string",
@@ -1903,16 +2069,16 @@
                     "label": "metadata/geoLocations.label",
                     "hint": "metadata/geoLocations.hint",
                     "child": {
-                        "detail": "geolocation",
                         "marshmallow": {
+                            "field-class": "ma_fields.Nested",
+                            "schema-class": "nr_metadata.common.services.records.ui_schema.NRGeoLocationUISchema",
                             "imports": [
                                 {
                                     "import": "nr_metadata.common.services.records.ui_schema.NRGeoLocationUISchema"
                                 }
-                            ],
-                            "schema-class": "nr_metadata.common.services.records.ui_schema.NRGeoLocationUISchema",
-                            "field-class": "ma_fields.Nested"
+                            ]
                         },
+                        "detail": "geolocation",
                         "input": "geolocation",
                         "children": {
                             "geoLocationPlace": {
@@ -1926,16 +2092,16 @@
                                 "hint": "metadata/geoLocations/geoLocationPlace.hint"
                             },
                             "geoLocationPoint": {
-                                "detail": "geolocation_point",
                                 "marshmallow": {
+                                    "field-class": "ma_fields.Nested",
+                                    "schema-class": "nr_metadata.common.services.records.ui_schema.NRGeoLocationPointUISchema",
                                     "imports": [
                                         {
                                             "import": "nr_metadata.common.services.records.ui_schema.NRGeoLocationPointUISchema"
                                         }
-                                    ],
-                                    "schema-class": "nr_metadata.common.services.records.ui_schema.NRGeoLocationPointUISchema",
-                                    "field-class": "ma_fields.Nested"
+                                    ]
                                 },
+                                "detail": "geolocation_point",
                                 "input": false,
                                 "help": "metadata/geoLocations/geoLocationPoint.help",
                                 "label": "metadata/geoLocations/geoLocationPoint.label",
@@ -1968,13 +2134,49 @@
                 },
                 "accessibility": {
                     "marshmallow": {
-                        "field-class": "ma_fields.String"
+                        "field-class": "ma_fields.List"
                     },
-                    "detail": "fulltext",
-                    "input": "fulltext",
+                    "detail": "array",
+                    "input": "array",
                     "help": "metadata/accessibility.help",
                     "label": "metadata/accessibility.label",
-                    "hint": "metadata/accessibility.hint"
+                    "hint": "metadata/accessibility.hint",
+                    "child": {
+                        "marshmallow": {
+                            "field-class": "ma_fields.Nested",
+                            "schema-class": "oarepo_runtime.i18n.schema.MultilingualUISchema",
+                            "imports": [
+                                {
+                                    "import": "oarepo_runtime.i18n.schema.MultilingualUISchema"
+                                }
+                            ],
+                            "generate": false
+                        },
+                        "detail": "multilingual",
+                        "input": "i18nStr",
+                        "children": {
+                            "lang": {
+                                "marshmallow": {
+                                    "field-class": "ma_fields.String"
+                                },
+                                "detail": "keyword",
+                                "input": "keyword",
+                                "help": "metadata/accessibility/lang.help",
+                                "label": "metadata/accessibility/lang.label",
+                                "hint": "metadata/accessibility/lang.hint"
+                            },
+                            "value": {
+                                "marshmallow": {
+                                    "field-class": "ma_fields.String"
+                                },
+                                "detail": "fulltext+keyword",
+                                "input": "fulltext+keyword",
+                                "help": "metadata/accessibility/value.help",
+                                "label": "metadata/accessibility/value.label",
+                                "hint": "metadata/accessibility/value.hint"
+                            }
+                        }
+                    }
                 },
                 "series": {
                     "marshmallow": {
@@ -1986,16 +2188,16 @@
                     "label": "metadata/series.label",
                     "hint": "metadata/series.hint",
                     "child": {
-                        "detail": "series",
                         "marshmallow": {
+                            "field-class": "ma_fields.Nested",
+                            "schema-class": "nr_metadata.common.services.records.ui_schema.NRSeriesUISchema",
                             "imports": [
                                 {
                                     "import": "nr_metadata.common.services.records.ui_schema.NRSeriesUISchema"
                                 }
-                            ],
-                            "schema-class": "nr_metadata.common.services.records.ui_schema.NRSeriesUISchema",
-                            "field-class": "ma_fields.Nested"
+                            ]
                         },
+                        "detail": "series",
                         "input": "series",
                         "children": {
                             "seriesTitle": {
@@ -2022,16 +2224,16 @@
                     }
                 },
                 "externalLocation": {
-                    "detail": "external_location",
                     "marshmallow": {
+                        "field-class": "ma_fields.Nested",
+                        "schema-class": "nr_metadata.common.services.records.ui_schema.NRExternalLocationUISchema",
                         "imports": [
                             {
                                 "import": "nr_metadata.common.services.records.ui_schema.NRExternalLocationUISchema"
                             }
-                        ],
-                        "schema-class": "nr_metadata.common.services.records.ui_schema.NRExternalLocationUISchema",
-                        "field-class": "ma_fields.Nested"
+                        ]
                     },
+                    "detail": "external_location",
                     "input": false,
                     "help": "metadata/externalLocation.help",
                     "label": "metadata/externalLocation.label",
@@ -2079,17 +2281,17 @@
                     "label": "metadata/objectIdentifiers.label",
                     "hint": "metadata/objectIdentifiers.hint",
                     "child": {
-                        "detail": "nr_object_pid",
                         "marshmallow": {
-                            "generate": false,
+                            "field-class": "ma_fields.Nested",
+                            "schema-class": "nr_metadata.ui_schema.identifiers.NRObjectIdentifierUISchema",
                             "imports": [
                                 {
                                     "import": "nr_metadata.ui_schema.identifiers.NRObjectIdentifierUISchema"
                                 }
                             ],
-                            "schema-class": "nr_metadata.ui_schema.identifiers.NRObjectIdentifierUISchema",
-                            "field-class": "ma_fields.Nested"
+                            "generate": false
                         },
+                        "detail": "nr_object_pid",
                         "input": "objectidentifier",
                         "children": {
                             "identifier": {
@@ -2128,17 +2330,17 @@
                     "label": "metadata/systemIdentifiers.label",
                     "hint": "metadata/systemIdentifiers.hint",
                     "child": {
-                        "detail": "identifier",
                         "marshmallow": {
-                            "generate": false,
+                            "field-class": "ma_fields.Nested",
+                            "schema-class": "nr_metadata.ui_schema.identifiers.NRSystemIdentifierUISchema",
                             "imports": [
                                 {
                                     "import": "nr_metadata.ui_schema.identifiers.NRSystemIdentifierUISchema"
                                 }
                             ],
-                            "schema-class": "nr_metadata.ui_schema.identifiers.NRSystemIdentifierUISchema",
-                            "field-class": "ma_fields.Nested"
+                            "generate": false
                         },
+                        "detail": "identifier",
                         "input": "systemidentifier",
                         "children": {
                             "identifier": {
@@ -2177,16 +2379,16 @@
                     "label": "metadata/events.label",
                     "hint": "metadata/events.hint",
                     "child": {
-                        "detail": "identifier",
                         "marshmallow": {
+                            "field-class": "ma_fields.Nested",
+                            "schema-class": "nr_metadata.common.services.records.ui_schema.NREventUISchema",
                             "imports": [
                                 {
                                     "import": "nr_metadata.common.services.records.ui_schema.NREventUISchema"
                                 }
-                            ],
-                            "schema-class": "nr_metadata.common.services.records.ui_schema.NREventUISchema",
-                            "field-class": "ma_fields.Nested"
+                            ]
                         },
+                        "detail": "identifier",
                         "input": "event",
                         "children": {
                             "eventNameOriginal": {
@@ -2227,16 +2429,16 @@
                                 "hint": "metadata/events/eventDate.hint"
                             },
                             "eventLocation": {
-                                "detail": "location",
                                 "marshmallow": {
+                                    "field-class": "ma_fields.Nested",
+                                    "schema-class": "nr_metadata.common.services.records.ui_schema.NRLocationUISchema",
                                     "imports": [
                                         {
                                             "import": "nr_metadata.common.services.records.ui_schema.NRLocationUISchema"
                                         }
-                                    ],
-                                    "schema-class": "nr_metadata.common.services.records.ui_schema.NRLocationUISchema",
-                                    "field-class": "ma_fields.Nested"
+                                    ]
                                 },
+                                "detail": "location",
                                 "input": false,
                                 "help": "metadata/events/eventLocation.help",
                                 "label": "metadata/events/eventLocation.label",
@@ -2253,16 +2455,16 @@
                                         "hint": "metadata/events/eventLocation/place.hint"
                                     },
                                     "country": {
-                                        "detail": "country",
                                         "marshmallow": {
+                                            "field-class": "ma_fields.Nested",
+                                            "schema-class": "nr_metadata.common.services.records.ui_schema.NRCountryVocabularyUISchema",
                                             "imports": [
                                                 {
                                                     "import": "nr_metadata.common.services.records.ui_schema.NRCountryVocabularyUISchema"
                                                 }
-                                            ],
-                                            "schema-class": "nr_metadata.common.services.records.ui_schema.NRCountryVocabularyUISchema",
-                                            "field-class": "ma_fields.Nested"
+                                            ]
                                         },
+                                        "detail": "country",
                                         "input": "relation",
                                         "help": "metadata/events/eventLocation/country.help",
                                         "label": "metadata/events/eventLocation/country.label",
@@ -2270,9 +2472,9 @@
                                         "children": {
                                             "id": {
                                                 "marshmallow": {
-                                                    "imports": [],
+                                                    "field-class": "ma_fields.String",
                                                     "validators": [],
-                                                    "field-class": "ma_fields.String"
+                                                    "imports": []
                                                 },
                                                 "detail": "keyword",
                                                 "input": "keyword",
@@ -2282,15 +2484,15 @@
                                             },
                                             "title": {
                                                 "marshmallow": {
+                                                    "field-class": "ma_fields.Nested",
+                                                    "validators": [],
+                                                    "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
                                                     "imports": [
                                                         {
                                                             "import": "invenio_vocabularies.services.schema.i18n_strings"
                                                         }
                                                     ],
-                                                    "field": "i18n_strings",
-                                                    "validators": [],
-                                                    "schema-class": "invenio_vocabularies.services.records.schema.TitleSchema",
-                                                    "field-class": "ma_fields.Nested"
+                                                    "field": "i18n_strings"
                                                 },
                                                 "detail": "string",
                                                 "input": "string",

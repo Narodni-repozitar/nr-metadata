@@ -20,3 +20,16 @@ model:
 
 settings:
   i18n-languages: ['cs', 'en']
+  supported-langs: 
+    cs: 
+      text: 
+        analyzer: czech
+      sort: 
+        type: icu_collation_keyword
+      keyword: 
+        test: test
+    en: 
+      text: 
+        analyzer: en        
+      sort: 
+        type: icu_collation_keyword

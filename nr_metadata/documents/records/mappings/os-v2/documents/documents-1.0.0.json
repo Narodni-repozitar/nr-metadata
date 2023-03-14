@@ -78,7 +78,48 @@
                         "type": "object",
                         "properties": {
                             "title": {
-                                "type": "text"
+                                "type": "object",
+                                "properties": {
+                                    "lang": {
+                                        "type": "keyword"
+                                    },
+                                    "value": {
+                                        "type": "text",
+                                        "fields": {
+                                            "keyword": {
+                                                "type": "keyword"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "title_cs": {
+                                "type": "text",
+                                "analyzer": "czech",
+                                "sort": {
+                                    "type": "icu_collation_keyword",
+                                    "index": false,
+                                    "language": "cs"
+                                },
+                                "fields": {
+                                    "keyword": {
+                                        "test": "test"
+                                    }
+                                }
+                            },
+                            "title_en": {
+                                "type": "text",
+                                "analyzer": "en",
+                                "sort": {
+                                    "type": "icu_collation_keyword",
+                                    "index": false,
+                                    "language": "en"
+                                },
+                                "fields": {
+                                    "keyword": {
+                                        "type": "keyword"
+                                    }
+                                }
                             },
                             "titleType": {
                                 "type": "keyword"
@@ -246,7 +287,48 @@
                                 "type": "keyword"
                             },
                             "subject": {
-                                "type": "text"
+                                "type": "object",
+                                "properties": {
+                                    "lang": {
+                                        "type": "keyword"
+                                    },
+                                    "value": {
+                                        "type": "text",
+                                        "fields": {
+                                            "keyword": {
+                                                "type": "keyword"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "subject_cs": {
+                                "type": "text",
+                                "analyzer": "czech",
+                                "sort": {
+                                    "type": "icu_collation_keyword",
+                                    "index": false,
+                                    "language": "cs"
+                                },
+                                "fields": {
+                                    "keyword": {
+                                        "test": "test"
+                                    }
+                                }
+                            },
+                            "subject_en": {
+                                "type": "text",
+                                "analyzer": "en",
+                                "sort": {
+                                    "type": "icu_collation_keyword",
+                                    "index": false,
+                                    "language": "en"
+                                },
+                                "fields": {
+                                    "keyword": {
+                                        "type": "keyword"
+                                    }
+                                }
                             },
                             "valueURI": {
                                 "type": "keyword"
@@ -315,13 +397,136 @@
                         "type": "text"
                     },
                     "abstract": {
-                        "type": "text"
+                        "type": "object",
+                        "properties": {
+                            "lang": {
+                                "type": "keyword"
+                            },
+                            "value": {
+                                "type": "text",
+                                "fields": {
+                                    "keyword": {
+                                        "type": "keyword"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "abstract_cs": {
+                        "type": "text",
+                        "analyzer": "czech",
+                        "sort": {
+                            "type": "icu_collation_keyword",
+                            "index": false,
+                            "language": "cs"
+                        },
+                        "fields": {
+                            "keyword": {
+                                "test": "test"
+                            }
+                        }
+                    },
+                    "abstract_en": {
+                        "type": "text",
+                        "analyzer": "en",
+                        "sort": {
+                            "type": "icu_collation_keyword",
+                            "index": false,
+                            "language": "en"
+                        },
+                        "fields": {
+                            "keyword": {
+                                "type": "keyword"
+                            }
+                        }
                     },
                     "methods": {
-                        "type": "text"
+                        "type": "object",
+                        "properties": {
+                            "lang": {
+                                "type": "keyword"
+                            },
+                            "value": {
+                                "type": "text",
+                                "fields": {
+                                    "keyword": {
+                                        "type": "keyword"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods_cs": {
+                        "type": "text",
+                        "analyzer": "czech",
+                        "sort": {
+                            "type": "icu_collation_keyword",
+                            "index": false,
+                            "language": "cs"
+                        },
+                        "fields": {
+                            "keyword": {
+                                "test": "test"
+                            }
+                        }
+                    },
+                    "methods_en": {
+                        "type": "text",
+                        "analyzer": "en",
+                        "sort": {
+                            "type": "icu_collation_keyword",
+                            "index": false,
+                            "language": "en"
+                        },
+                        "fields": {
+                            "keyword": {
+                                "type": "keyword"
+                            }
+                        }
                     },
                     "technicalInfo": {
-                        "type": "text"
+                        "type": "object",
+                        "properties": {
+                            "lang": {
+                                "type": "keyword"
+                            },
+                            "value": {
+                                "type": "text",
+                                "fields": {
+                                    "keyword": {
+                                        "type": "keyword"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "technicalInfo_cs": {
+                        "type": "text",
+                        "analyzer": "czech",
+                        "sort": {
+                            "type": "icu_collation_keyword",
+                            "index": false,
+                            "language": "cs"
+                        },
+                        "fields": {
+                            "keyword": {
+                                "test": "test"
+                            }
+                        }
+                    },
+                    "technicalInfo_en": {
+                        "type": "text",
+                        "analyzer": "en",
+                        "sort": {
+                            "type": "icu_collation_keyword",
+                            "index": false,
+                            "language": "en"
+                        },
+                        "fields": {
+                            "keyword": {
+                                "type": "keyword"
+                            }
+                        }
                     },
                     "rights": {
                         "type": "object",
@@ -652,7 +857,48 @@
                         }
                     },
                     "accessibility": {
-                        "type": "text"
+                        "type": "object",
+                        "properties": {
+                            "lang": {
+                                "type": "keyword"
+                            },
+                            "value": {
+                                "type": "text",
+                                "fields": {
+                                    "keyword": {
+                                        "type": "keyword"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "accessibility_cs": {
+                        "type": "text",
+                        "analyzer": "czech",
+                        "sort": {
+                            "type": "icu_collation_keyword",
+                            "index": false,
+                            "language": "cs"
+                        },
+                        "fields": {
+                            "keyword": {
+                                "test": "test"
+                            }
+                        }
+                    },
+                    "accessibility_en": {
+                        "type": "text",
+                        "analyzer": "en",
+                        "sort": {
+                            "type": "icu_collation_keyword",
+                            "index": false,
+                            "language": "en"
+                        },
+                        "fields": {
+                            "keyword": {
+                                "type": "keyword"
+                            }
+                        }
                     },
                     "series": {
                         "type": "object",

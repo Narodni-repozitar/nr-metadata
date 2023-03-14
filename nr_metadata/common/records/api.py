@@ -8,6 +8,7 @@ from oarepo_runtime.relations import InternalRelation, PIDRelation, RelationsFie
 
 from nr_metadata.common.records.dumper import CommonDumper
 from nr_metadata.common.records.models import CommonMetadata
+from nr_metadata.common.records.multilingual_dumper import MultilingualDumper
 
 
 class CommonRecord(Record):
@@ -21,7 +22,7 @@ class CommonRecord(Record):
         create=True, provider=RecordIdProviderV2, context_cls=PIDFieldContext
     )
 
-    dumper_extensions = []
+    dumper_extensions = [MultilingualDumper()]
     dumper = CommonDumper(extensions=dumper_extensions)
 
     relations = RelationsField(
