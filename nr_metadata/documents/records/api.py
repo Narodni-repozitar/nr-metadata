@@ -29,7 +29,7 @@ class DocumentsRecord(Record):
         degreeGrantor=PIDRelation(
             "metadata.thesis.degreeGrantor",
             keys=["id", "title", "hierarchy"],
-            pid_field=Vocabulary.pid.with_type_ctx("degreeGrantor"),
+            pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
         affiliations_item=PIDRelation(
             "metadata.creators.affiliations",
