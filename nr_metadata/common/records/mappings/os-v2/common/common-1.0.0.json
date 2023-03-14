@@ -77,12 +77,12 @@
                                     },
                                     "title": {
                                         "type": "object",
-                                        "dynamic": true,
                                         "properties": {
                                             "en": {
                                                 "type": "search_as_you_type"
                                             }
                                         },
+                                        "dynamic": true,
                                         "enabled": false
                                     },
                                     "@v": {
@@ -125,12 +125,12 @@
                                     },
                                     "title": {
                                         "type": "object",
-                                        "dynamic": true,
                                         "properties": {
                                             "en": {
                                                 "type": "search_as_you_type"
                                             }
                                         },
+                                        "dynamic": true,
                                         "enabled": false
                                     },
                                     "@v": {
@@ -151,12 +151,12 @@
                                     },
                                     "title": {
                                         "type": "object",
-                                        "dynamic": true,
                                         "properties": {
                                             "en": {
                                                 "type": "search_as_you_type"
                                             }
                                         },
+                                        "dynamic": true,
                                         "enabled": false
                                     },
                                     "@v": {
@@ -197,12 +197,12 @@
                             },
                             "title": {
                                 "type": "object",
-                                "dynamic": true,
                                 "properties": {
                                     "en": {
                                         "type": "search_as_you_type"
                                     }
                                 },
+                                "dynamic": true,
                                 "enabled": false
                             },
                             "@v": {
@@ -290,12 +290,12 @@
                             },
                             "title": {
                                 "type": "object",
-                                "dynamic": true,
                                 "properties": {
                                     "en": {
                                         "type": "search_as_you_type"
                                     }
                                 },
+                                "dynamic": true,
                                 "enabled": false
                             },
                             "@v": {
@@ -316,12 +316,12 @@
                             },
                             "title": {
                                 "type": "object",
-                                "dynamic": true,
                                 "properties": {
                                     "en": {
                                         "type": "search_as_you_type"
                                     }
                                 },
+                                "dynamic": true,
                                 "enabled": false
                             },
                             "@v": {
@@ -477,12 +477,12 @@
                             },
                             "title": {
                                 "type": "object",
-                                "dynamic": true,
                                 "properties": {
                                     "en": {
                                         "type": "search_as_you_type"
                                     }
                                 },
+                                "dynamic": true,
                                 "enabled": false
                             },
                             "@v": {
@@ -503,12 +503,12 @@
                             },
                             "title": {
                                 "type": "object",
-                                "dynamic": true,
                                 "properties": {
                                     "en": {
                                         "type": "search_as_you_type"
                                     }
                                 },
+                                "dynamic": true,
                                 "enabled": false
                             },
                             "@v": {
@@ -536,12 +536,12 @@
                                             },
                                             "title": {
                                                 "type": "object",
-                                                "dynamic": true,
                                                 "properties": {
                                                     "en": {
                                                         "type": "search_as_you_type"
                                                     }
                                                 },
+                                                "dynamic": true,
                                                 "enabled": false
                                             },
                                             "@v": {
@@ -584,12 +584,12 @@
                                             },
                                             "title": {
                                                 "type": "object",
-                                                "dynamic": true,
                                                 "properties": {
                                                     "en": {
                                                         "type": "search_as_you_type"
                                                     }
                                                 },
+                                                "dynamic": true,
                                                 "enabled": false
                                             },
                                             "@v": {
@@ -610,12 +610,12 @@
                                             },
                                             "title": {
                                                 "type": "object",
-                                                "dynamic": true,
                                                 "properties": {
                                                     "en": {
                                                         "type": "search_as_you_type"
                                                     }
                                                 },
+                                                "dynamic": true,
                                                 "enabled": false
                                             },
                                             "@v": {
@@ -688,12 +688,12 @@
                                     },
                                     "title": {
                                         "type": "object",
-                                        "dynamic": true,
                                         "properties": {
                                             "en": {
                                                 "type": "search_as_you_type"
                                             }
                                         },
+                                        "dynamic": true,
                                         "enabled": false
                                     },
                                     "@v": {
@@ -714,12 +714,12 @@
                                     },
                                     "title": {
                                         "type": "object",
-                                        "dynamic": true,
                                         "properties": {
                                             "en": {
                                                 "type": "search_as_you_type"
                                             }
                                         },
+                                        "dynamic": true,
                                         "enabled": false
                                     },
                                     "@v": {
@@ -754,12 +754,12 @@
                                     },
                                     "title": {
                                         "type": "object",
-                                        "dynamic": true,
                                         "properties": {
                                             "en": {
                                                 "type": "search_as_you_type"
                                             }
                                         },
+                                        "dynamic": true,
                                         "enabled": false
                                     },
                                     "@v": {
@@ -912,12 +912,12 @@
                                             },
                                             "title": {
                                                 "type": "object",
-                                                "dynamic": true,
                                                 "properties": {
                                                     "en": {
                                                         "type": "search_as_you_type"
                                                     }
                                                 },
+                                                "dynamic": true,
                                                 "enabled": false
                                             },
                                             "@v": {

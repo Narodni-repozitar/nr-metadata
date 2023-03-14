@@ -70,7 +70,7 @@ class NRSubjectSchema(ma.Schema):
     """NRSubjectSchema schema."""
 
     subjectScheme = ma_fields.String()
-    subject = ma_fields.Nested(lambda: MultilingualSchema())
+    subject = ma_fields.List(ma_fields.Nested(lambda: MultilingualSchema()))
     valueURI = ma_fields.String()
     classificationCode = ma_fields.String()
 
