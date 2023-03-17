@@ -13,6 +13,16 @@ metadata_additionalTitles_title_lang = NestedLabeledFacet(
 )
 
 
+metadata_additionalTitles_title_cs = TermsFacet(
+    field="metadata.additionalTitles.title_cs"
+)
+
+
+metadata_additionalTitles_title_en = TermsFacet(
+    field="metadata.additionalTitles.title_en"
+)
+
+
 metadata_additionalTitles_title_value_keyword = NestedLabeledFacet(
     path="metadata.additionalTitles.title",
     nested_facet=TermsFacet(field="metadata.additionalTitles.title.value.keyword"),
@@ -103,6 +113,12 @@ metadata_subjects_subject_lang = NestedLabeledFacet(
 )
 
 
+metadata_subjects_subject_cs = TermsFacet(field="metadata.subjects.subject_cs")
+
+
+metadata_subjects_subject_en = TermsFacet(field="metadata.subjects.subject_en")
+
+
 metadata_subjects_subject_value_keyword = NestedLabeledFacet(
     path="metadata.subjects.subject",
     nested_facet=TermsFacet(field="metadata.subjects.subject.value.keyword"),
@@ -134,6 +150,12 @@ metadata_abstract_lang = NestedLabeledFacet(
 )
 
 
+metadata_abstract_cs = TermsFacet(field="metadata.abstract_cs")
+
+
+metadata_abstract_en = TermsFacet(field="metadata.abstract_en")
+
+
 metadata_abstract_value_keyword = NestedLabeledFacet(
     path="metadata.abstract",
     nested_facet=TermsFacet(field="metadata.abstract.value.keyword"),
@@ -143,6 +165,12 @@ metadata_abstract_value_keyword = NestedLabeledFacet(
 metadata_methods_lang = NestedLabeledFacet(
     path="metadata.methods", nested_facet=TermsFacet(field="metadata.methods.lang")
 )
+
+
+metadata_methods_cs = TermsFacet(field="metadata.methods_cs")
+
+
+metadata_methods_en = TermsFacet(field="metadata.methods_en")
 
 
 metadata_methods_value_keyword = NestedLabeledFacet(
@@ -155,6 +183,12 @@ metadata_technicalInfo_lang = NestedLabeledFacet(
     path="metadata.technicalInfo",
     nested_facet=TermsFacet(field="metadata.technicalInfo.lang"),
 )
+
+
+metadata_technicalInfo_cs = TermsFacet(field="metadata.technicalInfo_cs")
+
+
+metadata_technicalInfo_en = TermsFacet(field="metadata.technicalInfo_en")
 
 
 metadata_technicalInfo_value_keyword = NestedLabeledFacet(
@@ -339,6 +373,12 @@ metadata_accessibility_lang = NestedLabeledFacet(
     path="metadata.accessibility",
     nested_facet=TermsFacet(field="metadata.accessibility.lang"),
 )
+
+
+metadata_accessibility_cs = TermsFacet(field="metadata.accessibility_cs")
+
+
+metadata_accessibility_en = TermsFacet(field="metadata.accessibility_en")
 
 
 metadata_accessibility_value_keyword = NestedLabeledFacet(

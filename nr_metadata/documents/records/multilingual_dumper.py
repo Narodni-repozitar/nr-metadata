@@ -3,15 +3,15 @@ from copy import deepcopy
 from functools import reduce
 
 from deepmerge import always_merger
-from invenio_records.dumpers import ElasticsearchDumperExt
+from invenio_records.dumpers import SearchDumperExt
 
 
 def getFromDict(dataDict, mapList):
     return reduce(operator.getitem, mapList, dataDict)
 
 
-class MultilingualDumper(ElasticsearchDumperExt):
-    """DocumentsRecord elasticsearch dumper."""
+class MultilingualDumper(SearchDumperExt):
+    """DocumentsRecord search dumper."""
 
     def dump(self, record, data):
         paths = []

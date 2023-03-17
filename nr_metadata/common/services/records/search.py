@@ -16,6 +16,8 @@ class CommonSearchOptions(InvenioSearchOptions):
         "metadata_additionalTitles_title_lang": (
             facets.metadata_additionalTitles_title_lang
         ),
+        "metadata_additionalTitles_title_cs": facets.metadata_additionalTitles_title_cs,
+        "metadata_additionalTitles_title_en": facets.metadata_additionalTitles_title_en,
         "metadata_additionalTitles_title_value_keyword": (
             facets.metadata_additionalTitles_title_value_keyword
         ),
@@ -58,6 +60,8 @@ class CommonSearchOptions(InvenioSearchOptions):
         "metadata_dateModified": facets.metadata_dateModified,
         "metadata_subjects_subjectScheme": facets.metadata_subjects_subjectScheme,
         "metadata_subjects_subject_lang": facets.metadata_subjects_subject_lang,
+        "metadata_subjects_subject_cs": facets.metadata_subjects_subject_cs,
+        "metadata_subjects_subject_en": facets.metadata_subjects_subject_en,
         "metadata_subjects_subject_value_keyword": (
             facets.metadata_subjects_subject_value_keyword
         ),
@@ -72,10 +76,16 @@ class CommonSearchOptions(InvenioSearchOptions):
         "metadata_languages_id": facets.metadata_languages_id,
         "metadata_languages__version": facets.metadata_languages__version,
         "metadata_abstract_lang": facets.metadata_abstract_lang,
+        "metadata_abstract_cs": facets.metadata_abstract_cs,
+        "metadata_abstract_en": facets.metadata_abstract_en,
         "metadata_abstract_value_keyword": facets.metadata_abstract_value_keyword,
         "metadata_methods_lang": facets.metadata_methods_lang,
+        "metadata_methods_cs": facets.metadata_methods_cs,
+        "metadata_methods_en": facets.metadata_methods_en,
         "metadata_methods_value_keyword": facets.metadata_methods_value_keyword,
         "metadata_technicalInfo_lang": facets.metadata_technicalInfo_lang,
+        "metadata_technicalInfo_cs": facets.metadata_technicalInfo_cs,
+        "metadata_technicalInfo_en": facets.metadata_technicalInfo_en,
         "metadata_technicalInfo_value_keyword": (
             facets.metadata_technicalInfo_value_keyword
         ),
@@ -174,6 +184,8 @@ class CommonSearchOptions(InvenioSearchOptions):
             facets.metadata_geoLocations_geoLocationPoint_pointLatitude
         ),
         "metadata_accessibility_lang": facets.metadata_accessibility_lang,
+        "metadata_accessibility_cs": facets.metadata_accessibility_cs,
+        "metadata_accessibility_en": facets.metadata_accessibility_en,
         "metadata_accessibility_value_keyword": (
             facets.metadata_accessibility_value_keyword
         ),

@@ -24,12 +24,15 @@ settings:
     cs: 
       text: 
         analyzer: czech
-      sort: 
-        type: icu_collation_keyword
+      # sort: 
+      #   type: icu_collation_keyword
       keyword: 
-        test: test
+        type: keyword
     en: 
-      text: 
-        analyzer: en        
-      sort: 
-        type: icu_collation_keyword
+      text: {}
+      # analyzer: en        
+      # sort: 
+      #   type: icu_collation_keyword
+      keyword: 
+        type: keyword
+
