@@ -8,7 +8,6 @@ from invenio_records_permissions.generators import (
 )
 
 from nr_metadata.common.proxies import current_service
-from nr_metadata.common.resources.records.config import CommonResourceConfig
 from nr_metadata.documents.proxies import current_service
 from nr_metadata.documents.resources.records.config import DocumentsResourceConfig
 

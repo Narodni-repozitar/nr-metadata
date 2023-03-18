@@ -1,6 +1,6 @@
 import marshmallow as ma
-from marshmallow import validate
 from idutils import normalize_pid
+from marshmallow import validate
 
 
 class NRIdentifierSchema(ma.Schema):

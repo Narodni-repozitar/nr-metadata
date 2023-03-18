@@ -1,9 +1,8 @@
-from invenio_records_resources.services import RecordLink
-from invenio_records_resources.services import RecordServiceConfig
 from invenio_records_resources.services import (
-    RecordServiceConfig as InvenioRecordServiceConfig,
+    RecordLink,
+    RecordServiceConfig,
+    pagination_links,
 )
-from invenio_records_resources.services import pagination_links
 
 from nr_metadata.common.records.api import CommonRecord
 from nr_metadata.common.services.records.permissions import CommonPermissionPolicy

@@ -12,7 +12,6 @@ from invenio_app.factory import create_api
 from invenio_records_resources.services.uow import RecordCommitOp, UnitOfWork
 
 from nr_metadata.common.proxies import current_service
-from nr_metadata.common.records.api import CommonRecord
 from nr_metadata.documents.proxies import current_service
 from nr_metadata.documents.records.api import DocumentsRecord
 
@@ -39,12 +38,12 @@ def create_app(instance_path, entry_points):
 def app_config(app_config):
     """Mimic an instance's configuration."""
     app_config["JSONSCHEMAS_HOST"] = "localhost"
-    app_config["RECORDS_REFRESOLVER_CLS"] = (
-        "invenio_records.resolver.InvenioRefResolver"
-    )
-    app_config["RECORDS_REFRESOLVER_STORE"] = (
-        "invenio_jsonschemas.proxies.current_refresolver_store"
-    )
+    app_config[
+        "RECORDS_REFRESOLVER_CLS"
+    ] = "invenio_records.resolver.InvenioRefResolver"
+    app_config[
+        "RECORDS_REFRESOLVER_STORE"
+    ] = "invenio_jsonschemas.proxies.current_refresolver_store"
     app_config["RATELIMIT_AUTHENTICATED_USER"] = "200 per second"
     app_config["SEARCH_HOSTS"] = [
         {

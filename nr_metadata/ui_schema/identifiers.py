@@ -1,6 +1,6 @@
 import marshmallow as ma
+from idutils import to_url
 from marshmallow import validate
-from idutils import normalize_pid, to_url
 
 
 class NRIdentifierUISchema(ma.Schema):

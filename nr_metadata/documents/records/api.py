@@ -4,7 +4,7 @@ from invenio_records_resources.records.api import Record
 from invenio_records_resources.records.systemfields import IndexField
 from invenio_records_resources.records.systemfields.pid import PIDField, PIDFieldContext
 from invenio_vocabularies.records.api import Vocabulary
-from oarepo_runtime.relations import InternalRelation, PIDRelation, RelationsField
+from oarepo_runtime.relations import PIDRelation, RelationsField
 
 from nr_metadata.documents.records.dumper import DocumentsDumper
 from nr_metadata.documents.records.models import DocumentsMetadata
@@ -64,7 +64,7 @@ class DocumentsRecord(Record):
         rights_item=PIDRelation(
             "metadata.rights",
             keys=["id", "title"],
-            pid_field=Vocabulary.pid.with_type_ctx("access-rights"),
+            pid_field=Vocabulary.pid.with_type_ctx("licenses"),
         ),
         accessRights=PIDRelation(
             "metadata.accessRights",

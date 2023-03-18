@@ -5,14 +5,10 @@ from invenio_records_resources.services.records.schema import (
     BaseRecordSchema as InvenioBaseRecordSchema,
 )
 from invenio_vocabularies.services.schema import i18n_strings
-from marshmallow import ValidationError
 from marshmallow import fields as ma_fields
 from marshmallow import validate as ma_validate
-from marshmallow_utils import fields as mu_fields
-from marshmallow_utils import schemas as mu_schemas
 from marshmallow_utils.fields import edtfdatestring as mu_fields_edtf
 from oarepo_runtime.i18n.schema import I18nSchema
-from oarepo_runtime.ui import marshmallow as l10n
 from oarepo_runtime.validation import validate_date
 
 from nr_metadata.schema.identifiers import (
@@ -99,6 +95,14 @@ class NRSubjectCategoryVocabularySchema(ma.Schema):
 
 class NRLanguageVocabularySchema(ma.Schema):
     """NRLanguageVocabularySchema schema."""
+
+    _id = ma_fields.String(data_key="id", attribute="id")
+    title = i18n_strings
+    _version = ma_fields.String(data_key="@v", attribute="@v")
+
+
+class NRLicenseVocabularySchema(ma.Schema):
+    """NRLicenseVocabularySchema schema."""
 
     _id = ma_fields.String(data_key="id", attribute="id")
     title = i18n_strings
@@ -240,7 +244,7 @@ class NRCommonMetadataSchema(ma.Schema):
     abstract = ma_fields.List(ma_fields.Nested(lambda: I18nSchema()))
     methods = ma_fields.List(ma_fields.Nested(lambda: I18nSchema()))
     technicalInfo = ma_fields.List(ma_fields.Nested(lambda: I18nSchema()))
-    rights = ma_fields.List(ma_fields.Nested(lambda: NRAccessRightsVocabularySchema()))
+    rights = ma_fields.List(ma_fields.Nested(lambda: NRLicenseVocabularySchema()))
     accessRights = ma_fields.Nested(lambda: NRAccessRightsVocabularySchema())
     relatedItems = ma_fields.List(ma_fields.Nested(lambda: NRRelatedItemSchema()))
     fundingReferences = ma_fields.List(

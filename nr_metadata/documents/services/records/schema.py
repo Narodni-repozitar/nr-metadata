@@ -1,38 +1,26 @@
 import marshmallow as ma
 from edtf import Date as EDTFDate
-from edtf import Interval as EDTFInterval
 from invenio_records_resources.services.records.schema import (
     BaseRecordSchema as InvenioBaseRecordSchema,
 )
 from invenio_vocabularies.services.schema import i18n_strings
-from marshmallow import ValidationError
 from marshmallow import fields as ma_fields
-from marshmallow import validate as ma_validate
-from marshmallow_utils import fields as mu_fields
-from marshmallow_utils import schemas as mu_schemas
 from marshmallow_utils.fields import edtfdatestring as mu_fields_edtf
 from oarepo_runtime.i18n.schema import I18nSchema
-from oarepo_runtime.ui import marshmallow as l10n
 from oarepo_runtime.validation import validate_date
 from oarepo_vocabularies.services.schemas import HierarchySchema
 
 from nr_metadata.common.services.records.schema import (
     AdditionalTitlesSchema,
     NRAccessRightsVocabularySchema,
-    NRAffiliationVocabularySchema,
-    NRAuthorityRoleVocabularySchema,
     NRAuthoritySchema,
     NRContributorSchema,
-    NRCountryVocabularySchema,
     NREventSchema,
     NRExternalLocationSchema,
-    NRFunderVocabularySchema,
     NRFundingReferenceSchema,
-    NRGeoLocationPointSchema,
     NRGeoLocationSchema,
-    NRItemRelationTypeVocabularySchema,
     NRLanguageVocabularySchema,
-    NRLocationSchema,
+    NRLicenseVocabularySchema,
     NRRelatedItemSchema,
     NRResourceTypeVocabularySchema,
     NRSeriesSchema,
@@ -40,7 +28,6 @@ from nr_metadata.common.services.records.schema import (
     NRSubjectSchema,
 )
 from nr_metadata.schema.identifiers import (
-    NRAuthorityIdentifierSchema,
     NRObjectIdentifierSchema,
     NRSystemIdentifierSchema,
 )
@@ -92,7 +79,7 @@ class NRDocumentMetadataSchema(ma.Schema):
     abstract = ma_fields.List(ma_fields.Nested(lambda: I18nSchema()))
     methods = ma_fields.List(ma_fields.Nested(lambda: I18nSchema()))
     technicalInfo = ma_fields.List(ma_fields.Nested(lambda: I18nSchema()))
-    rights = ma_fields.List(ma_fields.Nested(lambda: NRAccessRightsVocabularySchema()))
+    rights = ma_fields.List(ma_fields.Nested(lambda: NRLicenseVocabularySchema()))
     accessRights = ma_fields.Nested(lambda: NRAccessRightsVocabularySchema())
     relatedItems = ma_fields.List(ma_fields.Nested(lambda: NRRelatedItemSchema()))
     fundingReferences = ma_fields.List(
