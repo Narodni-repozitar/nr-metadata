@@ -22,7 +22,6 @@ class CommonServiceConfig(RecordServiceConfig):
     search = CommonSearchOptions
 
     record_cls = CommonRecord
-    # todo should i leave this here?
     service_id = "common"
 
     components = [*RecordServiceConfig.components]

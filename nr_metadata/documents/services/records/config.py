@@ -22,7 +22,6 @@ class DocumentsServiceConfig(RecordServiceConfig):
     search = DocumentsSearchOptions
 
     record_cls = DocumentsRecord
-    # todo should i leave this here?
     service_id = "documents"
 
     components = [*RecordServiceConfig.components]

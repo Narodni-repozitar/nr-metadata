@@ -19,7 +19,7 @@ class CommonRecord(Record):
     index = IndexField("common-common-1.0.0")
 
     pid = PIDField(
-        create=True, provider=RecordIdProviderV2, context_cls=PIDFieldContext
+        provider=RecordIdProviderV2, context_cls=PIDFieldContext, create=True
     )
 
     dumper_extensions = [MultilingualDumper()]
