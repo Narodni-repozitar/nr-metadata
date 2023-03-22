@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2023-03-22T15:47:31.492418\n"
-"PO-Revision-Date: 2023-03-22T15:47:31.492427\n"
+"POT-Creation-Date: 2023-03-22T20:48:59.023236\n"
+"PO-Revision-Date: 2023-03-22T20:48:59.023244\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -233,6 +233,51 @@ msgstr ""
 msgid "metadata/creators/affiliations/title.hint"
 msgstr ""
 
+msgid "metadata/creators/affiliations/hierarchy.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy.label"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/parent.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/parent.label"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/parent.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/level.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/level.label"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/level.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/title.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/title.label"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/title.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/ancestors.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/ancestors.label"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/ancestors.hint"
+msgstr ""
+
 msgid "metadata/creators/affiliations/@v.help"
 msgstr ""
 
@@ -359,6 +404,51 @@ msgid "metadata/contributors/affiliations/title.label"
 msgstr ""
 
 msgid "metadata/contributors/affiliations/title.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy.label"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/parent.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/parent.label"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/parent.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/level.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/level.label"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/level.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/title.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/title.label"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/title.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/ancestors.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/ancestors.label"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/ancestors.hint"
 msgstr ""
 
 msgid "metadata/contributors/affiliations/@v.help"
@@ -811,6 +901,54 @@ msgstr ""
 msgid "metadata/relatedItems/itemCreators/affiliations/title.hint"
 msgstr ""
 
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/parent.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/parent.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/parent.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/level.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/level.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/level.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/title.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/title.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/title.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.label"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.hint"
+msgstr ""
+
 msgid "metadata/relatedItems/itemCreators/affiliations/@v.help"
 msgstr ""
 
@@ -917,6 +1055,63 @@ msgid "metadata/relatedItems/itemContributors/affiliations/title.label"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/affiliations/title.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/parent.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/parent.label"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/parent.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/level.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/level.label"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/level.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/title.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/title.label"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/title.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.label"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.hint"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/affiliations/@v.help"

@@ -28,7 +28,7 @@ class CommonRecord(Record):
     relations = RelationsField(
         affiliations_item=PIDRelation(
             "metadata.creators.affiliations",
-            keys=["id", "title"],
+            keys=["id", "title", "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
         role=PIDRelation(
@@ -38,7 +38,7 @@ class CommonRecord(Record):
         ),
         affiliations_item_1=PIDRelation(
             "metadata.contributors.affiliations",
-            keys=["id", "title"],
+            keys=["id", "title", "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
         resourceType=PIDRelation(
@@ -68,7 +68,7 @@ class CommonRecord(Record):
         ),
         affiliations_item_2=PIDRelation(
             "metadata.relatedItems.itemCreators.affiliations",
-            keys=["id", "title"],
+            keys=["id", "title", "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
         role_1=PIDRelation(
@@ -78,7 +78,7 @@ class CommonRecord(Record):
         ),
         affiliations_item_3=PIDRelation(
             "metadata.relatedItems.itemContributors.affiliations",
-            keys=["id", "title"],
+            keys=["id", "title", "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
         itemRelationType=PIDRelation(

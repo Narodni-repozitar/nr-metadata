@@ -2,7 +2,7 @@ import marshmallow as ma
 from marshmallow import fields as ma_fields
 from oarepo_runtime.i18n.schema import I18nUISchema
 from oarepo_runtime.ui import marshmallow as l10n
-from oarepo_vocabularies.services.ui_schemas import I18nStrUIField
+from oarepo_vocabularies.services.ui_schemas import HierarchyUISchema, I18nStrUIField
 
 from nr_metadata.ui_schema.identifiers import (
     NRAuthorityIdentifierUISchema,
@@ -23,6 +23,7 @@ class NRAffiliationVocabularyUISchema(ma.Schema):
 
     _id = ma_fields.String(data_key="id", attribute="id")
     title = I18nStrUIField()
+    hierarchy = ma_fields.Nested(lambda: HierarchyUISchema())
     _version = ma_fields.String(data_key="@v", attribute="@v")
 
 

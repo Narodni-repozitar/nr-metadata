@@ -7,6 +7,7 @@ rm -rf .venv-builder
 python3 -m venv .venv-builder
 
 .venv-builder/bin/pip install -U setuptools pip wheel
+.venv-builder/bin/pip install 'oarepo-model-builder-multilingual==2.0.2'
 .venv-builder/bin/pip install oarepo-model-builder-nr black isort autoflake
 
 

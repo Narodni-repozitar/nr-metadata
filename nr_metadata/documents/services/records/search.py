@@ -42,6 +42,15 @@ class DocumentsSearchOptions(InvenioSearchOptions):
             facets.metadata_additionalTitles_titleType
         ),
         "metadata_creators_affiliations_id": facets.metadata_creators_affiliations_id,
+        "metadata_creators_affiliations_hierarchy_parent": (
+            facets.metadata_creators_affiliations_hierarchy_parent
+        ),
+        "metadata_creators_affiliations_hierarchy_level": (
+            facets.metadata_creators_affiliations_hierarchy_level
+        ),
+        "metadata_creators_affiliations_hierarchy_ancestors": (
+            facets.metadata_creators_affiliations_hierarchy_ancestors
+        ),
         "metadata_creators_affiliations__version": (
             facets.metadata_creators_affiliations__version
         ),
@@ -59,6 +68,15 @@ class DocumentsSearchOptions(InvenioSearchOptions):
         ),
         "metadata_contributors_affiliations_id": (
             facets.metadata_contributors_affiliations_id
+        ),
+        "metadata_contributors_affiliations_hierarchy_parent": (
+            facets.metadata_contributors_affiliations_hierarchy_parent
+        ),
+        "metadata_contributors_affiliations_hierarchy_level": (
+            facets.metadata_contributors_affiliations_hierarchy_level
+        ),
+        "metadata_contributors_affiliations_hierarchy_ancestors": (
+            facets.metadata_contributors_affiliations_hierarchy_ancestors
         ),
         "metadata_contributors_affiliations__version": (
             facets.metadata_contributors_affiliations__version
@@ -113,6 +131,15 @@ class DocumentsSearchOptions(InvenioSearchOptions):
         "metadata_relatedItems_itemCreators_affiliations_id": (
             facets.metadata_relatedItems_itemCreators_affiliations_id
         ),
+        "metadata_relatedItems_itemCreators_affiliations_hierarchy_parent": (
+            facets.metadata_relatedItems_itemCreators_affiliations_hierarchy_parent
+        ),
+        "metadata_relatedItems_itemCreators_affiliations_hierarchy_level": (
+            facets.metadata_relatedItems_itemCreators_affiliations_hierarchy_level
+        ),
+        "metadata_relatedItems_itemCreators_affiliations_hierarchy_ancestors": (
+            facets.metadata_relatedItems_itemCreators_affiliations_hierarchy_ancestors
+        ),
         "metadata_relatedItems_itemCreators_affiliations__version": (
             facets.metadata_relatedItems_itemCreators_affiliations__version
         ),
@@ -136,6 +163,15 @@ class DocumentsSearchOptions(InvenioSearchOptions):
         ),
         "metadata_relatedItems_itemContributors_affiliations_id": (
             facets.metadata_relatedItems_itemContributors_affiliations_id
+        ),
+        "metadata_relatedItems_itemContributors_affiliations_hierarchy_parent": (
+            facets.metadata_relatedItems_itemContributors_affiliations_hierarchy_parent
+        ),
+        "metadata_relatedItems_itemContributors_affiliations_hierarchy_level": (
+            facets.metadata_relatedItems_itemContributors_affiliations_hierarchy_level
+        ),
+        "metadata_relatedItems_itemContributors_affiliations_hierarchy_ancestors": (
+            facets.metadata_relatedItems_itemContributors_affiliations_hierarchy_ancestors
         ),
         "metadata_relatedItems_itemContributors_affiliations__version": (
             facets.metadata_relatedItems_itemContributors_affiliations__version

@@ -10,6 +10,7 @@ from marshmallow import validate as ma_validate
 from marshmallow_utils.fields import edtfdatestring as mu_fields_edtf
 from oarepo_runtime.i18n.schema import I18nSchema
 from oarepo_runtime.validation import validate_date
+from oarepo_vocabularies.services.schemas import HierarchySchema
 
 from nr_metadata.schema.identifiers import (
     NRAuthorityIdentifierSchema,
@@ -30,6 +31,7 @@ class NRAffiliationVocabularySchema(ma.Schema):
 
     _id = ma_fields.String(data_key="id", attribute="id")
     title = i18n_strings
+    hierarchy = ma_fields.Nested(lambda: HierarchySchema())
     _version = ma_fields.String(data_key="@v", attribute="@v")
 
 
