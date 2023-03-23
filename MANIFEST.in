@@ -1,3 +1,5 @@
-exclude tests/*
-include nr_metadata/**/*.yaml
-include nr_metadata/**/*.json
+recursive-exclude tests/
+recursive-include nr_metadata/**/*.yaml
+recursive-include nr_metadata/**/*.json
+recursive-include nr_metadata/common/translations
+recursive-include nr_metadata/documents/translations
