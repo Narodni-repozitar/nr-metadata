@@ -1,6 +1,6 @@
-recursive-exclude tests/
-include nr_metadata/**/*.yaml
-include nr_metadata/**/*.json
-include nr_metadata/**/*.po
-include nr_metadata/**/*.pot
-include nr_metadata/**/*.mo
+exclude tests/**
+recursive-include nr_metadata/** *.yaml
+recursive-include nr_metadata/** *.json
+recursive-include nr_metadata/** *.po
+recursive-include nr_metadata/** *.pot
+recursive-include nr_metadata/** *.mo
