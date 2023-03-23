@@ -1,4 +1,4 @@
-exclude tests/**
+recursive-exclude tests *
 recursive-include nr_metadata *.yaml
 recursive-include nr_metadata *.json
 recursive-include nr_metadata *.po
