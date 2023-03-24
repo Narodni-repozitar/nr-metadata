@@ -2,6 +2,7 @@
     "mappings": {
         "properties": {
             "metadata": {
+                "type": "object",
                 "properties": {
                     "title": {
                         "type": "text",
@@ -12,6 +13,7 @@
                         }
                     },
                     "additionalTitles": {
+                        "type": "object",
                         "properties": {
                             "title": {
                                 "type": "object",
@@ -49,12 +51,13 @@
                             "titleType": {
                                 "type": "keyword"
                             }
-                        },
-                        "type": "object"
+                        }
                     },
                     "creators": {
+                        "type": "object",
                         "properties": {
                             "affiliations": {
+                                "type": "object",
                                 "properties": {
                                     "id": {
                                         "type": "keyword",
@@ -75,6 +78,7 @@
                                         "enabled": false
                                     },
                                     "hierarchy": {
+                                        "type": "object",
                                         "properties": {
                                             "parent": {
                                                 "type": "keyword"
@@ -90,14 +94,12 @@
                                             "ancestors": {
                                                 "type": "keyword"
                                             }
-                                        },
-                                        "type": "object"
+                                        }
                                     },
                                     "@v": {
                                         "type": "keyword"
                                     }
-                                },
-                                "type": "object"
+                                }
                             },
                             "nameType": {
                                 "type": "keyword"
@@ -106,6 +108,7 @@
                                 "type": "keyword"
                             },
                             "authorityIdentifiers": {
+                                "type": "object",
                                 "properties": {
                                     "identifier": {
                                         "type": "keyword"
@@ -113,15 +116,15 @@
                                     "scheme": {
                                         "type": "keyword"
                                     }
-                                },
-                                "type": "object"
+                                }
                             }
-                        },
-                        "type": "object"
+                        }
                     },
                     "contributors": {
+                        "type": "object",
                         "properties": {
                             "role": {
+                                "type": "object",
                                 "properties": {
                                     "id": {
                                         "type": "keyword",
@@ -144,10 +147,10 @@
                                     "@v": {
                                         "type": "keyword"
                                     }
-                                },
-                                "type": "object"
+                                }
                             },
                             "affiliations": {
+                                "type": "object",
                                 "properties": {
                                     "id": {
                                         "type": "keyword",
@@ -168,6 +171,7 @@
                                         "enabled": false
                                     },
                                     "hierarchy": {
+                                        "type": "object",
                                         "properties": {
                                             "parent": {
                                                 "type": "keyword"
@@ -183,14 +187,12 @@
                                             "ancestors": {
                                                 "type": "keyword"
                                             }
-                                        },
-                                        "type": "object"
+                                        }
                                     },
                                     "@v": {
                                         "type": "keyword"
                                     }
-                                },
-                                "type": "object"
+                                }
                             },
                             "nameType": {
                                 "type": "keyword"
@@ -199,6 +201,7 @@
                                 "type": "keyword"
                             },
                             "authorityIdentifiers": {
+                                "type": "object",
                                 "properties": {
                                     "identifier": {
                                         "type": "keyword"
@@ -206,13 +209,12 @@
                                     "scheme": {
                                         "type": "keyword"
                                     }
-                                },
-                                "type": "object"
+                                }
                             }
-                        },
-                        "type": "object"
+                        }
                     },
                     "resourceType": {
+                        "type": "object",
                         "properties": {
                             "id": {
                                 "type": "keyword",
@@ -235,8 +237,7 @@
                             "@v": {
                                 "type": "keyword"
                             }
-                        },
-                        "type": "object"
+                        }
                     },
                     "dateAvailable": {
                         "type": "date"
@@ -245,6 +246,7 @@
                         "type": "date"
                     },
                     "subjects": {
+                        "type": "object",
                         "properties": {
                             "subjectScheme": {
                                 "type": "keyword"
@@ -288,13 +290,13 @@
                             "classificationCode": {
                                 "type": "keyword"
                             }
-                        },
-                        "type": "object"
+                        }
                     },
                     "publishers": {
                         "type": "text"
                     },
                     "subjectCategories": {
+                        "type": "object",
                         "properties": {
                             "id": {
                                 "type": "keyword",
@@ -317,10 +319,10 @@
                             "@v": {
                                 "type": "keyword"
                             }
-                        },
-                        "type": "object"
+                        }
                     },
                     "languages": {
+                        "type": "object",
                         "properties": {
                             "id": {
                                 "type": "keyword",
@@ -343,8 +345,7 @@
                             "@v": {
                                 "type": "keyword"
                             }
-                        },
-                        "type": "object"
+                        }
                     },
                     "notes": {
                         "type": "text"
@@ -449,6 +450,7 @@
                         }
                     },
                     "rights": {
+                        "type": "object",
                         "properties": {
                             "id": {
                                 "type": "keyword",
@@ -471,10 +473,10 @@
                             "@v": {
                                 "type": "keyword"
                             }
-                        },
-                        "type": "object"
+                        }
                     },
                     "accessRights": {
+                        "type": "object",
                         "properties": {
                             "id": {
                                 "type": "keyword",
@@ -497,17 +499,19 @@
                             "@v": {
                                 "type": "keyword"
                             }
-                        },
-                        "type": "object"
+                        }
                     },
                     "relatedItems": {
+                        "type": "object",
                         "properties": {
                             "itemTitle": {
                                 "type": "text"
                             },
                             "itemCreators": {
+                                "type": "object",
                                 "properties": {
                                     "affiliations": {
+                                        "type": "object",
                                         "properties": {
                                             "id": {
                                                 "type": "keyword",
@@ -528,6 +532,7 @@
                                                 "enabled": false
                                             },
                                             "hierarchy": {
+                                                "type": "object",
                                                 "properties": {
                                                     "parent": {
                                                         "type": "keyword"
@@ -543,14 +548,12 @@
                                                     "ancestors": {
                                                         "type": "keyword"
                                                     }
-                                                },
-                                                "type": "object"
+                                                }
                                             },
                                             "@v": {
                                                 "type": "keyword"
                                             }
-                                        },
-                                        "type": "object"
+                                        }
                                     },
                                     "nameType": {
                                         "type": "keyword"
@@ -559,6 +562,7 @@
                                         "type": "keyword"
                                     },
                                     "authorityIdentifiers": {
+                                        "type": "object",
                                         "properties": {
                                             "identifier": {
                                                 "type": "keyword"
@@ -566,15 +570,15 @@
                                             "scheme": {
                                                 "type": "keyword"
                                             }
-                                        },
-                                        "type": "object"
+                                        }
                                     }
-                                },
-                                "type": "object"
+                                }
                             },
                             "itemContributors": {
+                                "type": "object",
                                 "properties": {
                                     "role": {
+                                        "type": "object",
                                         "properties": {
                                             "id": {
                                                 "type": "keyword",
@@ -597,10 +601,10 @@
                                             "@v": {
                                                 "type": "keyword"
                                             }
-                                        },
-                                        "type": "object"
+                                        }
                                     },
                                     "affiliations": {
+                                        "type": "object",
                                         "properties": {
                                             "id": {
                                                 "type": "keyword",
@@ -621,6 +625,7 @@
                                                 "enabled": false
                                             },
                                             "hierarchy": {
+                                                "type": "object",
                                                 "properties": {
                                                     "parent": {
                                                         "type": "keyword"
@@ -636,14 +641,12 @@
                                                     "ancestors": {
                                                         "type": "keyword"
                                                     }
-                                                },
-                                                "type": "object"
+                                                }
                                             },
                                             "@v": {
                                                 "type": "keyword"
                                             }
-                                        },
-                                        "type": "object"
+                                        }
                                     },
                                     "nameType": {
                                         "type": "keyword"
@@ -652,6 +655,7 @@
                                         "type": "keyword"
                                     },
                                     "authorityIdentifiers": {
+                                        "type": "object",
                                         "properties": {
                                             "identifier": {
                                                 "type": "keyword"
@@ -659,13 +663,12 @@
                                             "scheme": {
                                                 "type": "keyword"
                                             }
-                                        },
-                                        "type": "object"
+                                        }
                                     }
-                                },
-                                "type": "object"
+                                }
                             },
                             "itemPIDs": {
+                                "type": "object",
                                 "properties": {
                                     "identifier": {
                                         "type": "keyword"
@@ -673,8 +676,7 @@
                                     "scheme": {
                                         "type": "keyword"
                                     }
-                                },
-                                "type": "object"
+                                }
                             },
                             "itemURL": {
                                 "type": "keyword"
@@ -698,6 +700,7 @@
                                 "type": "keyword"
                             },
                             "itemRelationType": {
+                                "type": "object",
                                 "properties": {
                                     "id": {
                                         "type": "keyword",
@@ -720,10 +723,10 @@
                                     "@v": {
                                         "type": "keyword"
                                     }
-                                },
-                                "type": "object"
+                                }
                             },
                             "itemResourceType": {
+                                "type": "object",
                                 "properties": {
                                     "id": {
                                         "type": "keyword",
@@ -746,13 +749,12 @@
                                     "@v": {
                                         "type": "keyword"
                                     }
-                                },
-                                "type": "object"
+                                }
                             }
-                        },
-                        "type": "object"
+                        }
                     },
                     "fundingReferences": {
+                        "type": "object",
                         "properties": {
                             "projectID": {
                                 "type": "keyword"
@@ -764,6 +766,7 @@
                                 "type": "text"
                             },
                             "funder": {
+                                "type": "object",
                                 "properties": {
                                     "id": {
                                         "type": "keyword",
@@ -786,21 +789,21 @@
                                     "@v": {
                                         "type": "keyword"
                                     }
-                                },
-                                "type": "object"
+                                }
                             }
-                        },
-                        "type": "object"
+                        }
                     },
                     "version": {
                         "type": "keyword"
                     },
                     "geoLocations": {
+                        "type": "object",
                         "properties": {
                             "geoLocationPlace": {
                                 "type": "keyword"
                             },
                             "geoLocationPoint": {
+                                "type": "object",
                                 "properties": {
                                     "pointLongitude": {
                                         "type": "double"
@@ -808,11 +811,9 @@
                                     "pointLatitude": {
                                         "type": "double"
                                     }
-                                },
-                                "type": "object"
+                                }
                             }
-                        },
-                        "type": "object"
+                        }
                     },
                     "accessibility": {
                         "type": "object",
@@ -848,6 +849,7 @@
                         }
                     },
                     "series": {
+                        "type": "object",
                         "properties": {
                             "seriesTitle": {
                                 "type": "keyword"
@@ -855,10 +857,10 @@
                             "seriesVolume": {
                                 "type": "keyword"
                             }
-                        },
-                        "type": "object"
+                        }
                     },
                     "externalLocation": {
+                        "type": "object",
                         "properties": {
                             "externalLocationURL": {
                                 "type": "keyword"
@@ -866,13 +868,13 @@
                             "externalLocationNote": {
                                 "type": "text"
                             }
-                        },
-                        "type": "object"
+                        }
                     },
                     "originalRecord": {
                         "type": "keyword"
                     },
                     "objectIdentifiers": {
+                        "type": "object",
                         "properties": {
                             "identifier": {
                                 "type": "keyword"
@@ -880,10 +882,10 @@
                             "scheme": {
                                 "type": "keyword"
                             }
-                        },
-                        "type": "object"
+                        }
                     },
                     "systemIdentifiers": {
+                        "type": "object",
                         "properties": {
                             "identifier": {
                                 "type": "keyword"
@@ -891,10 +893,10 @@
                             "scheme": {
                                 "type": "keyword"
                             }
-                        },
-                        "type": "object"
+                        }
                     },
                     "events": {
+                        "type": "object",
                         "properties": {
                             "eventNameOriginal": {
                                 "type": "text"
@@ -906,11 +908,13 @@
                                 "type": "date_range"
                             },
                             "eventLocation": {
+                                "type": "object",
                                 "properties": {
                                     "place": {
                                         "type": "keyword"
                                     },
                                     "country": {
+                                        "type": "object",
                                         "properties": {
                                             "id": {
                                                 "type": "keyword",
@@ -933,17 +937,13 @@
                                             "@v": {
                                                 "type": "keyword"
                                             }
-                                        },
-                                        "type": "object"
+                                        }
                                     }
-                                },
-                                "type": "object"
+                                }
                             }
-                        },
-                        "type": "object"
+                        }
                     }
-                },
-                "type": "object"
+                }
             },
             "id": {
                 "type": "keyword"
