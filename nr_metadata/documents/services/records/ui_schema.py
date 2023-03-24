@@ -1,6 +1,10 @@
 import marshmallow as ma
 from marshmallow import fields as ma_fields
-from oarepo_runtime.i18n.ui_schema import I18nStrUIField, MultilingualUIField
+from oarepo_runtime.i18n.ui_schema import (
+    I18nStrUIField,
+    MultilingualLocalizedUIField,
+    MultilingualUIField,
+)
 from oarepo_runtime.ui import marshmallow as l10n
 from oarepo_vocabularies.services.ui_schemas import HierarchyUISchema, I18nStrUIField
 
@@ -77,7 +81,7 @@ class NRDocumentMetadataUISchema(ma.Schema):
     )
     version = ma_fields.String()
     geoLocations = ma_fields.List(ma_fields.Nested(lambda: NRGeoLocationUISchema()))
-    accessibility = MultilingualUIField(I18nStrUIField())
+    accessibility = MultilingualLocalizedUIField(I18nStrUIField())
     series = ma_fields.List(ma_fields.Nested(lambda: NRSeriesUISchema()))
     externalLocation = ma_fields.Nested(lambda: NRExternalLocationUISchema())
     originalRecord = ma_fields.String()
