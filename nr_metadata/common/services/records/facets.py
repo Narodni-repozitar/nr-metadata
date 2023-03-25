@@ -38,6 +38,11 @@ metadata_creators_affiliations_id = TermsFacet(
 )
 
 
+metadata_creators_affiliations_type = TermsFacet(
+    field="metadata.creators.affiliations.type"
+)
+
+
 metadata_creators_affiliations_hierarchy_parent = TermsFacet(
     field="metadata.creators.affiliations.hierarchy.parent"
 )
@@ -77,11 +82,19 @@ metadata_creators_authorityIdentifiers_scheme = TermsFacet(
 metadata_contributors_role_id = TermsFacet(field="metadata.contributors.role.id")
 
 
+metadata_contributors_role_type = TermsFacet(field="metadata.contributors.role.type")
+
+
 metadata_contributors_role__version = TermsFacet(field="metadata.contributors.role.@v")
 
 
 metadata_contributors_affiliations_id = TermsFacet(
     field="metadata.contributors.affiliations.id"
+)
+
+
+metadata_contributors_affiliations_type = TermsFacet(
+    field="metadata.contributors.affiliations.type"
 )
 
 
@@ -122,6 +135,9 @@ metadata_contributors_authorityIdentifiers_scheme = TermsFacet(
 
 
 metadata_resourceType_id = TermsFacet(field="metadata.resourceType.id")
+
+
+metadata_resourceType_type = TermsFacet(field="metadata.resourceType.type")
 
 
 metadata_resourceType__version = TermsFacet(field="metadata.resourceType.@v")
@@ -165,10 +181,16 @@ metadata_subjects_classificationCode = TermsFacet(
 metadata_subjectCategories_id = TermsFacet(field="metadata.subjectCategories.id")
 
 
+metadata_subjectCategories_type = TermsFacet(field="metadata.subjectCategories.type")
+
+
 metadata_subjectCategories__version = TermsFacet(field="metadata.subjectCategories.@v")
 
 
 metadata_languages_id = TermsFacet(field="metadata.languages.id")
+
+
+metadata_languages_type = TermsFacet(field="metadata.languages.type")
 
 
 metadata_languages__version = TermsFacet(field="metadata.languages.@v")
@@ -229,10 +251,16 @@ metadata_technicalInfo_value_keyword = NestedLabeledFacet(
 metadata_rights_id = TermsFacet(field="metadata.rights.id")
 
 
+metadata_rights_type = TermsFacet(field="metadata.rights.type")
+
+
 metadata_rights__version = TermsFacet(field="metadata.rights.@v")
 
 
 metadata_accessRights_id = TermsFacet(field="metadata.accessRights.id")
+
+
+metadata_accessRights_type = TermsFacet(field="metadata.accessRights.type")
 
 
 metadata_accessRights__version = TermsFacet(field="metadata.accessRights.@v")
@@ -240,6 +268,11 @@ metadata_accessRights__version = TermsFacet(field="metadata.accessRights.@v")
 
 metadata_relatedItems_itemCreators_affiliations_id = TermsFacet(
     field="metadata.relatedItems.itemCreators.affiliations.id"
+)
+
+
+metadata_relatedItems_itemCreators_affiliations_type = TermsFacet(
+    field="metadata.relatedItems.itemCreators.affiliations.type"
 )
 
 
@@ -288,6 +321,11 @@ metadata_relatedItems_itemContributors_role_id = TermsFacet(
 )
 
 
+metadata_relatedItems_itemContributors_role_type = TermsFacet(
+    field="metadata.relatedItems.itemContributors.role.type"
+)
+
+
 metadata_relatedItems_itemContributors_role__version = TermsFacet(
     field="metadata.relatedItems.itemContributors.role.@v"
 )
@@ -295,6 +333,11 @@ metadata_relatedItems_itemContributors_role__version = TermsFacet(
 
 metadata_relatedItems_itemContributors_affiliations_id = TermsFacet(
     field="metadata.relatedItems.itemContributors.affiliations.id"
+)
+
+
+metadata_relatedItems_itemContributors_affiliations_type = TermsFacet(
+    field="metadata.relatedItems.itemContributors.affiliations.type"
 )
 
 
@@ -380,6 +423,11 @@ metadata_relatedItems_itemRelationType_id = TermsFacet(
 )
 
 
+metadata_relatedItems_itemRelationType_type = TermsFacet(
+    field="metadata.relatedItems.itemRelationType.type"
+)
+
+
 metadata_relatedItems_itemRelationType__version = TermsFacet(
     field="metadata.relatedItems.itemRelationType.@v"
 )
@@ -387,6 +435,11 @@ metadata_relatedItems_itemRelationType__version = TermsFacet(
 
 metadata_relatedItems_itemResourceType_id = TermsFacet(
     field="metadata.relatedItems.itemResourceType.id"
+)
+
+
+metadata_relatedItems_itemResourceType_type = TermsFacet(
+    field="metadata.relatedItems.itemResourceType.type"
 )
 
 
@@ -402,6 +455,11 @@ metadata_fundingReferences_projectID = TermsFacet(
 
 metadata_fundingReferences_funder_id = TermsFacet(
     field="metadata.fundingReferences.funder.id"
+)
+
+
+metadata_fundingReferences_funder_type = TermsFacet(
+    field="metadata.fundingReferences.funder.type"
 )
 
 
@@ -490,6 +548,11 @@ metadata_events_eventLocation_place = TermsFacet(
 
 metadata_events_eventLocation_country_id = TermsFacet(
     field="metadata.events.eventLocation.country.id"
+)
+
+
+metadata_events_eventLocation_country_type = TermsFacet(
+    field="metadata.events.eventLocation.country.type"
 )
 
 

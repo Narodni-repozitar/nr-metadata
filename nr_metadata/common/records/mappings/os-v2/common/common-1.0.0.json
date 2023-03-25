@@ -77,6 +77,9 @@
                                         },
                                         "enabled": false
                                     },
+                                    "type": {
+                                        "type": "keyword"
+                                    },
                                     "hierarchy": {
                                         "type": "object",
                                         "properties": {
@@ -144,6 +147,9 @@
                                         },
                                         "enabled": false
                                     },
+                                    "type": {
+                                        "type": "keyword"
+                                    },
                                     "@v": {
                                         "type": "keyword"
                                     }
@@ -169,6 +175,9 @@
                                             }
                                         },
                                         "enabled": false
+                                    },
+                                    "type": {
+                                        "type": "keyword"
                                     },
                                     "hierarchy": {
                                         "type": "object",
@@ -233,6 +242,9 @@
                                     }
                                 },
                                 "enabled": false
+                            },
+                            "type": {
+                                "type": "keyword"
                             },
                             "@v": {
                                 "type": "keyword"
@@ -316,6 +328,9 @@
                                 },
                                 "enabled": false
                             },
+                            "type": {
+                                "type": "keyword"
+                            },
                             "@v": {
                                 "type": "keyword"
                             }
@@ -341,6 +356,9 @@
                                     }
                                 },
                                 "enabled": false
+                            },
+                            "type": {
+                                "type": "keyword"
                             },
                             "@v": {
                                 "type": "keyword"
@@ -470,6 +488,9 @@
                                 },
                                 "enabled": false
                             },
+                            "type": {
+                                "type": "keyword"
+                            },
                             "@v": {
                                 "type": "keyword"
                             }
@@ -495,6 +516,9 @@
                                     }
                                 },
                                 "enabled": false
+                            },
+                            "type": {
+                                "type": "keyword"
                             },
                             "@v": {
                                 "type": "keyword"
@@ -530,6 +554,9 @@
                                                     }
                                                 },
                                                 "enabled": false
+                                            },
+                                            "type": {
+                                                "type": "keyword"
                                             },
                                             "hierarchy": {
                                                 "type": "object",
@@ -598,6 +625,9 @@
                                                 },
                                                 "enabled": false
                                             },
+                                            "type": {
+                                                "type": "keyword"
+                                            },
                                             "@v": {
                                                 "type": "keyword"
                                             }
@@ -623,6 +653,9 @@
                                                     }
                                                 },
                                                 "enabled": false
+                                            },
+                                            "type": {
+                                                "type": "keyword"
                                             },
                                             "hierarchy": {
                                                 "type": "object",
@@ -720,6 +753,9 @@
                                         },
                                         "enabled": false
                                     },
+                                    "type": {
+                                        "type": "keyword"
+                                    },
                                     "@v": {
                                         "type": "keyword"
                                     }
@@ -745,6 +781,9 @@
                                             }
                                         },
                                         "enabled": false
+                                    },
+                                    "type": {
+                                        "type": "keyword"
                                     },
                                     "@v": {
                                         "type": "keyword"
@@ -785,6 +824,9 @@
                                             }
                                         },
                                         "enabled": false
+                                    },
+                                    "type": {
+                                        "type": "keyword"
                                     },
                                     "@v": {
                                         "type": "keyword"
@@ -933,6 +975,9 @@
                                                     }
                                                 },
                                                 "enabled": false
+                                            },
+                                            "type": {
+                                                "type": "keyword"
                                             },
                                             "@v": {
                                                 "type": "keyword"

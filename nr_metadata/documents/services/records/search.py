@@ -15,6 +15,9 @@ class DocumentsSearchOptions(InvenioSearchOptions):
         "metadata_thesis_dateDefended": facets.metadata_thesis_dateDefended,
         "metadata_thesis_defended": facets.metadata_thesis_defended,
         "metadata_thesis_degreeGrantors_id": facets.metadata_thesis_degreeGrantors_id,
+        "metadata_thesis_degreeGrantors_type": (
+            facets.metadata_thesis_degreeGrantors_type
+        ),
         "metadata_thesis_degreeGrantors_hierarchy_parent": (
             facets.metadata_thesis_degreeGrantors_hierarchy_parent
         ),
@@ -42,6 +45,9 @@ class DocumentsSearchOptions(InvenioSearchOptions):
             facets.metadata_additionalTitles_titleType
         ),
         "metadata_creators_affiliations_id": facets.metadata_creators_affiliations_id,
+        "metadata_creators_affiliations_type": (
+            facets.metadata_creators_affiliations_type
+        ),
         "metadata_creators_affiliations_hierarchy_parent": (
             facets.metadata_creators_affiliations_hierarchy_parent
         ),
@@ -63,11 +69,15 @@ class DocumentsSearchOptions(InvenioSearchOptions):
             facets.metadata_creators_authorityIdentifiers_scheme
         ),
         "metadata_contributors_role_id": facets.metadata_contributors_role_id,
+        "metadata_contributors_role_type": facets.metadata_contributors_role_type,
         "metadata_contributors_role__version": (
             facets.metadata_contributors_role__version
         ),
         "metadata_contributors_affiliations_id": (
             facets.metadata_contributors_affiliations_id
+        ),
+        "metadata_contributors_affiliations_type": (
+            facets.metadata_contributors_affiliations_type
         ),
         "metadata_contributors_affiliations_hierarchy_parent": (
             facets.metadata_contributors_affiliations_hierarchy_parent
@@ -90,6 +100,7 @@ class DocumentsSearchOptions(InvenioSearchOptions):
             facets.metadata_contributors_authorityIdentifiers_scheme
         ),
         "metadata_resourceType_id": facets.metadata_resourceType_id,
+        "metadata_resourceType_type": facets.metadata_resourceType_type,
         "metadata_resourceType__version": facets.metadata_resourceType__version,
         "metadata_dateAvailable": facets.metadata_dateAvailable,
         "metadata_dateModified": facets.metadata_dateModified,
@@ -105,10 +116,12 @@ class DocumentsSearchOptions(InvenioSearchOptions):
             facets.metadata_subjects_classificationCode
         ),
         "metadata_subjectCategories_id": facets.metadata_subjectCategories_id,
+        "metadata_subjectCategories_type": facets.metadata_subjectCategories_type,
         "metadata_subjectCategories__version": (
             facets.metadata_subjectCategories__version
         ),
         "metadata_languages_id": facets.metadata_languages_id,
+        "metadata_languages_type": facets.metadata_languages_type,
         "metadata_languages__version": facets.metadata_languages__version,
         "metadata_abstract_lang": facets.metadata_abstract_lang,
         "metadata_abstract_cs": facets.metadata_abstract_cs,
@@ -125,11 +138,16 @@ class DocumentsSearchOptions(InvenioSearchOptions):
             facets.metadata_technicalInfo_value_keyword
         ),
         "metadata_rights_id": facets.metadata_rights_id,
+        "metadata_rights_type": facets.metadata_rights_type,
         "metadata_rights__version": facets.metadata_rights__version,
         "metadata_accessRights_id": facets.metadata_accessRights_id,
+        "metadata_accessRights_type": facets.metadata_accessRights_type,
         "metadata_accessRights__version": facets.metadata_accessRights__version,
         "metadata_relatedItems_itemCreators_affiliations_id": (
             facets.metadata_relatedItems_itemCreators_affiliations_id
+        ),
+        "metadata_relatedItems_itemCreators_affiliations_type": (
+            facets.metadata_relatedItems_itemCreators_affiliations_type
         ),
         "metadata_relatedItems_itemCreators_affiliations_hierarchy_parent": (
             facets.metadata_relatedItems_itemCreators_affiliations_hierarchy_parent
@@ -158,11 +176,17 @@ class DocumentsSearchOptions(InvenioSearchOptions):
         "metadata_relatedItems_itemContributors_role_id": (
             facets.metadata_relatedItems_itemContributors_role_id
         ),
+        "metadata_relatedItems_itemContributors_role_type": (
+            facets.metadata_relatedItems_itemContributors_role_type
+        ),
         "metadata_relatedItems_itemContributors_role__version": (
             facets.metadata_relatedItems_itemContributors_role__version
         ),
         "metadata_relatedItems_itemContributors_affiliations_id": (
             facets.metadata_relatedItems_itemContributors_affiliations_id
+        ),
+        "metadata_relatedItems_itemContributors_affiliations_type": (
+            facets.metadata_relatedItems_itemContributors_affiliations_type
         ),
         "metadata_relatedItems_itemContributors_affiliations_hierarchy_parent": (
             facets.metadata_relatedItems_itemContributors_affiliations_hierarchy_parent
@@ -208,11 +232,17 @@ class DocumentsSearchOptions(InvenioSearchOptions):
         "metadata_relatedItems_itemRelationType_id": (
             facets.metadata_relatedItems_itemRelationType_id
         ),
+        "metadata_relatedItems_itemRelationType_type": (
+            facets.metadata_relatedItems_itemRelationType_type
+        ),
         "metadata_relatedItems_itemRelationType__version": (
             facets.metadata_relatedItems_itemRelationType__version
         ),
         "metadata_relatedItems_itemResourceType_id": (
             facets.metadata_relatedItems_itemResourceType_id
+        ),
+        "metadata_relatedItems_itemResourceType_type": (
+            facets.metadata_relatedItems_itemResourceType_type
         ),
         "metadata_relatedItems_itemResourceType__version": (
             facets.metadata_relatedItems_itemResourceType__version
@@ -222,6 +252,9 @@ class DocumentsSearchOptions(InvenioSearchOptions):
         ),
         "metadata_fundingReferences_funder_id": (
             facets.metadata_fundingReferences_funder_id
+        ),
+        "metadata_fundingReferences_funder_type": (
+            facets.metadata_fundingReferences_funder_type
         ),
         "metadata_fundingReferences_funder__version": (
             facets.metadata_fundingReferences_funder__version
@@ -262,6 +295,9 @@ class DocumentsSearchOptions(InvenioSearchOptions):
         ),
         "metadata_events_eventLocation_country_id": (
             facets.metadata_events_eventLocation_country_id
+        ),
+        "metadata_events_eventLocation_country_type": (
+            facets.metadata_events_eventLocation_country_type
         ),
         "metadata_events_eventLocation_country__version": (
             facets.metadata_events_eventLocation_country__version

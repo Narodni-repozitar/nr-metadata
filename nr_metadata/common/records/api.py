@@ -28,77 +28,77 @@ class CommonRecord(Record):
     relations = RelationsField(
         affiliations_item=PIDRelation(
             "metadata.creators.affiliations",
-            keys=["id", "title", "hierarchy"],
+            keys=["id", "title", {"key": "type.id", "target": "type"}, "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
         role=PIDRelation(
             "metadata.contributors.role",
-            keys=["id", "title"],
+            keys=["id", "title", {"key": "type.id", "target": "type"}],
             pid_field=Vocabulary.pid.with_type_ctx("contributor-roles"),
         ),
         affiliations_item_1=PIDRelation(
             "metadata.contributors.affiliations",
-            keys=["id", "title", "hierarchy"],
+            keys=["id", "title", {"key": "type.id", "target": "type"}, "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
         resourceType=PIDRelation(
             "metadata.resourceType",
-            keys=["id", "title"],
+            keys=["id", "title", {"key": "type.id", "target": "type"}],
             pid_field=Vocabulary.pid.with_type_ctx("resource-types"),
         ),
         subjectCategories_item=PIDRelation(
             "metadata.subjectCategories",
-            keys=["id", "title"],
+            keys=["id", "title", {"key": "type.id", "target": "type"}],
             pid_field=Vocabulary.pid.with_type_ctx("subject-categories"),
         ),
         languages_item=PIDRelation(
             "metadata.languages",
-            keys=["id", "title"],
+            keys=["id", "title", {"key": "type.id", "target": "type"}],
             pid_field=Vocabulary.pid.with_type_ctx("languages"),
         ),
         rights_item=PIDRelation(
             "metadata.rights",
-            keys=["id", "title"],
+            keys=["id", "title", {"key": "type.id", "target": "type"}],
             pid_field=Vocabulary.pid.with_type_ctx("licenses"),
         ),
         accessRights=PIDRelation(
             "metadata.accessRights",
-            keys=["id", "title"],
+            keys=["id", "title", {"key": "type.id", "target": "type"}],
             pid_field=Vocabulary.pid.with_type_ctx("access-rights"),
         ),
         affiliations_item_2=PIDRelation(
             "metadata.relatedItems.itemCreators.affiliations",
-            keys=["id", "title", "hierarchy"],
+            keys=["id", "title", {"key": "type.id", "target": "type"}, "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
         role_1=PIDRelation(
             "metadata.relatedItems.itemContributors.role",
-            keys=["id", "title"],
+            keys=["id", "title", {"key": "type.id", "target": "type"}],
             pid_field=Vocabulary.pid.with_type_ctx("contributor-roles"),
         ),
         affiliations_item_3=PIDRelation(
             "metadata.relatedItems.itemContributors.affiliations",
-            keys=["id", "title", "hierarchy"],
+            keys=["id", "title", {"key": "type.id", "target": "type"}, "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
         itemRelationType=PIDRelation(
             "metadata.relatedItems.itemRelationType",
-            keys=["id", "title"],
+            keys=["id", "title", {"key": "type.id", "target": "type"}],
             pid_field=Vocabulary.pid.with_type_ctx("item-relation-types"),
         ),
         itemResourceType=PIDRelation(
             "metadata.relatedItems.itemResourceType",
-            keys=["id", "title"],
+            keys=["id", "title", {"key": "type.id", "target": "type"}],
             pid_field=Vocabulary.pid.with_type_ctx("resource-types"),
         ),
         funder=PIDRelation(
             "metadata.fundingReferences.funder",
-            keys=["id", "title"],
+            keys=["id", "title", {"key": "type.id", "target": "type"}],
             pid_field=Vocabulary.pid.with_type_ctx("funders"),
         ),
         country=PIDRelation(
             "metadata.events.eventLocation.country",
-            keys=["id", "title"],
+            keys=["id", "title", {"key": "type.id", "target": "type"}],
             pid_field=Vocabulary.pid.with_type_ctx("countries"),
         ),
     )

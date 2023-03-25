@@ -38,6 +38,7 @@ class NRDegreeGrantorSchema(ma.Schema):
 
     _id = ma_fields.String(data_key="id", attribute="id")
     title = i18n_strings
+    type = ma_fields.String()
     hierarchy = ma_fields.Nested(lambda: HierarchySchema())
     _version = ma_fields.String(data_key="@v", attribute="@v")
 
@@ -104,5 +105,3 @@ class NRDocumentRecordSchema(InvenioBaseRecordSchema):
     """NRDocumentRecordSchema schema."""
 
     metadata = ma_fields.Nested(lambda: NRDocumentMetadataSchema())
-    created = ma_fields.String(validate=[validate_date("%Y-%m-%d")], dump_only=True)
-    updated = ma_fields.String(validate=[validate_date("%Y-%m-%d")], dump_only=True)

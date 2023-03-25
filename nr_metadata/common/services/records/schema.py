@@ -9,7 +9,6 @@ from marshmallow import fields as ma_fields
 from marshmallow import validate as ma_validate
 from marshmallow_utils.fields import edtfdatestring as mu_fields_edtf
 from oarepo_runtime.i18n.schema import I18nStrField, MultilingualField
-from oarepo_runtime.validation import validate_date
 from oarepo_vocabularies.services.schemas import HierarchySchema
 
 from nr_metadata.schema.identifiers import (
@@ -31,6 +30,7 @@ class NRAffiliationVocabularySchema(ma.Schema):
 
     _id = ma_fields.String(data_key="id", attribute="id")
     title = i18n_strings
+    type = ma_fields.String()
     hierarchy = ma_fields.Nested(lambda: HierarchySchema())
     _version = ma_fields.String(data_key="@v", attribute="@v")
 
@@ -53,6 +53,7 @@ class NRAuthorityRoleVocabularySchema(ma.Schema):
 
     _id = ma_fields.String(data_key="id", attribute="id")
     title = i18n_strings
+    type = ma_fields.String()
     _version = ma_fields.String(data_key="@v", attribute="@v")
 
 
@@ -75,6 +76,7 @@ class NRResourceTypeVocabularySchema(ma.Schema):
 
     _id = ma_fields.String(data_key="id", attribute="id")
     title = i18n_strings
+    type = ma_fields.String()
     _version = ma_fields.String(data_key="@v", attribute="@v")
 
 
@@ -92,6 +94,7 @@ class NRSubjectCategoryVocabularySchema(ma.Schema):
 
     _id = ma_fields.String(data_key="id", attribute="id")
     title = i18n_strings
+    type = ma_fields.String()
     _version = ma_fields.String(data_key="@v", attribute="@v")
 
 
@@ -100,6 +103,7 @@ class NRLanguageVocabularySchema(ma.Schema):
 
     _id = ma_fields.String(data_key="id", attribute="id")
     title = i18n_strings
+    type = ma_fields.String()
     _version = ma_fields.String(data_key="@v", attribute="@v")
 
 
@@ -108,6 +112,7 @@ class NRLicenseVocabularySchema(ma.Schema):
 
     _id = ma_fields.String(data_key="id", attribute="id")
     title = i18n_strings
+    type = ma_fields.String()
     _version = ma_fields.String(data_key="@v", attribute="@v")
 
 
@@ -116,6 +121,7 @@ class NRAccessRightsVocabularySchema(ma.Schema):
 
     _id = ma_fields.String(data_key="id", attribute="id")
     title = i18n_strings
+    type = ma_fields.String()
     _version = ma_fields.String(data_key="@v", attribute="@v")
 
 
@@ -124,6 +130,7 @@ class NRItemRelationTypeVocabularySchema(ma.Schema):
 
     _id = ma_fields.String(data_key="id", attribute="id")
     title = i18n_strings
+    type = ma_fields.String()
     _version = ma_fields.String(data_key="@v", attribute="@v")
 
 
@@ -150,6 +157,7 @@ class NRFunderVocabularySchema(ma.Schema):
 
     _id = ma_fields.String(data_key="id", attribute="id")
     title = i18n_strings
+    type = ma_fields.String()
     _version = ma_fields.String(data_key="@v", attribute="@v")
 
 
@@ -199,6 +207,7 @@ class NRCountryVocabularySchema(ma.Schema):
 
     _id = ma_fields.String(data_key="id", attribute="id")
     title = i18n_strings
+    type = ma_fields.String()
     _version = ma_fields.String(data_key="@v", attribute="@v")
 
 
@@ -271,5 +280,3 @@ class NRCommonRecordSchema(InvenioBaseRecordSchema):
     """NRCommonRecordSchema schema."""
 
     metadata = ma_fields.Nested(lambda: NRCommonMetadataSchema())
-    created = ma_fields.String(validate=[validate_date("%Y-%m-%d")], dump_only=True)
-    updated = ma_fields.String(validate=[validate_date("%Y-%m-%d")], dump_only=True)

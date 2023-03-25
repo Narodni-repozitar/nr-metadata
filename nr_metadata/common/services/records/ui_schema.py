@@ -27,6 +27,7 @@ class NRAffiliationVocabularyUISchema(ma.Schema):
 
     _id = ma_fields.String(data_key="id", attribute="id")
     title = I18nStrUIField()
+    type = ma_fields.String()
     hierarchy = ma_fields.Nested(lambda: HierarchyUISchema())
     _version = ma_fields.String(data_key="@v", attribute="@v")
 
@@ -49,6 +50,7 @@ class NRAuthorityRoleVocabularyUISchema(ma.Schema):
 
     _id = ma_fields.String(data_key="id", attribute="id")
     title = I18nStrUIField()
+    type = ma_fields.String()
     _version = ma_fields.String(data_key="@v", attribute="@v")
 
 
@@ -71,6 +73,7 @@ class NRResourceTypeVocabularyUISchema(ma.Schema):
 
     _id = ma_fields.String(data_key="id", attribute="id")
     title = I18nStrUIField()
+    type = ma_fields.String()
     _version = ma_fields.String(data_key="@v", attribute="@v")
 
 
@@ -88,6 +91,7 @@ class NRSubjectCategoryVocabularyUISchema(ma.Schema):
 
     _id = ma_fields.String(data_key="id", attribute="id")
     title = I18nStrUIField()
+    type = ma_fields.String()
     _version = ma_fields.String(data_key="@v", attribute="@v")
 
 
@@ -96,6 +100,7 @@ class NRLanguageVocabularyUISchema(ma.Schema):
 
     _id = ma_fields.String(data_key="id", attribute="id")
     title = I18nStrUIField()
+    type = ma_fields.String()
     _version = ma_fields.String(data_key="@v", attribute="@v")
 
 
@@ -104,6 +109,7 @@ class NRLicenseVocabularyUISchema(ma.Schema):
 
     _id = ma_fields.String(data_key="id", attribute="id")
     title = I18nStrUIField()
+    type = ma_fields.String()
     _version = ma_fields.String(data_key="@v", attribute="@v")
 
 
@@ -112,6 +118,7 @@ class NRAccessRightsVocabularyUISchema(ma.Schema):
 
     _id = ma_fields.String(data_key="id", attribute="id")
     title = I18nStrUIField()
+    type = ma_fields.String()
     _version = ma_fields.String(data_key="@v", attribute="@v")
 
 
@@ -120,6 +127,7 @@ class NRItemRelationTypeVocabularyUISchema(ma.Schema):
 
     _id = ma_fields.String(data_key="id", attribute="id")
     title = I18nStrUIField()
+    type = ma_fields.String()
     _version = ma_fields.String(data_key="@v", attribute="@v")
 
 
@@ -146,6 +154,7 @@ class NRFunderVocabularyUISchema(ma.Schema):
 
     _id = ma_fields.String(data_key="id", attribute="id")
     title = I18nStrUIField()
+    type = ma_fields.String()
     _version = ma_fields.String(data_key="@v", attribute="@v")
 
 
@@ -191,6 +200,7 @@ class NRCountryVocabularyUISchema(ma.Schema):
 
     _id = ma_fields.String(data_key="id", attribute="id")
     title = I18nStrUIField()
+    type = ma_fields.String()
     _version = ma_fields.String(data_key="@v", attribute="@v")
 
 
@@ -253,7 +263,7 @@ class NRCommonMetadataUISchema(ma.Schema):
     events = ma_fields.List(ma_fields.Nested(lambda: NREventUISchema()))
 
 
-class NRCommonRecordUISchema(ma.Schema):
+class NRCommonRecordUISchema(InvenioUISchema):
     """NRCommonRecordUISchema schema."""
 
     metadata = ma_fields.Nested(lambda: NRCommonMetadataUISchema())
