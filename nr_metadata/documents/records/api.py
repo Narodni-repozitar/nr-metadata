@@ -14,7 +14,7 @@ from nr_metadata.documents.records.multilingual_dumper import MultilingualDumper
 class DocumentsRecord(Record):
     model_cls = DocumentsMetadata
 
-    schema = ConstantField("$schema", "http://localhost/schemas/documents-1.0.0.json")
+    schema = ConstantField("$schema", "local://documents-1.0.0.json")
 
     index = IndexField("documents-documents-1.0.0")
 

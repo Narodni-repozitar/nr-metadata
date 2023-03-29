@@ -14,7 +14,14 @@ class MultilingualDumper(SearchDumperExt):
     """DocumentsRecord search dumper."""
 
     def dump(self, record, data):
-        paths = []
+        paths = [
+            "/metadata/additionalTitles/title",
+            "/metadata/subjects/subject",
+            "/metadata/abstract",
+            "/metadata/methods",
+            "/metadata/technicalInfo",
+            "/metadata/accessibility",
+        ]
         SUPPORTED_LANGS = ["cs", "en"]
 
         for path in paths:
@@ -44,7 +51,14 @@ class MultilingualDumper(SearchDumperExt):
         return data
 
     def load(self, record, data):
-        paths = []
+        paths = [
+            "/metadata/additionalTitles/title",
+            "/metadata/subjects/subject",
+            "/metadata/abstract",
+            "/metadata/methods",
+            "/metadata/technicalInfo",
+            "/metadata/accessibility",
+        ]
         SUPPORTED_LANGS = ["cs", "en"]
         for path in paths:
             record2 = record

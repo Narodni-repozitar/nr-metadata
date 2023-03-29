@@ -23,12 +23,12 @@
                                     },
                                     "title": {
                                         "type": "object",
+                                        "dynamic": true,
                                         "properties": {
                                             "en": {
                                                 "type": "search_as_you_type"
                                             }
                                         },
-                                        "dynamic": true,
                                         "enabled": false
                                     },
                                     "type": {
@@ -79,7 +79,7 @@
                     "additionalTitles": {
                         "properties": {
                             "title": {
-                                "type": "object",
+                                "type": "nested",
                                 "properties": {
                                     "lang": {
                                         "type": "keyword"
@@ -131,12 +131,12 @@
                                     },
                                     "title": {
                                         "type": "object",
+                                        "dynamic": true,
                                         "properties": {
                                             "en": {
                                                 "type": "search_as_you_type"
                                             }
                                         },
-                                        "dynamic": true,
                                         "enabled": false
                                     },
                                     "type": {
@@ -201,12 +201,12 @@
                                     },
                                     "title": {
                                         "type": "object",
+                                        "dynamic": true,
                                         "properties": {
                                             "en": {
                                                 "type": "search_as_you_type"
                                             }
                                         },
-                                        "dynamic": true,
                                         "enabled": false
                                     },
                                     "type": {
@@ -230,12 +230,12 @@
                                     },
                                     "title": {
                                         "type": "object",
+                                        "dynamic": true,
                                         "properties": {
                                             "en": {
                                                 "type": "search_as_you_type"
                                             }
                                         },
-                                        "dynamic": true,
                                         "enabled": false
                                     },
                                     "type": {
@@ -298,12 +298,12 @@
                             },
                             "title": {
                                 "type": "object",
+                                "dynamic": true,
                                 "properties": {
                                     "en": {
                                         "type": "search_as_you_type"
                                     }
                                 },
-                                "dynamic": true,
                                 "enabled": false
                             },
                             "type": {
@@ -327,7 +327,7 @@
                                 "type": "keyword"
                             },
                             "subject": {
-                                "type": "object",
+                                "type": "nested",
                                 "properties": {
                                     "lang": {
                                         "type": "keyword"
@@ -383,12 +383,12 @@
                             },
                             "title": {
                                 "type": "object",
+                                "dynamic": true,
                                 "properties": {
                                     "en": {
                                         "type": "search_as_you_type"
                                     }
                                 },
-                                "dynamic": true,
                                 "enabled": false
                             },
                             "type": {
@@ -412,12 +412,12 @@
                             },
                             "title": {
                                 "type": "object",
+                                "dynamic": true,
                                 "properties": {
                                     "en": {
                                         "type": "search_as_you_type"
                                     }
                                 },
-                                "dynamic": true,
                                 "enabled": false
                             },
                             "type": {
@@ -433,7 +433,7 @@
                         "type": "text"
                     },
                     "abstract": {
-                        "type": "object",
+                        "type": "nested",
                         "properties": {
                             "lang": {
                                 "type": "keyword"
@@ -466,7 +466,7 @@
                         }
                     },
                     "methods": {
-                        "type": "object",
+                        "type": "nested",
                         "properties": {
                             "lang": {
                                 "type": "keyword"
@@ -499,7 +499,7 @@
                         }
                     },
                     "technicalInfo": {
-                        "type": "object",
+                        "type": "nested",
                         "properties": {
                             "lang": {
                                 "type": "keyword"
@@ -543,12 +543,12 @@
                             },
                             "title": {
                                 "type": "object",
+                                "dynamic": true,
                                 "properties": {
                                     "en": {
                                         "type": "search_as_you_type"
                                     }
                                 },
-                                "dynamic": true,
                                 "enabled": false
                             },
                             "type": {
@@ -572,12 +572,12 @@
                             },
                             "title": {
                                 "type": "object",
+                                "dynamic": true,
                                 "properties": {
                                     "en": {
                                         "type": "search_as_you_type"
                                     }
                                 },
-                                "dynamic": true,
                                 "enabled": false
                             },
                             "type": {
@@ -608,12 +608,12 @@
                                             },
                                             "title": {
                                                 "type": "object",
+                                                "dynamic": true,
                                                 "properties": {
                                                     "en": {
                                                         "type": "search_as_you_type"
                                                     }
                                                 },
-                                                "dynamic": true,
                                                 "enabled": false
                                             },
                                             "type": {
@@ -678,12 +678,12 @@
                                             },
                                             "title": {
                                                 "type": "object",
+                                                "dynamic": true,
                                                 "properties": {
                                                     "en": {
                                                         "type": "search_as_you_type"
                                                     }
                                                 },
-                                                "dynamic": true,
                                                 "enabled": false
                                             },
                                             "type": {
@@ -707,12 +707,12 @@
                                             },
                                             "title": {
                                                 "type": "object",
+                                                "dynamic": true,
                                                 "properties": {
                                                     "en": {
                                                         "type": "search_as_you_type"
                                                     }
                                                 },
-                                                "dynamic": true,
                                                 "enabled": false
                                             },
                                             "type": {
@@ -807,12 +807,12 @@
                                     },
                                     "title": {
                                         "type": "object",
+                                        "dynamic": true,
                                         "properties": {
                                             "en": {
                                                 "type": "search_as_you_type"
                                             }
                                         },
-                                        "dynamic": true,
                                         "enabled": false
                                     },
                                     "type": {
@@ -836,12 +836,12 @@
                                     },
                                     "title": {
                                         "type": "object",
+                                        "dynamic": true,
                                         "properties": {
                                             "en": {
                                                 "type": "search_as_you_type"
                                             }
                                         },
-                                        "dynamic": true,
                                         "enabled": false
                                     },
                                     "type": {
@@ -879,12 +879,12 @@
                                     },
                                     "title": {
                                         "type": "object",
+                                        "dynamic": true,
                                         "properties": {
                                             "en": {
                                                 "type": "search_as_you_type"
                                             }
                                         },
-                                        "dynamic": true,
                                         "enabled": false
                                     },
                                     "type": {
@@ -922,7 +922,7 @@
                         "type": "object"
                     },
                     "accessibility": {
-                        "type": "object",
+                        "type": "nested",
                         "properties": {
                             "lang": {
                                 "type": "keyword"
@@ -1029,12 +1029,12 @@
                                             },
                                             "title": {
                                                 "type": "object",
+                                                "dynamic": true,
                                                 "properties": {
                                                     "en": {
                                                         "type": "search_as_you_type"
                                                     }
                                                 },
-                                                "dynamic": true,
                                                 "enabled": false
                                             },
                                             "type": {

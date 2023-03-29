@@ -14,7 +14,7 @@ from nr_metadata.common.records.multilingual_dumper import MultilingualDumper
 class CommonRecord(Record):
     model_cls = CommonMetadata
 
-    schema = ConstantField("$schema", "http://localhost/schemas/common-1.0.0.json")
+    schema = ConstantField("$schema", "local://common-1.0.0.json")
 
     index = IndexField("common-common-1.0.0")
 

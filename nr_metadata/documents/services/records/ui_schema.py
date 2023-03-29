@@ -7,7 +7,10 @@ from oarepo_runtime.i18n.ui_schema import (
 )
 from oarepo_runtime.ui import marshmallow as l10n
 from oarepo_runtime.ui.marshmallow import InvenioUISchema
-from oarepo_vocabularies.services.ui_schemas import HierarchyUISchema, I18nStrUIField
+from oarepo_vocabularies.services.ui_schemas import (
+    HierarchyUISchema,
+    VocabularyI18nStrUIField,
+)
 
 from nr_metadata.common.services.records.ui_schema import (
     AdditionalTitlesUISchema,
@@ -36,7 +39,7 @@ class NRDegreeGrantorUISchema(ma.Schema):
     """NRDegreeGrantorUISchema schema."""
 
     _id = ma_fields.String(data_key="id", attribute="id")
-    title = I18nStrUIField()
+    title = VocabularyI18nStrUIField()
     type = ma_fields.String()
     hierarchy = ma_fields.Nested(lambda: HierarchyUISchema())
     _version = ma_fields.String(data_key="@v", attribute="@v")
