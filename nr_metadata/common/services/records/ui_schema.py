@@ -17,6 +17,7 @@ from nr_metadata.ui_schema.identifiers import (
     NRObjectIdentifierUISchema,
     NRSystemIdentifierUISchema,
 )
+from nr_metadata.ui_schema.subjects import NRSubjectListField
 
 
 class AdditionalTitlesUISchema(ma.Schema):
@@ -85,7 +86,7 @@ class NRSubjectUISchema(ma.Schema):
     """NRSubjectUISchema schema."""
 
     subjectScheme = ma_fields.String()
-    subject = MultilingualLocalizedUIField(I18nStrUIField())
+    subject = MultilingualUIField(I18nStrUIField())
     valueURI = ma_fields.String()
     classificationCode = ma_fields.String()
 
@@ -236,7 +237,7 @@ class NRCommonMetadataUISchema(ma.Schema):
     resourceType = ma_fields.Nested(lambda: NRResourceTypeVocabularyUISchema())
     dateAvailable = l10n.LocalizedEDTF()
     dateModified = l10n.LocalizedEDTF()
-    subjects = ma_fields.List(ma_fields.Nested(lambda: NRSubjectUISchema()))
+    subjects = NRSubjectListField(ma_fields.Nested(lambda: NRSubjectUISchema()))
     publishers = ma_fields.List(ma_fields.String())
     subjectCategories = ma_fields.List(
         ma_fields.Nested(lambda: NRSubjectCategoryVocabularyUISchema())

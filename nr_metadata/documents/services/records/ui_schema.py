@@ -33,6 +33,7 @@ from nr_metadata.ui_schema.identifiers import (
     NRObjectIdentifierUISchema,
     NRSystemIdentifierUISchema,
 )
+from nr_metadata.ui_schema.subjects import NRSubjectListField
 
 
 class NRDegreeGrantorUISchema(ma.Schema):
@@ -68,7 +69,7 @@ class NRDocumentMetadataUISchema(ma.Schema):
     resourceType = ma_fields.Nested(lambda: NRResourceTypeVocabularyUISchema())
     dateAvailable = l10n.LocalizedEDTF()
     dateModified = l10n.LocalizedEDTF()
-    subjects = ma_fields.List(ma_fields.Nested(lambda: NRSubjectUISchema()))
+    subjects = NRSubjectListField(ma_fields.Nested(lambda: NRSubjectUISchema()))
     publishers = ma_fields.List(ma_fields.String())
     subjectCategories = ma_fields.List(
         ma_fields.Nested(lambda: NRSubjectCategoryVocabularyUISchema())
