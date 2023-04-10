@@ -281,13 +281,13 @@ msgstr ""
 msgid "metadata/creators/affiliations/@v.hint"
 msgstr ""
 
-msgid "metadata/creators/nameType.label"
-msgstr "Type"
-
 msgid "metadata/creators/nameType.hint"
 msgstr ""
 "It is possible to designate a person or an institution as the "
 "creator/contributor."
+
+msgid "metadata/creators/nameType.label"
+msgstr "Type"
 
 msgid "metadata/creators/nameType.help"
 msgstr ""
@@ -319,13 +319,13 @@ msgstr ""
 msgid "identifier.hint"
 msgstr ""
 
-msgid "identifier_type.label"
-msgstr "Identifier type"
-
 msgid "identifier_type.hint"
 msgstr ""
 "We recommend providing at least one of the identifier types.\n"
 "If you need to expand the range of identifier types, contact us at support@narodni-repozitar.cz.\n"
+
+msgid "identifier_type.label"
+msgstr "Identifier type"
 
 msgid "identifier_type.help"
 msgstr ""
@@ -474,13 +474,13 @@ msgstr ""
 msgid "metadata/contributors/affiliations/@v.hint"
 msgstr ""
 
-msgid "metadata/contributors/nameType.label"
-msgstr "Type"
-
 msgid "metadata/contributors/nameType.hint"
 msgstr ""
 "It is possible to designate a person or an institution as the "
 "creator/contributor."
+
+msgid "metadata/contributors/nameType.label"
+msgstr "Type"
 
 msgid "metadata/contributors/nameType.help"
 msgstr ""
@@ -1028,13 +1028,13 @@ msgstr ""
 msgid "metadata/relatedItems/itemCreators/affiliations/@v.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/nameType.label"
-msgstr "Type"
-
 msgid "metadata/relatedItems/itemCreators/nameType.hint"
 msgstr ""
 "It is possible to designate a person or an institution as the "
 "creator/contributor."
+
+msgid "metadata/relatedItems/itemCreators/nameType.label"
+msgstr "Type"
 
 msgid "metadata/relatedItems/itemCreators/nameType.help"
 msgstr ""
@@ -1213,13 +1213,13 @@ msgstr ""
 msgid "metadata/relatedItems/itemContributors/affiliations/@v.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/nameType.label"
-msgstr "Type"
-
 msgid "metadata/relatedItems/itemContributors/nameType.hint"
 msgstr ""
 "It is possible to designate a person or an institution as the "
 "creator/contributor."
+
+msgid "metadata/relatedItems/itemContributors/nameType.label"
+msgstr "Type"
 
 msgid "metadata/relatedItems/itemContributors/nameType.help"
 msgstr ""

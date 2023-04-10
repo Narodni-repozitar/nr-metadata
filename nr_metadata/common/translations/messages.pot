@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2023-04-10T14:32:39.860915\n"
-"PO-Revision-Date: 2023-04-10T14:32:39.860921\n"
+"POT-Creation-Date: 2023-04-10T19:36:48.428462\n"
+"PO-Revision-Date: 2023-04-10T19:36:48.428471\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -182,10 +182,10 @@ msgstr ""
 msgid "metadata/creators/affiliations/@v.hint"
 msgstr ""
 
-msgid "metadata/creators/nameType.label"
+msgid "metadata/creators/nameType.hint"
 msgstr ""
 
-msgid "metadata/creators/nameType.hint"
+msgid "metadata/creators/nameType.label"
 msgstr ""
 
 msgid "metadata/creators/nameType.help"
@@ -224,10 +224,10 @@ msgstr ""
 msgid "identifier.hint"
 msgstr ""
 
-msgid "identifier_type.label"
+msgid "identifier_type.hint"
 msgstr ""
 
-msgid "identifier_type.hint"
+msgid "identifier_type.label"
 msgstr ""
 
 msgid "identifier_type.help"
@@ -407,10 +407,10 @@ msgstr ""
 msgid "metadata/contributors/affiliations/@v.hint"
 msgstr ""
 
-msgid "metadata/contributors/nameType.label"
+msgid "metadata/contributors/nameType.hint"
 msgstr ""
 
-msgid "metadata/contributors/nameType.hint"
+msgid "metadata/contributors/nameType.label"
 msgstr ""
 
 msgid "metadata/contributors/nameType.help"
@@ -965,10 +965,10 @@ msgstr ""
 msgid "metadata/relatedItems/itemCreators/affiliations/@v.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/nameType.label"
+msgid "metadata/relatedItems/itemCreators/nameType.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/nameType.hint"
+msgid "metadata/relatedItems/itemCreators/nameType.label"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/nameType.help"
@@ -1154,10 +1154,10 @@ msgstr ""
 msgid "metadata/relatedItems/itemContributors/affiliations/@v.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/nameType.label"
+msgid "metadata/relatedItems/itemContributors/nameType.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/nameType.hint"
+msgid "metadata/relatedItems/itemContributors/nameType.label"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/nameType.help"

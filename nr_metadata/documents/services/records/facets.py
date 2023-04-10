@@ -8,6 +8,7 @@ from oarepo_runtime.facets.date import (
     EDTFFacet,
     EDTFIntervalFacet,
 )
+from oarepo_runtime.facets.enum import EnumTermsFacet
 from oarepo_runtime.facets.nested_facet import NestedLabeledFacet
 
 metadata_thesis_dateDefended = DateFacet(
@@ -99,7 +100,7 @@ metadata_additionalTitles_title_value_keyword = NestedLabeledFacet(
 )
 
 
-metadata_additionalTitles_titleType = TermsFacet(
+metadata_additionalTitles_titleType = EnumTermsFacet(
     field="metadata.additionalTitles.titleType",
     label=_("metadata/additionalTitles/titleType.label"),
 )
@@ -141,7 +142,7 @@ metadata_creators_affiliations__version = TermsFacet(
 )
 
 
-metadata_creators_nameType = TermsFacet(
+metadata_creators_nameType = EnumTermsFacet(
     field="metadata.creators.nameType", label=_("metadata/creators/nameType.label")
 )
 
@@ -157,7 +158,7 @@ metadata_creators_authorityIdentifiers_identifier = TermsFacet(
 )
 
 
-metadata_creators_authorityIdentifiers_scheme = TermsFacet(
+metadata_creators_authorityIdentifiers_scheme = EnumTermsFacet(
     field="metadata.creators.authorityIdentifiers.scheme",
     label=_("metadata/creators/authorityIdentifiers/scheme.label"),
 )
@@ -217,7 +218,7 @@ metadata_contributors_affiliations__version = TermsFacet(
 )
 
 
-metadata_contributors_nameType = TermsFacet(
+metadata_contributors_nameType = EnumTermsFacet(
     field="metadata.contributors.nameType",
     label=_("metadata/contributors/nameType.label"),
 )
@@ -235,7 +236,7 @@ metadata_contributors_authorityIdentifiers_identifier = TermsFacet(
 )
 
 
-metadata_contributors_authorityIdentifiers_scheme = TermsFacet(
+metadata_contributors_authorityIdentifiers_scheme = EnumTermsFacet(
     field="metadata.contributors.authorityIdentifiers.scheme",
     label=_("metadata/contributors/authorityIdentifiers/scheme.label"),
 )
@@ -486,7 +487,7 @@ metadata_relatedItems_itemCreators_affiliations__version = TermsFacet(
 )
 
 
-metadata_relatedItems_itemCreators_nameType = TermsFacet(
+metadata_relatedItems_itemCreators_nameType = EnumTermsFacet(
     field="metadata.relatedItems.itemCreators.nameType",
     label=_("metadata/relatedItems/itemCreators/nameType.label"),
 )
@@ -504,7 +505,7 @@ metadata_relatedItems_itemCreators_authorityIdentifiers_identifier = TermsFacet(
 )
 
 
-metadata_relatedItems_itemCreators_authorityIdentifiers_scheme = TermsFacet(
+metadata_relatedItems_itemCreators_authorityIdentifiers_scheme = EnumTermsFacet(
     field="metadata.relatedItems.itemCreators.authorityIdentifiers.scheme",
     label=_("metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.label"),
 )
@@ -570,7 +571,7 @@ metadata_relatedItems_itemContributors_affiliations__version = TermsFacet(
 )
 
 
-metadata_relatedItems_itemContributors_nameType = TermsFacet(
+metadata_relatedItems_itemContributors_nameType = EnumTermsFacet(
     field="metadata.relatedItems.itemContributors.nameType",
     label=_("metadata/relatedItems/itemContributors/nameType.label"),
 )
@@ -590,7 +591,7 @@ metadata_relatedItems_itemContributors_authorityIdentifiers_identifier = TermsFa
 )
 
 
-metadata_relatedItems_itemContributors_authorityIdentifiers_scheme = TermsFacet(
+metadata_relatedItems_itemContributors_authorityIdentifiers_scheme = EnumTermsFacet(
     field="metadata.relatedItems.itemContributors.authorityIdentifiers.scheme",
     label=_("metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.label"),
 )
@@ -602,7 +603,7 @@ metadata_relatedItems_itemPIDs_identifier = TermsFacet(
 )
 
 
-metadata_relatedItems_itemPIDs_scheme = TermsFacet(
+metadata_relatedItems_itemPIDs_scheme = EnumTermsFacet(
     field="metadata.relatedItems.itemPIDs.scheme",
     label=_("metadata/relatedItems/itemPIDs/scheme.label"),
 )
@@ -788,7 +789,7 @@ metadata_objectIdentifiers_identifier = TermsFacet(
 )
 
 
-metadata_objectIdentifiers_scheme = TermsFacet(
+metadata_objectIdentifiers_scheme = EnumTermsFacet(
     field="metadata.objectIdentifiers.scheme",
     label=_("metadata/objectIdentifiers/scheme.label"),
 )
@@ -800,7 +801,7 @@ metadata_systemIdentifiers_identifier = TermsFacet(
 )
 
 
-metadata_systemIdentifiers_scheme = TermsFacet(
+metadata_systemIdentifiers_scheme = EnumTermsFacet(
     field="metadata.systemIdentifiers.scheme",
     label=_("metadata/systemIdentifiers/scheme.label"),
 )
