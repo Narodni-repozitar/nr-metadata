@@ -1,0 +1,120 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"POT-Creation-Date: 2023-04-07T15:58:10.428340\n"
+"PO-Revision-Date: 2023-04-07T15:58:10.428342\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "metadata/additionalTitles/titleType.enum.translatedTitle"
+msgstr "Translated title"
+
+msgid "metadata/additionalTitles/titleType.enum.alternativeTitle"
+msgstr "Alternative title"
+
+msgid "metadata/additionalTitles/titleType.enum.subtitle"
+msgstr "Subtitle"
+
+msgid "metadata/additionalTitles/titleType.enum.other"
+msgstr "Other title"
+
+msgid "metadata/creators/nameType.enum.Organizational"
+msgstr "Organization"
+
+msgid "metadata/creators/nameType.enum.Personal"
+msgstr "Person"
+
+msgid "identifier_type.enum.orcid"
+msgstr "ORCID"
+
+msgid "identifier_type.enum.scopusID"
+msgstr "Scopus ID"
+
+msgid "identifier_type.enum.researcherID"
+msgstr "Researcher ID"
+
+msgid "identifier_type.enum.czenasAutID"
+msgstr "CZENAS ID"
+
+msgid "identifier_type.enum.vedidk"
+msgstr "VEDIDK"
+
+msgid "identifier_type.enum.institutionalID"
+msgstr "Institutional ID"
+
+msgid "identifier_type.enum.ISNI"
+msgstr "ISNI"
+
+msgid "identifier_type.enum.ROR"
+msgstr "ROR"
+
+msgid "identifier_type.enum.ICO"
+msgstr "ICO"
+
+msgid "identifier_type.enum.DOI"
+msgstr "DOI"
+
+msgid "metadata/contributors/nameType.enum.Organizational"
+msgstr "Organization"
+
+msgid "metadata/contributors/nameType.enum.Personal"
+msgstr "Person"
+
+msgid "metadata/relatedItems/itemCreators/nameType.enum.Organizational"
+msgstr "Organization"
+
+msgid "metadata/relatedItems/itemCreators/nameType.enum.Personal"
+msgstr "Person"
+
+msgid "metadata/relatedItems/itemContributors/nameType.enum.Organizational"
+msgstr "Organization"
+
+msgid "metadata/relatedItems/itemContributors/nameType.enum.Personal"
+msgstr "Person"
+
+msgid "metadata/relatedItems/itemPIDs/scheme.enum.DOI"
+msgstr "DOI"
+
+msgid "metadata/relatedItems/itemPIDs/scheme.enum.Handle"
+msgstr "Handle"
+
+msgid "metadata/relatedItems/itemPIDs/scheme.enum.ISBN"
+msgstr "ISBN"
+
+msgid "metadata/relatedItems/itemPIDs/scheme.enum.ISSN"
+msgstr "ISSN"
+
+msgid "metadata/relatedItems/itemPIDs/scheme.enum.RIV"
+msgstr "RIV"
+
+msgid "metadata/objectIdentifiers/scheme.enum.DOI"
+msgstr "DOI"
+
+msgid "metadata/objectIdentifiers/scheme.enum.Handle"
+msgstr "Handle"
+
+msgid "metadata/objectIdentifiers/scheme.enum.ISBN"
+msgstr "ISBN"
+
+msgid "metadata/objectIdentifiers/scheme.enum.ISSN"
+msgstr "ISSN"
+
+msgid "metadata/objectIdentifiers/scheme.enum.RIV"
+msgstr "RIV"
+
+msgid "metadata/systemIdentifiers/scheme.enum.nusl"
+msgstr "NUSL ID"
+
+msgid "metadata/systemIdentifiers/scheme.enum.nuslOAI"
+msgstr "NUSL OAI"
+
+msgid "metadata/systemIdentifiers/scheme.enum.originalRecordOAI"
+msgstr "Original record OAI"
+
+msgid "metadata/systemIdentifiers/scheme.enum.catalogueSysNo"
+msgstr "Catalogue No"
+
+msgid "metadata/systemIdentifiers/scheme.enum.nrOAI"
+msgstr "NR OAI"
