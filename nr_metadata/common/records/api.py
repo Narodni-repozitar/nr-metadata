@@ -11,6 +11,10 @@ from nr_metadata.common.records.models import CommonMetadata
 from nr_metadata.common.records.multilingual_dumper import MultilingualDumper
 
 
+class CommonIdProvider(RecordIdProviderV2):
+    pid_type = "common"
+
+
 class CommonRecord(Record):
     model_cls = CommonMetadata
 
@@ -18,9 +22,7 @@ class CommonRecord(Record):
 
     index = IndexField("common-common-1.0.0")
 
-    pid = PIDField(
-        provider=RecordIdProviderV2, context_cls=PIDFieldContext, create=True
-    )
+    pid = PIDField(provider=CommonIdProvider, context_cls=PIDFieldContext, create=True)
 
     dumper_extensions = [MultilingualDumper()]
     dumper = CommonDumper(extensions=dumper_extensions)

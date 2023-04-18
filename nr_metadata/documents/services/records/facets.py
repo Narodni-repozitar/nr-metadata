@@ -10,6 +10,10 @@ from oarepo_runtime.facets.date import (
 )
 from oarepo_runtime.facets.enum import EnumTermsFacet
 from oarepo_runtime.facets.nested_facet import NestedLabeledFacet
+from oarepo_vocabularies.services.facets import (
+    HierarchyVocabularyFacet,
+    VocabularyFacet,
+)
 
 metadata_thesis_dateDefended = DateFacet(
     field="metadata.thesis.dateDefended", label=_("metadata/thesis/dateDefended.label")
@@ -21,39 +25,10 @@ metadata_thesis_defended = TermsFacet(
 )
 
 
-metadata_thesis_degreeGrantors_id = TermsFacet(
-    field="metadata.thesis.degreeGrantors.id",
-    label=_("metadata/thesis/degreeGrantors/id.label"),
-)
-
-
-metadata_thesis_degreeGrantors_type = TermsFacet(
-    field="metadata.thesis.degreeGrantors.type",
-    label=_("metadata/thesis/degreeGrantors/type.label"),
-)
-
-
-metadata_thesis_degreeGrantors_hierarchy_parent = TermsFacet(
-    field="metadata.thesis.degreeGrantors.hierarchy.parent",
-    label=_("metadata/thesis/degreeGrantors/hierarchy/parent.label"),
-)
-
-
-metadata_thesis_degreeGrantors_hierarchy_level = TermsFacet(
-    field="metadata.thesis.degreeGrantors.hierarchy.level",
-    label=_("metadata/thesis/degreeGrantors/hierarchy/level.label"),
-)
-
-
-metadata_thesis_degreeGrantors_hierarchy_ancestors = TermsFacet(
-    field="metadata.thesis.degreeGrantors.hierarchy.ancestors",
-    label=_("metadata/thesis/degreeGrantors/hierarchy/ancestors.label"),
-)
-
-
-metadata_thesis_degreeGrantors__version = TermsFacet(
-    field="metadata.thesis.degreeGrantors.@v",
-    label=_("metadata/thesis/degreeGrantors/@v.label"),
+metadata_thesis_degreeGrantors = HierarchyVocabularyFacet(
+    field="metadata.thesis.degreeGrantors",
+    label=_("metadata/thesis/degreeGrantors.label"),
+    vocabulary="institutions",
 )
 
 
@@ -106,39 +81,10 @@ metadata_additionalTitles_titleType = EnumTermsFacet(
 )
 
 
-metadata_creators_affiliations_id = TermsFacet(
-    field="metadata.creators.affiliations.id",
-    label=_("metadata/creators/affiliations/id.label"),
-)
-
-
-metadata_creators_affiliations_type = TermsFacet(
-    field="metadata.creators.affiliations.type",
-    label=_("metadata/creators/affiliations/type.label"),
-)
-
-
-metadata_creators_affiliations_hierarchy_parent = TermsFacet(
-    field="metadata.creators.affiliations.hierarchy.parent",
-    label=_("metadata/creators/affiliations/hierarchy/parent.label"),
-)
-
-
-metadata_creators_affiliations_hierarchy_level = TermsFacet(
-    field="metadata.creators.affiliations.hierarchy.level",
-    label=_("metadata/creators/affiliations/hierarchy/level.label"),
-)
-
-
-metadata_creators_affiliations_hierarchy_ancestors = TermsFacet(
-    field="metadata.creators.affiliations.hierarchy.ancestors",
-    label=_("metadata/creators/affiliations/hierarchy/ancestors.label"),
-)
-
-
-metadata_creators_affiliations__version = TermsFacet(
-    field="metadata.creators.affiliations.@v",
-    label=_("metadata/creators/affiliations/@v.label"),
+metadata_creators_affiliations = HierarchyVocabularyFacet(
+    field="metadata.creators.affiliations",
+    label=_("metadata/creators/affiliations.label"),
+    vocabulary="institutions",
 )
 
 
@@ -164,57 +110,17 @@ metadata_creators_authorityIdentifiers_scheme = EnumTermsFacet(
 )
 
 
-metadata_contributors_role_id = TermsFacet(
-    field="metadata.contributors.role.id",
-    label=_("metadata/contributors/role/id.label"),
+metadata_contributors_role = VocabularyFacet(
+    field="metadata.contributors.role",
+    label=_("metadata/contributors/role.label"),
+    vocabulary="contributor-roles",
 )
 
 
-metadata_contributors_role_type = TermsFacet(
-    field="metadata.contributors.role.type",
-    label=_("metadata/contributors/role/type.label"),
-)
-
-
-metadata_contributors_role__version = TermsFacet(
-    field="metadata.contributors.role.@v",
-    label=_("metadata/contributors/role/@v.label"),
-)
-
-
-metadata_contributors_affiliations_id = TermsFacet(
-    field="metadata.contributors.affiliations.id",
-    label=_("metadata/contributors/affiliations/id.label"),
-)
-
-
-metadata_contributors_affiliations_type = TermsFacet(
-    field="metadata.contributors.affiliations.type",
-    label=_("metadata/contributors/affiliations/type.label"),
-)
-
-
-metadata_contributors_affiliations_hierarchy_parent = TermsFacet(
-    field="metadata.contributors.affiliations.hierarchy.parent",
-    label=_("metadata/contributors/affiliations/hierarchy/parent.label"),
-)
-
-
-metadata_contributors_affiliations_hierarchy_level = TermsFacet(
-    field="metadata.contributors.affiliations.hierarchy.level",
-    label=_("metadata/contributors/affiliations/hierarchy/level.label"),
-)
-
-
-metadata_contributors_affiliations_hierarchy_ancestors = TermsFacet(
-    field="metadata.contributors.affiliations.hierarchy.ancestors",
-    label=_("metadata/contributors/affiliations/hierarchy/ancestors.label"),
-)
-
-
-metadata_contributors_affiliations__version = TermsFacet(
-    field="metadata.contributors.affiliations.@v",
-    label=_("metadata/contributors/affiliations/@v.label"),
+metadata_contributors_affiliations = HierarchyVocabularyFacet(
+    field="metadata.contributors.affiliations",
+    label=_("metadata/contributors/affiliations.label"),
+    vocabulary="institutions",
 )
 
 
@@ -242,18 +148,10 @@ metadata_contributors_authorityIdentifiers_scheme = EnumTermsFacet(
 )
 
 
-metadata_resourceType_id = TermsFacet(
-    field="metadata.resourceType.id", label=_("metadata/resourceType/id.label")
-)
-
-
-metadata_resourceType_type = TermsFacet(
-    field="metadata.resourceType.type", label=_("metadata/resourceType/type.label")
-)
-
-
-metadata_resourceType__version = TermsFacet(
-    field="metadata.resourceType.@v", label=_("metadata/resourceType/@v.label")
+metadata_resourceType = VocabularyFacet(
+    field="metadata.resourceType",
+    label=_("metadata/resourceType.label"),
+    vocabulary="resource-types",
 )
 
 
@@ -312,36 +210,17 @@ metadata_subjects_classificationCode = TermsFacet(
 )
 
 
-metadata_subjectCategories_id = TermsFacet(
-    field="metadata.subjectCategories.id",
-    label=_("metadata/subjectCategories/id.label"),
+metadata_subjectCategories = VocabularyFacet(
+    field="metadata.subjectCategories",
+    label=_("metadata/subjectCategories.label"),
+    vocabulary="subject-categories",
 )
 
 
-metadata_subjectCategories_type = TermsFacet(
-    field="metadata.subjectCategories.type",
-    label=_("metadata/subjectCategories/type.label"),
-)
-
-
-metadata_subjectCategories__version = TermsFacet(
-    field="metadata.subjectCategories.@v",
-    label=_("metadata/subjectCategories/@v.label"),
-)
-
-
-metadata_languages_id = TermsFacet(
-    field="metadata.languages.id", label=_("metadata/languages/id.label")
-)
-
-
-metadata_languages_type = TermsFacet(
-    field="metadata.languages.type", label=_("metadata/languages/type.label")
-)
-
-
-metadata_languages__version = TermsFacet(
-    field="metadata.languages.@v", label=_("metadata/languages/@v.label")
+metadata_languages = VocabularyFacet(
+    field="metadata.languages",
+    label=_("metadata/languages.label"),
+    vocabulary="languages",
 )
 
 
@@ -419,71 +298,22 @@ metadata_technicalInfo_value_keyword = NestedLabeledFacet(
 )
 
 
-metadata_rights_id = TermsFacet(
-    field="metadata.rights.id", label=_("metadata/rights/id.label")
+metadata_rights = VocabularyFacet(
+    field="metadata.rights", label=_("metadata/rights.label"), vocabulary="licenses"
 )
 
 
-metadata_rights_type = TermsFacet(
-    field="metadata.rights.type", label=_("metadata/rights/type.label")
+metadata_accessRights = VocabularyFacet(
+    field="metadata.accessRights",
+    label=_("metadata/accessRights.label"),
+    vocabulary="access-rights",
 )
 
 
-metadata_rights__version = TermsFacet(
-    field="metadata.rights.@v", label=_("metadata/rights/@v.label")
-)
-
-
-metadata_accessRights_id = TermsFacet(
-    field="metadata.accessRights.id", label=_("metadata/accessRights/id.label")
-)
-
-
-metadata_accessRights_type = TermsFacet(
-    field="metadata.accessRights.type", label=_("metadata/accessRights/type.label")
-)
-
-
-metadata_accessRights__version = TermsFacet(
-    field="metadata.accessRights.@v", label=_("metadata/accessRights/@v.label")
-)
-
-
-metadata_relatedItems_itemCreators_affiliations_id = TermsFacet(
-    field="metadata.relatedItems.itemCreators.affiliations.id",
-    label=_("metadata/relatedItems/itemCreators/affiliations/id.label"),
-)
-
-
-metadata_relatedItems_itemCreators_affiliations_type = TermsFacet(
-    field="metadata.relatedItems.itemCreators.affiliations.type",
-    label=_("metadata/relatedItems/itemCreators/affiliations/type.label"),
-)
-
-
-metadata_relatedItems_itemCreators_affiliations_hierarchy_parent = TermsFacet(
-    field="metadata.relatedItems.itemCreators.affiliations.hierarchy.parent",
-    label=_("metadata/relatedItems/itemCreators/affiliations/hierarchy/parent.label"),
-)
-
-
-metadata_relatedItems_itemCreators_affiliations_hierarchy_level = TermsFacet(
-    field="metadata.relatedItems.itemCreators.affiliations.hierarchy.level",
-    label=_("metadata/relatedItems/itemCreators/affiliations/hierarchy/level.label"),
-)
-
-
-metadata_relatedItems_itemCreators_affiliations_hierarchy_ancestors = TermsFacet(
-    field="metadata.relatedItems.itemCreators.affiliations.hierarchy.ancestors",
-    label=_(
-        "metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.label"
-    ),
-)
-
-
-metadata_relatedItems_itemCreators_affiliations__version = TermsFacet(
-    field="metadata.relatedItems.itemCreators.affiliations.@v",
-    label=_("metadata/relatedItems/itemCreators/affiliations/@v.label"),
+metadata_relatedItems_itemCreators_affiliations = HierarchyVocabularyFacet(
+    field="metadata.relatedItems.itemCreators.affiliations",
+    label=_("metadata/relatedItems/itemCreators/affiliations.label"),
+    vocabulary="institutions",
 )
 
 
@@ -511,63 +341,17 @@ metadata_relatedItems_itemCreators_authorityIdentifiers_scheme = EnumTermsFacet(
 )
 
 
-metadata_relatedItems_itemContributors_role_id = TermsFacet(
-    field="metadata.relatedItems.itemContributors.role.id",
-    label=_("metadata/relatedItems/itemContributors/role/id.label"),
+metadata_relatedItems_itemContributors_role = VocabularyFacet(
+    field="metadata.relatedItems.itemContributors.role",
+    label=_("metadata/relatedItems/itemContributors/role.label"),
+    vocabulary="contributor-roles",
 )
 
 
-metadata_relatedItems_itemContributors_role_type = TermsFacet(
-    field="metadata.relatedItems.itemContributors.role.type",
-    label=_("metadata/relatedItems/itemContributors/role/type.label"),
-)
-
-
-metadata_relatedItems_itemContributors_role__version = TermsFacet(
-    field="metadata.relatedItems.itemContributors.role.@v",
-    label=_("metadata/relatedItems/itemContributors/role/@v.label"),
-)
-
-
-metadata_relatedItems_itemContributors_affiliations_id = TermsFacet(
-    field="metadata.relatedItems.itemContributors.affiliations.id",
-    label=_("metadata/relatedItems/itemContributors/affiliations/id.label"),
-)
-
-
-metadata_relatedItems_itemContributors_affiliations_type = TermsFacet(
-    field="metadata.relatedItems.itemContributors.affiliations.type",
-    label=_("metadata/relatedItems/itemContributors/affiliations/type.label"),
-)
-
-
-metadata_relatedItems_itemContributors_affiliations_hierarchy_parent = TermsFacet(
-    field="metadata.relatedItems.itemContributors.affiliations.hierarchy.parent",
-    label=_(
-        "metadata/relatedItems/itemContributors/affiliations/hierarchy/parent.label"
-    ),
-)
-
-
-metadata_relatedItems_itemContributors_affiliations_hierarchy_level = TermsFacet(
-    field="metadata.relatedItems.itemContributors.affiliations.hierarchy.level",
-    label=_(
-        "metadata/relatedItems/itemContributors/affiliations/hierarchy/level.label"
-    ),
-)
-
-
-metadata_relatedItems_itemContributors_affiliations_hierarchy_ancestors = TermsFacet(
-    field="metadata.relatedItems.itemContributors.affiliations.hierarchy.ancestors",
-    label=_(
-        "metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.label"
-    ),
-)
-
-
-metadata_relatedItems_itemContributors_affiliations__version = TermsFacet(
-    field="metadata.relatedItems.itemContributors.affiliations.@v",
-    label=_("metadata/relatedItems/itemContributors/affiliations/@v.label"),
+metadata_relatedItems_itemContributors_affiliations = HierarchyVocabularyFacet(
+    field="metadata.relatedItems.itemContributors.affiliations",
+    label=_("metadata/relatedItems/itemContributors/affiliations.label"),
+    vocabulary="institutions",
 )
 
 
@@ -651,39 +435,17 @@ metadata_relatedItems_itemPublisher = TermsFacet(
 )
 
 
-metadata_relatedItems_itemRelationType_id = TermsFacet(
-    field="metadata.relatedItems.itemRelationType.id",
-    label=_("metadata/relatedItems/itemRelationType/id.label"),
+metadata_relatedItems_itemRelationType = VocabularyFacet(
+    field="metadata.relatedItems.itemRelationType",
+    label=_("metadata/relatedItems/itemRelationType.label"),
+    vocabulary="item-relation-types",
 )
 
 
-metadata_relatedItems_itemRelationType_type = TermsFacet(
-    field="metadata.relatedItems.itemRelationType.type",
-    label=_("metadata/relatedItems/itemRelationType/type.label"),
-)
-
-
-metadata_relatedItems_itemRelationType__version = TermsFacet(
-    field="metadata.relatedItems.itemRelationType.@v",
-    label=_("metadata/relatedItems/itemRelationType/@v.label"),
-)
-
-
-metadata_relatedItems_itemResourceType_id = TermsFacet(
-    field="metadata.relatedItems.itemResourceType.id",
-    label=_("metadata/relatedItems/itemResourceType/id.label"),
-)
-
-
-metadata_relatedItems_itemResourceType_type = TermsFacet(
-    field="metadata.relatedItems.itemResourceType.type",
-    label=_("metadata/relatedItems/itemResourceType/type.label"),
-)
-
-
-metadata_relatedItems_itemResourceType__version = TermsFacet(
-    field="metadata.relatedItems.itemResourceType.@v",
-    label=_("metadata/relatedItems/itemResourceType/@v.label"),
+metadata_relatedItems_itemResourceType = VocabularyFacet(
+    field="metadata.relatedItems.itemResourceType",
+    label=_("metadata/relatedItems/itemResourceType.label"),
+    vocabulary="resource-types",
 )
 
 
@@ -693,21 +455,10 @@ metadata_fundingReferences_projectID = TermsFacet(
 )
 
 
-metadata_fundingReferences_funder_id = TermsFacet(
-    field="metadata.fundingReferences.funder.id",
-    label=_("metadata/fundingReferences/funder/id.label"),
-)
-
-
-metadata_fundingReferences_funder_type = TermsFacet(
-    field="metadata.fundingReferences.funder.type",
-    label=_("metadata/fundingReferences/funder/type.label"),
-)
-
-
-metadata_fundingReferences_funder__version = TermsFacet(
-    field="metadata.fundingReferences.funder.@v",
-    label=_("metadata/fundingReferences/funder/@v.label"),
+metadata_fundingReferences_funder = VocabularyFacet(
+    field="metadata.fundingReferences.funder",
+    label=_("metadata/fundingReferences/funder.label"),
+    vocabulary="funders",
 )
 
 
@@ -818,21 +569,10 @@ metadata_events_eventLocation_place = TermsFacet(
 )
 
 
-metadata_events_eventLocation_country_id = TermsFacet(
-    field="metadata.events.eventLocation.country.id",
-    label=_("metadata/events/eventLocation/country/id.label"),
-)
-
-
-metadata_events_eventLocation_country_type = TermsFacet(
-    field="metadata.events.eventLocation.country.type",
-    label=_("metadata/events/eventLocation/country/type.label"),
-)
-
-
-metadata_events_eventLocation_country__version = TermsFacet(
-    field="metadata.events.eventLocation.country.@v",
-    label=_("metadata/events/eventLocation/country/@v.label"),
+metadata_events_eventLocation_country = VocabularyFacet(
+    field="metadata.events.eventLocation.country",
+    label=_("metadata/events/eventLocation/country.label"),
+    vocabulary="countries",
 )
 
 

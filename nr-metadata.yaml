@@ -17,6 +17,10 @@ model:
       - invenio_record_metadata_models_setup_cfg
       - invenio_record_resource_setup_cfg
       - invenio_record_search_setup_cfg
+      - invenio_i18n
+      - invenio_i18n_setup_cfg
+      - invenio_layout_setup_cfg
+      - ui-layout
 
 settings:
   i18n-languages: ['cs', 'en']

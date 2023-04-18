@@ -13,8 +13,8 @@ python3 -m venv .venv-builder
 rm -rf nr_metadata/common
 rm -rf nr_metadata/documents
 
-.venv-builder/bin/oarepo-merge translations nr_metadata/common/translations
-.venv-builder/bin/oarepo-merge translations nr_metadata/documents/translations
+# .venv-builder/bin/oarepo-merge translations nr_metadata/common/translations
+# .venv-builder/bin/oarepo-merge translations nr_metadata/documents/translations
 
 .venv-builder/bin/oarepo-compile-model nr-metadata.yaml -vvv
 .venv-builder/bin/oarepo-compile-model nr-documents.yaml -vvv

@@ -11,6 +11,10 @@ from nr_metadata.documents.records.models import DocumentsMetadata
 from nr_metadata.documents.records.multilingual_dumper import MultilingualDumper
 
 
+class DocumentsIdProvider(RecordIdProviderV2):
+    pid_type = "dcmnts"
+
+
 class DocumentsRecord(Record):
     model_cls = DocumentsMetadata
 
@@ -19,7 +23,7 @@ class DocumentsRecord(Record):
     index = IndexField("documents-documents-1.0.0")
 
     pid = PIDField(
-        provider=RecordIdProviderV2, context_cls=PIDFieldContext, create=True
+        provider=DocumentsIdProvider, context_cls=PIDFieldContext, create=True
     )
 
     dumper_extensions = [MultilingualDumper()]
