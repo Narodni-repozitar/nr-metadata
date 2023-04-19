@@ -3,6 +3,7 @@ from invenio_records_resources.services import (
     RecordServiceConfig,
     pagination_links,
 )
+from oarepo_runtime.relations.components import CachingRelationsComponent
 
 from nr_metadata.documents.records.api import DocumentsRecord
 from nr_metadata.documents.services.records.permissions import DocumentsPermissionPolicy
@@ -24,7 +25,7 @@ class DocumentsServiceConfig(RecordServiceConfig):
     record_cls = DocumentsRecord
     service_id = "documents"
 
-    components = [*RecordServiceConfig.components]
+    components = [*RecordServiceConfig.components, CachingRelationsComponent]
 
     model = "documents"
 

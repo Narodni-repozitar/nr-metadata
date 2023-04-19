@@ -7,8 +7,8 @@ from invenio_records_resources.services.records.schema import (
 from invenio_vocabularies.services.schema import i18n_strings
 from marshmallow import fields as ma_fields
 from marshmallow import validate as ma_validate
-from marshmallow_utils.fields import edtfdatestring as mu_fields_edtf
 from oarepo_runtime.i18n.schema import I18nStrField, MultilingualField
+from oarepo_runtime.validation import CachedMultilayerEDTFValidator
 from oarepo_vocabularies.services.schemas import HierarchySchema
 
 from nr_metadata.schema.identifiers import (
@@ -224,7 +224,7 @@ class NREventSchema(ma.Schema):
     eventNameOriginal = ma_fields.String()
     eventNameAlternate = ma_fields.List(ma_fields.String())
     eventDate = ma_fields.String(
-        validate=[mu_fields_edtf.EDTFValidator(types=(EDTFInterval,))]
+        validate=[CachedMultilayerEDTFValidator(types=(EDTFInterval,))]
     )
     eventLocation = ma_fields.Nested(lambda: NRLocationSchema())
 
@@ -240,10 +240,10 @@ class NRCommonMetadataSchema(ma.Schema):
     contributors = ma_fields.List(ma_fields.Nested(lambda: NRContributorSchema()))
     resourceType = ma_fields.Nested(lambda: NRResourceTypeVocabularySchema())
     dateAvailable = ma_fields.String(
-        validate=[mu_fields_edtf.EDTFValidator(types=(EDTFDate,))]
+        validate=[CachedMultilayerEDTFValidator(types=(EDTFDate,))]
     )
     dateModified = ma_fields.String(
-        validate=[mu_fields_edtf.EDTFValidator(types=(EDTFDate,))]
+        validate=[CachedMultilayerEDTFValidator(types=(EDTFDate,))]
     )
     subjects = ma_fields.List(ma_fields.Nested(lambda: NRSubjectSchema()))
     publishers = ma_fields.List(ma_fields.String())

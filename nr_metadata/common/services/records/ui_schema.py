@@ -272,7 +272,3 @@ class NRCommonRecordUISchema(InvenioUISchema):
     """NRCommonRecordUISchema schema."""
 
     metadata = ma_fields.Nested(lambda: NRCommonMetadataUISchema())
-    _id = ma_fields.String(data_key="id", attribute="id")
-    created = l10n.LocalizedDateTime()
-    updated = l10n.LocalizedDateTime()
-    _schema = ma_fields.String(data_key="$schema", attribute="$schema")

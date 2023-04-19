@@ -3,6 +3,7 @@ from invenio_records_resources.services import (
     RecordServiceConfig,
     pagination_links,
 )
+from oarepo_runtime.relations.components import CachingRelationsComponent
 
 from nr_metadata.common.records.api import CommonRecord
 from nr_metadata.common.services.records.permissions import CommonPermissionPolicy
@@ -24,7 +25,7 @@ class CommonServiceConfig(RecordServiceConfig):
     record_cls = CommonRecord
     service_id = "common"
 
-    components = [*RecordServiceConfig.components]
+    components = [*RecordServiceConfig.components, CachingRelationsComponent]
 
     model = "common"
 
