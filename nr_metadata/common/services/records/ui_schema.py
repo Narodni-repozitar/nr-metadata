@@ -7,7 +7,7 @@ from oarepo_runtime.i18n.ui_schema import (
 )
 from oarepo_runtime.ui import marshmallow as l10n
 from oarepo_runtime.ui.marshmallow import InvenioUISchema
-from oarepo_vocabularies.services.ui_schemas import (
+from oarepo_vocabularies.services.ui_schema import (
     HierarchyUISchema,
     VocabularyI18nStrUIField,
 )

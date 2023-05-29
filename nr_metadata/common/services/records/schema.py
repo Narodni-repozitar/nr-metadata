@@ -9,7 +9,7 @@ from marshmallow import fields as ma_fields
 from marshmallow import validate as ma_validate
 from oarepo_runtime.i18n.schema import I18nStrField, MultilingualField
 from oarepo_runtime.validation import CachedMultilayerEDTFValidator
-from oarepo_vocabularies.services.schemas import HierarchySchema
+from oarepo_vocabularies.services.schema import HierarchySchema
 
 from nr_metadata.schema.identifiers import (
     NRAuthorityIdentifierSchema,
