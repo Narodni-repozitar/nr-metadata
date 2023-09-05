@@ -1,16 +1,11 @@
 import re
+from functools import cached_property
 
 from nr_metadata.documents import config as config
 
 
 class DocumentsExt:
-    """nr_metadata.documents extension."""
-
     def __init__(self, app=None):
-        """Extension initialization."""
-        self.resource = None
-        self.service = None
-
         if app:
             self.init_app(app)
 
@@ -19,21 +14,10 @@ class DocumentsExt:
 
         self.init_config(app)
         if not self.is_inherited():
-            self.init_resource(app)
             self.register_flask_extension(app)
 
     def register_flask_extension(self, app):
-        app.extensions["documents"] = self
-
-    def init_resource(self, app):
-        """Initialize vocabulary resources."""
-        self.service = app.config["DOCUMENTS_SERVICE_CLASS_DOCUMENTS"](
-            config=app.config["DOCUMENTS_SERVICE_CONFIG_DOCUMENTS"](),
-        )
-        self.resource = app.config["DOCUMENTS_RESOURCE_CLASS_DOCUMENTS"](
-            service=self.service,
-            config=app.config["DOCUMENTS_RESOURCE_CONFIG_DOCUMENTS"](),
-        )
+        app.extensions["nr_metadata.documents"] = self
 
     def init_config(self, app):
         """Initialize configuration."""
@@ -54,3 +38,16 @@ class DocumentsExt:
             if loaded is not ext_class and issubclass(ext_class, loaded):
                 return True
         return False
+
+    @cached_property
+    def service_records(self):
+        return config.DOCUMENTS_RECORD_SERVICE_CLASS(
+            config=config.DOCUMENTS_RECORD_SERVICE_CONFIG(),
+        )
+
+    @cached_property
+    def resource_records(self):
+        return config.DOCUMENTS_RECORD_RESOURCE_CLASS(
+            service=self.service_records,
+            config=config.DOCUMENTS_RECORD_RESOURCE_CONFIG(),
+        )
