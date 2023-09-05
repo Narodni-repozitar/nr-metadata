@@ -3,24 +3,25 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-model:
+record:
   use: "nr-common-metadata#CommonModel"
-  package: nr_metadata.common
-  plugins:
-    builder:
-      disable: 
-      - script_sample_data
-      - invenio_cli_setup_cfg
-      - invenio_ext_setup_cfg
-      - invenio_record_jsonschemas_setup_cfg
-      - invenio_record_metadata_alembic_setup_cfg
-      - invenio_record_metadata_models_setup_cfg
-      - invenio_record_resource_setup_cfg
-      - invenio_record_search_setup_cfg
-      - invenio_i18n
-      - invenio_i18n_setup_cfg
-      - invenio_layout_setup_cfg
-      - ui-layout
+  module:
+    qualified: nr_metadata.common
+plugins:
+  builder:
+    disable: 
+    - script_sample_data
+    - invenio_cli_setup_cfg
+    - invenio_ext_setup_cfg
+    - invenio_record_jsonschemas_setup_cfg
+    - invenio_record_metadata_alembic_setup_cfg
+    - invenio_record_metadata_models_setup_cfg
+    - invenio_record_resource_setup_cfg
+    - invenio_record_search_setup_cfg
+    - invenio_i18n
+    - invenio_i18n_setup_cfg
+    - invenio_layout_setup_cfg
+    - ui-layout
 
 settings:
   i18n-languages: ['cs', 'en']
