@@ -8,8 +8,8 @@ from nr_metadata.common.resources.records.ui import CommonUIJSONSerializer
 class CommonResourceConfig(RecordResourceConfig):
     """CommonRecord resource config."""
 
-    blueprint_name = "Common"
-    url_prefix = "/nr-metadata.common/"
+    blueprint_name = "common"
+    url_prefix = "/nr-metadata-common/"
 
     @property
     def response_handlers(self):

@@ -3,7 +3,13 @@ from nr_metadata.common.resources.records.resource import CommonResource
 from nr_metadata.common.services.records.config import CommonServiceConfig
 from nr_metadata.common.services.records.service import CommonService
 
-COMMON_RESOURCE_CONFIG_COMMON = CommonResourceConfig
-COMMON_RESOURCE_CLASS_COMMON = CommonResource
-COMMON_SERVICE_CONFIG_COMMON = CommonServiceConfig
-COMMON_SERVICE_CLASS_COMMON = CommonService
+COMMON_RECORD_RESOURCE_CONFIG = CommonResourceConfig
+
+
+COMMON_RECORD_RESOURCE_CLASS = CommonResource
+
+
+COMMON_RECORD_SERVICE_CONFIG = CommonServiceConfig
+
+
+COMMON_RECORD_SERVICE_CLASS = CommonService

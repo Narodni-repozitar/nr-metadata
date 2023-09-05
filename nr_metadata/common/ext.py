@@ -1,16 +1,11 @@
 import re
+from functools import cached_property
 
 from nr_metadata.common import config as config
 
 
 class CommonExt:
-    """nr_metadata.common extension."""
-
     def __init__(self, app=None):
-        """Extension initialization."""
-        self.resource = None
-        self.service = None
-
         if app:
             self.init_app(app)
 
@@ -19,21 +14,10 @@ class CommonExt:
 
         self.init_config(app)
         if not self.is_inherited():
-            self.init_resource(app)
             self.register_flask_extension(app)
 
     def register_flask_extension(self, app):
-        app.extensions["common"] = self
-
-    def init_resource(self, app):
-        """Initialize vocabulary resources."""
-        self.service = app.config["COMMON_SERVICE_CLASS_COMMON"](
-            config=app.config["COMMON_SERVICE_CONFIG_COMMON"](),
-        )
-        self.resource = app.config["COMMON_RESOURCE_CLASS_COMMON"](
-            service=self.service,
-            config=app.config["COMMON_RESOURCE_CONFIG_COMMON"](),
-        )
+        app.extensions["nr_metadata.common"] = self
 
     def init_config(self, app):
         """Initialize configuration."""
@@ -54,3 +38,16 @@ class CommonExt:
             if loaded is not ext_class and issubclass(ext_class, loaded):
                 return True
         return False
+
+    @cached_property
+    def service_records(self):
+        return config.COMMON_RECORD_SERVICE_CLASS(
+            config=config.COMMON_RECORD_SERVICE_CONFIG(),
+        )
+
+    @cached_property
+    def resource_records(self):
+        return config.COMMON_RECORD_RESOURCE_CLASS(
+            service=self.service_records,
+            config=config.COMMON_RECORD_RESOURCE_CONFIG(),
+        )

@@ -3,12 +3,14 @@ from werkzeug.local import LocalProxy
 
 
 def _ext_proxy(attr):
-    return LocalProxy(lambda: getattr(current_app.extensions["documents"], attr))
+    return LocalProxy(
+        lambda: getattr(current_app.extensions["nr_metadata.documents"], attr)
+    )
 
 
-current_service = _ext_proxy("service")
+current_service = _ext_proxy("service_records")
 """Proxy to the instantiated vocabulary service."""
 
 
-current_resource = _ext_proxy("resource")
+current_resource = _ext_proxy("resource_records")
 """Proxy to the instantiated vocabulary resource."""

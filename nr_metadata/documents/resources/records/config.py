@@ -8,8 +8,8 @@ from nr_metadata.documents.resources.records.ui import DocumentsUIJSONSerializer
 class DocumentsResourceConfig(RecordResourceConfig):
     """DocumentsRecord resource config."""
 
-    blueprint_name = "Documents"
-    url_prefix = "/nr-metadata.documents/"
+    blueprint_name = "documents"
+    url_prefix = "/nr-metadata-documents/"
 
     @property
     def response_handlers(self):
