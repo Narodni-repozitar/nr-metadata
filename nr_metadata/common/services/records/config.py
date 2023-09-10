@@ -8,7 +8,7 @@ from oarepo_runtime.config.service import PermissionsPresetsConfigMixin
 
 from nr_metadata.common.records.api import CommonRecord
 from nr_metadata.common.services.records.permissions import CommonPermissionPolicy
-from nr_metadata.common.services.records.schema import NRCommonRecordSchema
+from nr_metadata.common.services.records.schema_common import NRCommonRecordSchema
 from nr_metadata.common.services.records.search import CommonSearchOptions
 
 

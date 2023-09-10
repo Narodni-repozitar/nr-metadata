@@ -1,7 +1,7 @@
 from flask_resources import BaseListSchema, MarshmallowSerializer
 from flask_resources.serializers import JSONSerializer
 
-from nr_metadata.common.services.records.ui_schema import NRCommonRecordUISchema
+from nr_metadata.common.services.records.ui_schema_common import NRCommonRecordUISchema
 
 
 class CommonUIJSONSerializer(MarshmallowSerializer):
