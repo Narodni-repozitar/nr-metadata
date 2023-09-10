@@ -22,6 +22,11 @@ plugins:
     - invenio_i18n_setup_cfg
     - invenio_layout_setup_cfg
     - ui-layout
+    - invenio_tests_conftest
+    - oarepo_model_builder_setup_cfg
+    - invenio_tests_resource
+    - invenio_tests_service
+    - test_utils
 
 settings:
   i18n-languages: ['cs', 'en']
