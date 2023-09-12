@@ -174,6 +174,21 @@
             "module": "nr_metadata.documents.translations",
             "alias": "documents"
         },
+        "multilingual-dumper": {
+            "generate": true,
+            "module": "nr_metadata.documents.records.multilingual_dumper",
+            "class": "nr_metadata.documents.records.multilingual_dumper.MultilingualSearchDumper",
+            "base-classes": [
+                "MultilingualDumper"
+            ],
+            "extra-code": "",
+            "extensions": [],
+            "imports": [
+                {
+                    "import": "oarepo_runtime.i18n.dumper.MultilingualDumper"
+                }
+            ]
+        },
         "json-schema-settings": {
             "generate": true,
             "alias": "documents",
@@ -307,21 +322,6 @@
             ],
             "extra-code": "",
             "generate": true
-        },
-        "multilingual-dumper": {
-            "generate": true,
-            "module": "nr_metadata.documents.records.multilingual_dumper",
-            "class": "nr_metadata.documents.records.multilingual_dumper.MultilingualSearchDumper",
-            "base-classes": [
-                "MultilingualDumper"
-            ],
-            "extra-code": "",
-            "extensions": [],
-            "imports": [
-                {
-                    "import": "oarepo_runtime.i18n.dumper.MultilingualDumper"
-                }
-            ]
         },
         "mapping": {
             "generate": true,
@@ -500,7 +500,10 @@
                             },
                             "properties": {
                                 "lang": {
-                                    "type": "keyword"
+                                    "type": "keyword",
+                                    "mapping": {
+                                        "ignore_above": 256
+                                    }
                                 },
                                 "value": {
                                     "type": "fulltext+keyword"
@@ -710,7 +713,10 @@
                             },
                             "properties": {
                                 "lang": {
-                                    "type": "keyword"
+                                    "type": "keyword",
+                                    "mapping": {
+                                        "ignore_above": 256
+                                    }
                                 },
                                 "value": {
                                     "type": "fulltext+keyword"
@@ -757,18 +763,6 @@
                                 "title": {
                                     "type": "i18nStr",
                                     "required": true,
-                                    "marshmallow": {
-                                        "read": false,
-                                        "write": false,
-                                        "class": null,
-                                        "field-class": "I18nStrField",
-                                        "imports": [
-                                            {
-                                                "import": "oarepo_runtime.i18n.schema.I18nStrField"
-                                            }
-                                        ],
-                                        "generate": false
-                                    },
                                     "ui": {
                                         "marshmallow": {
                                             "read": false,
@@ -783,12 +777,27 @@
                                         },
                                         "detail": "multilingual"
                                     },
+                                    "marshmallow": {
+                                        "read": false,
+                                        "write": false,
+                                        "class": null,
+                                        "field-class": "I18nStrField",
+                                        "imports": [
+                                            {
+                                                "import": "oarepo_runtime.i18n.schema.I18nStrField"
+                                            }
+                                        ],
+                                        "generate": false
+                                    },
                                     "sample": {
                                         "skip": false
                                     },
                                     "properties": {
                                         "lang": {
-                                            "type": "keyword"
+                                            "type": "keyword",
+                                            "mapping": {
+                                                "ignore_above": 256
+                                            }
                                         },
                                         "value": {
                                             "type": "fulltext+keyword"
@@ -2842,7 +2851,10 @@
                             },
                             "properties": {
                                 "lang": {
-                                    "type": "keyword"
+                                    "type": "keyword",
+                                    "mapping": {
+                                        "ignore_above": 256
+                                    }
                                 },
                                 "value": {
                                     "type": "fulltext+keyword"
@@ -5217,7 +5229,10 @@
                                         },
                                         "properties": {
                                             "lang": {
-                                                "type": "keyword"
+                                                "type": "keyword",
+                                                "mapping": {
+                                                    "ignore_above": 256
+                                                }
                                             },
                                             "value": {
                                                 "type": "fulltext+keyword"
@@ -5402,7 +5417,10 @@
                             },
                             "properties": {
                                 "lang": {
-                                    "type": "keyword"
+                                    "type": "keyword",
+                                    "mapping": {
+                                        "ignore_above": 256
+                                    }
                                 },
                                 "value": {
                                     "type": "fulltext+keyword"
@@ -5748,15 +5766,15 @@
             },
             "syntheticFields": {
                 "type": "object",
-                "marshmallow": {
-                    "generate": true,
-                    "class": "nr_metadata.documents.services.records.schema.SyntheticFieldsSchema"
-                },
                 "ui": {
                     "marshmallow": {
-                        "generate": true,
-                        "class": "nr_metadata.documents.services.records.ui_schema.SyntheticFieldsUISchema"
+                        "class": "nr_metadata.documents.services.records.ui_schema.NRDocumentSyntheticFieldsUISchema",
+                        "generate": true
                     }
+                },
+                "marshmallow": {
+                    "class": "nr_metadata.documents.services.records.schema.NRDocumentSyntheticFieldsSchema",
+                    "generate": true
                 },
                 "properties": {
                     "institutions": {

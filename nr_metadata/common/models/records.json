@@ -174,6 +174,21 @@
             "module": "nr_metadata.common.translations",
             "alias": "common"
         },
+        "multilingual-dumper": {
+            "generate": true,
+            "module": "nr_metadata.common.records.multilingual_dumper",
+            "class": "nr_metadata.common.records.multilingual_dumper.MultilingualSearchDumper",
+            "base-classes": [
+                "MultilingualDumper"
+            ],
+            "extra-code": "",
+            "extensions": [],
+            "imports": [
+                {
+                    "import": "oarepo_runtime.i18n.dumper.MultilingualDumper"
+                }
+            ]
+        },
         "json-schema-settings": {
             "generate": true,
             "alias": "common",
@@ -307,21 +322,6 @@
             ],
             "extra-code": "",
             "generate": true
-        },
-        "multilingual-dumper": {
-            "generate": true,
-            "module": "nr_metadata.common.records.multilingual_dumper",
-            "class": "nr_metadata.common.records.multilingual_dumper.MultilingualSearchDumper",
-            "base-classes": [
-                "MultilingualDumper"
-            ],
-            "extra-code": "",
-            "extensions": [],
-            "imports": [
-                {
-                    "import": "oarepo_runtime.i18n.dumper.MultilingualDumper"
-                }
-            ]
         },
         "mapping": {
             "generate": true,
@@ -486,7 +486,10 @@
                             },
                             "properties": {
                                 "lang": {
-                                    "type": "keyword"
+                                    "type": "keyword",
+                                    "mapping": {
+                                        "ignore_above": 256
+                                    }
                                 },
                                 "value": {
                                     "type": "fulltext+keyword"
@@ -670,7 +673,10 @@
                             },
                             "properties": {
                                 "lang": {
-                                    "type": "keyword"
+                                    "type": "keyword",
+                                    "mapping": {
+                                        "ignore_above": 256
+                                    }
                                 },
                                 "value": {
                                     "type": "fulltext+keyword"
@@ -726,7 +732,10 @@
                                     },
                                     "properties": {
                                         "lang": {
-                                            "type": "keyword"
+                                            "type": "keyword",
+                                            "mapping": {
+                                                "ignore_above": 256
+                                            }
                                         },
                                         "value": {
                                             "type": "fulltext+keyword"
@@ -2233,7 +2242,10 @@
                             },
                             "properties": {
                                 "lang": {
-                                    "type": "keyword"
+                                    "type": "keyword",
+                                    "mapping": {
+                                        "ignore_above": 256
+                                    }
                                 },
                                 "value": {
                                     "type": "fulltext+keyword"
@@ -4006,7 +4018,10 @@
                                         },
                                         "properties": {
                                             "lang": {
-                                                "type": "keyword"
+                                                "type": "keyword",
+                                                "mapping": {
+                                                    "ignore_above": 256
+                                                }
                                             },
                                             "value": {
                                                 "type": "fulltext+keyword"
@@ -4129,7 +4144,10 @@
                             },
                             "properties": {
                                 "lang": {
-                                    "type": "keyword"
+                                    "type": "keyword",
+                                    "mapping": {
+                                        "ignore_above": 256
+                                    }
                                 },
                                 "value": {
                                     "type": "fulltext+keyword"
