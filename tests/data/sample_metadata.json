@@ -1,0 +1,300 @@
+{
+    "abstract": [
+        {
+            "lang": "en",
+            "value": "The subject of this work is an analysis of two plays by a medieval French dramatic Adam de la Halle. One of them is a pastorale \"The Play of Robin and Marion\", the second one is a comical revue \"Play of the Greensward\". This work examines their structure, story, characters and topics and tries to place them into the historical, geographical and aesthetical context."
+        },
+        {
+            "lang": "cs",
+            "value": "P\u0159edm\u011btem t\u00e9to pr\u00e1ce je anal\u00fdza dvou her francouzsk\u00e9ho st\u0159edov\u011bk\u00e9ho dramatika Adama de la Halle. Jednou z nich je pastorela \"Robin a Marion\", druhou komick\u00e1 revue \"Hra v loub\u00ed\". Pr\u00e1ce se zab\u00fdv\u00e1 jejich strukturou, p\u0159\u00edb\u011bhem, postavami, t\u00e9maty a sna\u017e\u00ed se je uv\u00e9st do historick\u00e9ho, geografick\u00e9ho a estetick\u00e9ho kontextu."
+        }
+    ],
+    "accessRights": {
+        "@v": "cf06c5be-8395-4411-96a9-818983d58419::1",
+        "id": "c_abf2",
+        "title": {
+            "cs": "otev\u0159en\u00fd p\u0159\u00edstup",
+            "en": "open access"
+        }
+    },
+    "accessibility": [
+        {
+            "lang": "cs",
+            "value": "Dostupn\u00e9 v digit\u00e1ln\u00edm repozit\u00e1\u0159i UK."
+        },
+        {
+            "lang": "en",
+            "value": "Available in the Charles University Digital Repository."
+        }
+    ],
+    "additionalTitles": [
+        {
+            "title": {
+                "lang": "en",
+                "value": "Adam de la Halle - The First French Playwrigt"
+            },
+            "titleType": "translatedTitle"
+        }
+    ],
+    "collection": "Univerzita Karlova",
+    "contributors": [
+        {
+            "fullName": "Christov, Petr",
+            "nameType": "Personal",
+            "role": {
+                "@v": "66c5199c-b7d4-4738-94a3-fbec7a59950b::1",
+                "id": "advisor",
+                "title": {
+                    "cs": "vedouc\u00ed",
+                    "en": "advisor"
+                }
+            }
+        },
+        {
+            "fullName": "Sarkissian, Alena",
+            "nameType": "Personal",
+            "role": {
+                "@v": "dccafc98-1015-408e-adc9-1d2bd4e92948::1",
+                "id": "referee",
+                "title": {
+                    "cs": "oponent",
+                    "en": "referee"
+                }
+            }
+        }
+    ],
+    "creators": [
+        {
+            "fullName": "Hlubu\u010dkov\u00e1, Petra",
+            "nameType": "Personal"
+        }
+    ],
+    "dateAvailable": "2011-09-12",
+    "languages": [
+        {
+            "@v": "85fa4bf6-53a9-4de6-9687-0fb828dec108::1",
+            "id": "cs",
+            "title": {
+                "cs": "\u010de\u0161tina",
+                "en": "Czech"
+            }
+        }
+    ],
+    "objectIdentifiers": [
+        {
+            "identifier": "20.500.11956/50116",
+            "scheme": "Handle"
+        }
+    ],
+    "originalRecord": "http://hdl.handle.net/20.500.11956/50116",
+    "resourceType": {
+        "@v": "e15fad3b-5de4-4fda-a6de-3969d607dd9c::1",
+        "id": "bachelor",
+        "title": {
+            "cs": "Bakal\u00e1\u0159sk\u00e1 pr\u00e1ce",
+            "en": "Bachelor thesis"
+        }
+    },
+    "subjects": [
+        {
+            "subject": [
+                {
+                    "lang": "en",
+                    "value": "Middle Ages"
+                }
+            ],
+            "subjectScheme": "keyword"
+        },
+        {
+            "subject": [
+                {
+                    "lang": "en",
+                    "value": "Adam de la Halle"
+                }
+            ],
+            "subjectScheme": "keyword"
+        },
+        {
+            "subject": [
+                {
+                    "lang": "en",
+                    "value": "Arras"
+                }
+            ],
+            "subjectScheme": "keyword"
+        },
+        {
+            "subject": [
+                {
+                    "lang": "en",
+                    "value": "The Play of Robin and Marion"
+                }
+            ],
+            "subjectScheme": "keyword"
+        },
+        {
+            "subject": [
+                {
+                    "lang": "en",
+                    "value": "Play of the Greensward"
+                }
+            ],
+            "subjectScheme": "keyword"
+        },
+        {
+            "subject": [
+                {
+                    "lang": "en",
+                    "value": "pastoral"
+                }
+            ],
+            "subjectScheme": "keyword"
+        },
+        {
+            "subject": [
+                {
+                    "lang": "en",
+                    "value": "revue"
+                }
+            ],
+            "subjectScheme": "keyword"
+        },
+        {
+            "subject": [
+                {
+                    "lang": "cs",
+                    "value": "st\u0159edov\u011bk"
+                }
+            ],
+            "subjectScheme": "keyword"
+        },
+        {
+            "subject": [
+                {
+                    "lang": "cs",
+                    "value": "Adam de la Halle"
+                }
+            ],
+            "subjectScheme": "keyword"
+        },
+        {
+            "subject": [
+                {
+                    "lang": "cs",
+                    "value": "Arras"
+                }
+            ],
+            "subjectScheme": "keyword"
+        },
+        {
+            "subject": [
+                {
+                    "lang": "cs",
+                    "value": "Robin a Marion"
+                }
+            ],
+            "subjectScheme": "keyword"
+        },
+        {
+            "subject": [
+                {
+                    "lang": "cs",
+                    "value": "Hra v loub\u00ed"
+                }
+            ],
+            "subjectScheme": "keyword"
+        },
+        {
+            "subject": [
+                {
+                    "lang": "cs",
+                    "value": "pastorela"
+                }
+            ],
+            "subjectScheme": "keyword"
+        },
+        {
+            "subject": [
+                {
+                    "lang": "cs",
+                    "value": "revue"
+                }
+            ],
+            "subjectScheme": "keyword"
+        }
+    ],
+    "systemIdentifiers": [
+        {
+            "identifier": "http://www.nusl.cz/ntk/nusl-314405",
+            "scheme": "nusl"
+        },
+        {
+            "identifier": "oai:dspace.cuni.cz:20.500.11956/50116",
+            "scheme": "originalRecordOAI"
+        },
+        {
+            "identifier": "oai:invenio.nusl.cz:314405",
+            "scheme": "nuslOAI"
+        }
+    ],
+    "thesis": {
+        "defended": true,
+        "degreeGrantors": [
+            {
+                "@v": "cfce8ec4-e47c-411d-aa31-23358eebb603::1",
+                "hierarchy": {
+                    "ancestors": [],
+                    "ancestors_or_self": [
+                        "uk"
+                    ],
+                    "level": 1,
+                    "title": [
+                        {
+                            "cs": "Univerzita Karlova",
+                            "en": "Charles University"
+                        }
+                    ]
+                },
+                "id": "uk",
+                "title": {
+                    "cs": "Univerzita Karlova",
+                    "en": "Charles University"
+                }
+            },
+            {
+                "@v": "efa353b3-fde2-4469-b332-c50c37efaeaf::1",
+                "hierarchy": {
+                    "ancestors": [
+                        "uk-filozoficka-fakulta",
+                        "uk"
+                    ],
+                    "ancestors_or_self": [
+                        "uk-ff-katedra-divadelni-vedy",
+                        "uk-filozoficka-fakulta",
+                        "uk"
+                    ],
+                    "level": 3,
+                    "parent": "uk-filozoficka-fakulta",
+                    "title": [
+                        {
+                            "cs": "Katedra divadeln\u00ed v\u011bdy"
+                        },
+                        {
+                            "cs": "Filozofick\u00e1 fakulta",
+                            "en": "Faculty of Arts"
+                        },
+                        {
+                            "cs": "Univerzita Karlova",
+                            "en": "Charles University"
+                        }
+                    ]
+                },
+                "id": "uk-ff-katedra-divadelni-vedy",
+                "title": {
+                    "cs": "Katedra divadeln\u00ed v\u011bdy"
+                }
+            }
+        ]
+    },
+    "title": "Adam de la Halle, prvn\u00ed francouzsk\u00fd dramatik"
+}
