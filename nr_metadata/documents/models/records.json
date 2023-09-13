@@ -170,10 +170,6 @@
             "module": "nr_metadata.documents.proxies",
             "generate": true
         },
-        "translations": {
-            "module": "nr_metadata.documents.translations",
-            "alias": "documents"
-        },
         "json-schema-settings": {
             "generate": true,
             "alias": "documents",
@@ -307,6 +303,10 @@
             ],
             "extra-code": "",
             "generate": true
+        },
+        "translations": {
+            "module": "nr_metadata.documents.translations",
+            "alias": "documents"
         },
         "multilingual-dumper": {
             "generate": true,
@@ -500,7 +500,10 @@
                             },
                             "properties": {
                                 "lang": {
-                                    "type": "keyword"
+                                    "type": "keyword",
+                                    "mapping": {
+                                        "ignore_above": 256
+                                    }
                                 },
                                 "value": {
                                     "type": "fulltext+keyword"
@@ -710,7 +713,10 @@
                             },
                             "properties": {
                                 "lang": {
-                                    "type": "keyword"
+                                    "type": "keyword",
+                                    "mapping": {
+                                        "ignore_above": 256
+                                    }
                                 },
                                 "value": {
                                     "type": "fulltext+keyword"
@@ -788,7 +794,10 @@
                                     },
                                     "properties": {
                                         "lang": {
-                                            "type": "keyword"
+                                            "type": "keyword",
+                                            "mapping": {
+                                                "ignore_above": 256
+                                            }
                                         },
                                         "value": {
                                             "type": "fulltext+keyword"
@@ -2539,6 +2548,7 @@
                                 "geoLocationPlace": {
                                     "type": "keyword",
                                     "required": true,
+                                    "description": "Free description of the location; ie. Atlantic Ocean",
                                     "marshmallow": {
                                         "read": false,
                                         "write": false
@@ -2548,8 +2558,7 @@
                                             "read": false,
                                             "write": false
                                         }
-                                    },
-                                    "description": "Free description of the location; ie. Atlantic Ocean"
+                                    }
                                 },
                                 "geoLocationPoint": {
                                     "type": "object",
@@ -2842,7 +2851,10 @@
                             },
                             "properties": {
                                 "lang": {
-                                    "type": "keyword"
+                                    "type": "keyword",
+                                    "mapping": {
+                                        "ignore_above": 256
+                                    }
                                 },
                                 "value": {
                                     "type": "fulltext+keyword"
@@ -2996,6 +3008,7 @@
                         "label.en": "Link to/from other resources:",
                         "items": {
                             "type": "object",
+                            "description": "linkdata, propojení přidružených dokumentů a datasetů.",
                             "ui": {
                                 "marshmallow": {
                                     "imports": [
@@ -3025,7 +3038,6 @@
                                 "generate": true,
                                 "class": "nr_metadata.documents.services.records.schema.RelatedItemsItemSchema"
                             },
-                            "description": "linkdata, propojení přidružených dokumentů a datasetů.",
                             "label.cs": "Vazba na/z dalších zdrojů:",
                             "label.en": "Link to/from other resources:",
                             "properties": {
@@ -4217,6 +4229,7 @@
                                 "itemRelationType": {
                                     "type": "vocabulary",
                                     "vocabulary-type": "item-relation-types",
+                                    "description": "typ vztahu k původnímu popisovanému dok.",
                                     "ui": {
                                         "marshmallow": {
                                             "imports": [
@@ -4251,7 +4264,6 @@
                                         "generate": true,
                                         "class": "nr_metadata.documents.services.records.schema.ItemRelationTypeSchema"
                                     },
-                                    "description": "typ vztahu k původnímu popisovanému dok.",
                                     "label.cs": "Typ vazby",
                                     "label.en": "Relation type",
                                     "imports": [
@@ -4512,6 +4524,7 @@
                                 "itemTitle": {
                                     "type": "fulltext",
                                     "required": true,
+                                    "description": "název propojeného dokumentu",
                                     "marshmallow": {
                                         "read": false,
                                         "write": false
@@ -4522,7 +4535,6 @@
                                             "write": false
                                         }
                                     },
-                                    "description": "název propojeného dokumentu",
                                     "label.cs": "Název",
                                     "label.en": "Title"
                                 },
@@ -5217,7 +5229,10 @@
                                         },
                                         "properties": {
                                             "lang": {
-                                                "type": "keyword"
+                                                "type": "keyword",
+                                                "mapping": {
+                                                    "ignore_above": 256
+                                                }
                                             },
                                             "value": {
                                                 "type": "fulltext+keyword"
@@ -5402,7 +5417,10 @@
                             },
                             "properties": {
                                 "lang": {
-                                    "type": "keyword"
+                                    "type": "keyword",
+                                    "mapping": {
+                                        "ignore_above": 256
+                                    }
                                 },
                                 "value": {
                                     "type": "fulltext+keyword"
@@ -5748,15 +5766,15 @@
             },
             "syntheticFields": {
                 "type": "object",
-                "marshmallow": {
-                    "generate": true,
-                    "class": "nr_metadata.documents.services.records.schema.SyntheticFieldsSchema"
-                },
                 "ui": {
                     "marshmallow": {
-                        "generate": true,
-                        "class": "nr_metadata.documents.services.records.ui_schema.SyntheticFieldsUISchema"
+                        "class": "nr_metadata.documents.services.records.ui_schema.NRDocumentSyntheticFieldsUISchema",
+                        "generate": true
                     }
+                },
+                "marshmallow": {
+                    "class": "nr_metadata.documents.services.records.schema.NRDocumentSyntheticFieldsSchema",
+                    "generate": true
                 },
                 "properties": {
                     "institutions": {

@@ -18,7 +18,7 @@ class NRDocumentRecordUISchema(InvenioUISchema):
 
     metadata = ma.fields.Nested(lambda: NRDocumentMetadataUISchema())
 
-    syntheticFields = ma.fields.Nested(lambda: SyntheticFieldsUISchema())
+    syntheticFields = ma.fields.Nested(lambda: NRDocumentSyntheticFieldsUISchema())
 
 
 class NRDocumentMetadataUISchema(
@@ -304,6 +304,19 @@ class NRDegreeGrantorUISchema(ma.Schema):
     title = VocabularyI18nStrUIField()
 
 
+class NRDocumentSyntheticFieldsUISchema(ma.Schema):
+    class Meta:
+        unknown = ma.RAISE
+
+    institutions = ma.fields.String()
+
+    keywords_cs = ma.fields.String()
+
+    keywords_en = ma.fields.String()
+
+    person = ma.fields.String()
+
+
 class ObjectIdentifiersItemUISchema(
     nr_metadata.ui_schema.identifiers.NRObjectIdentifierUISchema
 ):
@@ -362,19 +375,6 @@ class SubjectsItemUISchema(
 ):
     class Meta:
         unknown = ma.RAISE
-
-
-class SyntheticFieldsUISchema(ma.Schema):
-    class Meta:
-        unknown = ma.RAISE
-
-    institutions = ma.fields.String()
-
-    keywords_cs = ma.fields.String()
-
-    keywords_en = ma.fields.String()
-
-    person = ma.fields.String()
 
 
 class SystemIdentifiersItemUISchema(

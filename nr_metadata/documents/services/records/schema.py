@@ -15,7 +15,7 @@ class NRDocumentRecordSchema(BaseRecordSchema):
 
     metadata = ma.fields.Nested(lambda: NRDocumentMetadataSchema())
 
-    syntheticFields = ma.fields.Nested(lambda: SyntheticFieldsSchema())
+    syntheticFields = ma.fields.Nested(lambda: NRDocumentSyntheticFieldsSchema())
 
 
 class NRDocumentMetadataSchema(
@@ -303,6 +303,11 @@ class NRDegreeGrantorSchema(ma.Schema):
     title = i18n_strings
 
 
+class NRDocumentSyntheticFieldsSchema(ma.Schema):
+    class Meta:
+        unknown = ma.RAISE
+
+
 class ObjectIdentifiersItemSchema(
     nr_metadata.schema.identifiers.NRObjectIdentifierSchema
 ):
@@ -359,11 +364,6 @@ class SubjectCategoriesItemSchema(
 class SubjectsItemSchema(
     nr_metadata.common.services.records.schema_datatypes.NRSubjectSchema
 ):
-    class Meta:
-        unknown = ma.RAISE
-
-
-class SyntheticFieldsSchema(ma.Schema):
     class Meta:
         unknown = ma.RAISE
 
