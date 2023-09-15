@@ -1,24 +1,28 @@
 import json
-from pathlib import Path
-import pytest
 import os
+from pathlib import Path
+
+import pytest
 from invenio_app.factory import create_api
+
 
 @pytest.fixture(scope="module")
 def extra_entry_points():
     return {
-        'invenio_jsonschemas.schemas': [
-            'documents = nr_metadata.documents.records.jsonschemas'
+        "invenio_jsonschemas.schemas": [
+            "documents = nr_metadata.documents.records.jsonschemas"
         ]
     }
 
+
 @pytest.fixture(scope="module")
-def create_app(instance_path, entry_points):    
+def create_app(instance_path, entry_points):
     """Application factory fixture."""
     return create_api
 
+
 @pytest.fixture(scope="module")
-def app_config(app_config):    
+def app_config(app_config):
     """Mimic an instance's configuration."""
     app_config["JSONSCHEMAS_HOST"] = "localhost"
     app_config[
@@ -36,7 +40,8 @@ def app_config(app_config):
     ]
     return app_config
 
+
 @pytest.fixture
 def sample_metadata():
-    with open(f'{Path(__file__).parent}/data/sample_metadata.json', 'r') as f:
+    with open(f"{Path(__file__).parent}/data/sample_metadata.json", "r") as f:
         return json.load(f)
