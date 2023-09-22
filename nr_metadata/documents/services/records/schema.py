@@ -63,19 +63,6 @@ class AdditionalTitlesItemSchema(
         unknown = ma.RAISE
 
 
-class InstitutionsSchema(ma.Schema):
-    class Meta:
-        unknown = ma.RAISE
-
-    _id = ma.fields.String(data_key="id", attribute="id")
-
-    _version = ma.fields.String(data_key="@v", attribute="@v")
-
-    hierarchy = ma.fields.Nested(lambda: HierarchySchema())
-
-    title = i18n_strings
-
-
 class NRDegreeGrantorSchema(ma.Schema):
     class Meta:
         unknown = ma.RAISE

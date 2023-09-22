@@ -125,9 +125,6 @@
                 {
                     "import": "invenio_records_resources.records.api.Record",
                     "alias": "InvenioRecord"
-                },
-                {
-                    "import": "nr_metadata.extensions.facets.dumper.SyntheticFieldsDumperExtension"
                 }
             ],
             "extra-code": ""
@@ -219,8 +216,7 @@
             ],
             "extra-code": "",
             "extensions": [
-                "MultilingualSearchDumper()",
-                "SyntheticFieldsDumperExtension()"
+                "MultilingualSearchDumper()"
             ],
             "imports": [
                 {

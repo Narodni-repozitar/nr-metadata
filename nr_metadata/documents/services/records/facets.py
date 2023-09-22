@@ -492,10 +492,8 @@ metadata_version = TermsFacet(
     field="metadata.version", label=_("metadata/version.label")
 )
 
-syntheticFields_institutions = HierarchyVocabularyFacet(
-    field="syntheticFields.institutions",
-    label=_("syntheticFields/institutions.label"),
-    vocabulary="institutions",
+syntheticFields_institutions = TermsFacet(
+    field="syntheticFields.institutions", label=_("syntheticFields/institutions.label")
 )
 
 syntheticFields_keywords_cs = TermsFacet(

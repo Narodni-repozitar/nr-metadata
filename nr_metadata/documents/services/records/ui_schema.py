@@ -43,19 +43,6 @@ class NRDocumentMetadataUISchema(
     thesis = ma.fields.Nested(lambda: NRThesisUISchema())
 
 
-class NRDocumentSyntheticFieldsUISchema(ma.Schema):
-    class Meta:
-        unknown = ma.RAISE
-
-    institutions = ma.fields.Nested(lambda: InstitutionsUISchema())
-
-    keywords_cs = ma.fields.String()
-
-    keywords_en = ma.fields.String()
-
-    person = ma.fields.String()
-
-
 class NRThesisUISchema(ma.Schema):
     class Meta:
         unknown = ma.RAISE
@@ -76,19 +63,6 @@ class AdditionalTitlesItemUISchema(
         unknown = ma.RAISE
 
 
-class InstitutionsUISchema(ma.Schema):
-    class Meta:
-        unknown = ma.RAISE
-
-    _id = ma.fields.String(data_key="id", attribute="id")
-
-    _version = ma.fields.String(data_key="@v", attribute="@v")
-
-    hierarchy = ma.fields.Nested(lambda: HierarchyUISchema())
-
-    title = VocabularyI18nStrUIField()
-
-
 class NRDegreeGrantorUISchema(ma.Schema):
     class Meta:
         unknown = ma.RAISE
@@ -100,3 +74,16 @@ class NRDegreeGrantorUISchema(ma.Schema):
     hierarchy = ma.fields.Nested(lambda: HierarchyUISchema())
 
     title = VocabularyI18nStrUIField()
+
+
+class NRDocumentSyntheticFieldsUISchema(ma.Schema):
+    class Meta:
+        unknown = ma.RAISE
+
+    institutions = ma.fields.String()
+
+    keywords_cs = ma.fields.String()
+
+    keywords_en = ma.fields.String()
+
+    person = ma.fields.String()
