@@ -9,6 +9,7 @@ from oarepo_runtime.relations import PIDRelation, RelationsField
 from nr_metadata.common.records.dumper import CommonDumper
 from nr_metadata.common.records.models import CommonMetadata
 from nr_metadata.common.records.multilingual_dumper import MultilingualSearchDumper
+from nr_metadata.extensions.facets.dumper import SyntheticFieldsDumperExtension
 
 
 class CommonIdProvider(RecordIdProviderV2):
@@ -24,7 +25,7 @@ class CommonRecord(InvenioRecord):
 
     pid = PIDField(provider=CommonIdProvider, context_cls=PIDFieldContext, create=True)
 
-    dumper_extensions = [MultilingualSearchDumper()]
+    dumper_extensions = [MultilingualSearchDumper(), SyntheticFieldsDumperExtension()]
     dumper = CommonDumper(extensions=dumper_extensions)
 
     relations = RelationsField(
