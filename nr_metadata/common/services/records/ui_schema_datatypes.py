@@ -7,6 +7,7 @@ from oarepo_vocabularies.services.ui_schema import (
     VocabularyI18nStrUIField,
 )
 
+import nr_metadata.common.services.records.ui_schema_common
 from nr_metadata.ui_schema.identifiers import (
     NRAuthorityIdentifierUISchema,
     NRObjectIdentifierUISchema,
@@ -107,7 +108,11 @@ class NRRelatedItemContributorUISchema(ma.Schema):
     fullName = ma.fields.String(required=True)
 
     nameType = ma.fields.String(
-        validate=[ma_validate.OneOf(["Organizational", "Personal"])]
+        validate=[
+            ma_validate.OneOf(
+                ["Organizational", "Personal", "Organizational", "Personal"]
+            )
+        ]
     )
 
     role = ma.fields.Nested(lambda: NRAuthorityRoleVocabularyUISchema())
@@ -128,7 +133,11 @@ class NRRelatedItemCreatorUISchema(ma.Schema):
     fullName = ma.fields.String(required=True)
 
     nameType = ma.fields.String(
-        validate=[ma_validate.OneOf(["Organizational", "Personal"])]
+        validate=[
+            ma_validate.OneOf(
+                ["Organizational", "Personal", "Organizational", "Personal"]
+            )
+        ]
     )
 
 
@@ -282,3 +291,70 @@ class NRSubjectUISchema(ma.Schema):
     subjectScheme = ma.fields.String()
 
     valueURI = ma.fields.String()
+
+
+class AffiliationsItemNRAffiliationVocabularyUISchema(ma.Schema):
+    class Meta:
+        unknown = ma.RAISE
+
+    _id = ma.fields.String(data_key="id", attribute="id")
+
+    _version = ma.fields.String(data_key="@v", attribute="@v")
+
+    hierarchy = ma.fields.Nested(lambda: HierarchyUISchema())
+
+    title = VocabularyI18nStrUIField()
+
+
+class CreatorsItemNRAuthorityUIUISchema(
+    nr_metadata.common.services.records.ui_schema_common.NRCreatorUISchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+    authorityIdentifiers = ma.fields.List(
+        ma.fields.Nested(lambda: NRAuthorityIdentifierUISchema())
+    )
+
+    fullName = ma.fields.String(required=True)
+
+    nameType = ma.fields.String(
+        validate=[ma_validate.OneOf(["Organizational", "Personal"])]
+    )
+
+
+class NRAuthorityUIUISchema(
+    nr_metadata.common.services.records.ui_schema_common.NRContributorUISchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+    authorityIdentifiers = ma.fields.List(
+        ma.fields.Nested(lambda: NRAuthorityIdentifierUISchema())
+    )
+
+    nameType = ma.fields.String(
+        validate=[ma_validate.OneOf(["Organizational", "Personal"])]
+    )
+
+
+class ResourceTypeNRResourceTypeVocabularyUISchema(ma.Schema):
+    class Meta:
+        unknown = ma.RAISE
+
+    _id = ma.fields.String(data_key="id", attribute="id")
+
+    _version = ma.fields.String(data_key="@v", attribute="@v")
+
+    title = VocabularyI18nStrUIField()
+
+
+class RoleNRAuthorityRoleVocabularyUISchema(ma.Schema):
+    class Meta:
+        unknown = ma.RAISE
+
+    _id = ma.fields.String(data_key="id", attribute="id")
+
+    _version = ma.fields.String(data_key="@v", attribute="@v")
+
+    title = VocabularyI18nStrUIField()

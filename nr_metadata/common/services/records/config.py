@@ -40,11 +40,11 @@ class CommonServiceConfig(PermissionsPresetsConfigMixin, InvenioRecordServiceCon
     @property
     def links_item(self):
         return {
-            "self": RecordLink("{self.url_prefix}{id}"),
+            "self": RecordLink("{+api}/nr-metadata-common/{id}"),
         }
 
     @property
     def links_search(self):
         return {
-            **pagination_links("{self.url_prefix}{?args*}"),
+            **pagination_links("{+api}/nr-metadata-common/{?args*}"),
         }

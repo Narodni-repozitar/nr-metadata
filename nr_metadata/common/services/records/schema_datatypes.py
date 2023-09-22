@@ -7,6 +7,7 @@ from oarepo_runtime.i18n.schema import I18nStrField, MultilingualField
 from oarepo_runtime.validation import CachedMultilayerEDTFValidator
 from oarepo_vocabularies.services.schema import HierarchySchema
 
+import nr_metadata.common.services.records.schema_common
 from nr_metadata.schema.identifiers import (
     NRAuthorityIdentifierSchema,
     NRObjectIdentifierSchema,
@@ -109,7 +110,11 @@ class NRRelatedItemContributorSchema(ma.Schema):
     fullName = ma.fields.String(required=True)
 
     nameType = ma.fields.String(
-        validate=[ma_validate.OneOf(["Organizational", "Personal"])]
+        validate=[
+            ma_validate.OneOf(
+                ["Organizational", "Personal", "Organizational", "Personal"]
+            )
+        ]
     )
 
     role = ma.fields.Nested(lambda: NRAuthorityRoleVocabularySchema())
@@ -130,7 +135,11 @@ class NRRelatedItemCreatorSchema(ma.Schema):
     fullName = ma.fields.String(required=True)
 
     nameType = ma.fields.String(
-        validate=[ma_validate.OneOf(["Organizational", "Personal"])]
+        validate=[
+            ma_validate.OneOf(
+                ["Organizational", "Personal", "Organizational", "Personal"]
+            )
+        ]
     )
 
 
@@ -288,3 +297,70 @@ class NRSubjectSchema(ma.Schema):
     subjectScheme = ma.fields.String()
 
     valueURI = ma.fields.String()
+
+
+class AffiliationsItemNRAffiliationVocabularySchema(ma.Schema):
+    class Meta:
+        unknown = ma.RAISE
+
+    _id = ma.fields.String(data_key="id", attribute="id")
+
+    _version = ma.fields.String(data_key="@v", attribute="@v")
+
+    hierarchy = ma.fields.Nested(lambda: HierarchySchema())
+
+    title = i18n_strings
+
+
+class CreatorsItemNRAuthoritySchema(
+    nr_metadata.common.services.records.schema_common.NRCreatorSchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+    authorityIdentifiers = ma.fields.List(
+        ma.fields.Nested(lambda: NRAuthorityIdentifierSchema())
+    )
+
+    fullName = ma.fields.String(required=True)
+
+    nameType = ma.fields.String(
+        validate=[ma_validate.OneOf(["Organizational", "Personal"])]
+    )
+
+
+class NRAuthoritySchema(
+    nr_metadata.common.services.records.schema_common.NRContributorSchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+    authorityIdentifiers = ma.fields.List(
+        ma.fields.Nested(lambda: NRAuthorityIdentifierSchema())
+    )
+
+    nameType = ma.fields.String(
+        validate=[ma_validate.OneOf(["Organizational", "Personal"])]
+    )
+
+
+class ResourceTypeNRResourceTypeVocabularySchema(ma.Schema):
+    class Meta:
+        unknown = ma.RAISE
+
+    _id = ma.fields.String(data_key="id", attribute="id")
+
+    _version = ma.fields.String(data_key="@v", attribute="@v")
+
+    title = i18n_strings
+
+
+class RoleNRAuthorityRoleVocabularySchema(ma.Schema):
+    class Meta:
+        unknown = ma.RAISE
+
+    _id = ma.fields.String(data_key="id", attribute="id")
+
+    _version = ma.fields.String(data_key="@v", attribute="@v")
+
+    title = i18n_strings

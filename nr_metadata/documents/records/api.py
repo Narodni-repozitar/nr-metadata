@@ -9,6 +9,7 @@ from oarepo_runtime.relations import PIDRelation, RelationsField
 from nr_metadata.documents.records.dumper import DocumentsDumper
 from nr_metadata.documents.records.models import DocumentsMetadata
 from nr_metadata.documents.records.multilingual_dumper import MultilingualSearchDumper
+from nr_metadata.extensions.facets.dumper import SyntheticFieldsDumperExtension
 
 
 class DocumentsIdProvider(RecordIdProviderV2):
@@ -26,7 +27,7 @@ class DocumentsRecord(InvenioRecord):
         provider=DocumentsIdProvider, context_cls=PIDFieldContext, create=True
     )
 
-    dumper_extensions = [MultilingualSearchDumper()]
+    dumper_extensions = [MultilingualSearchDumper(), SyntheticFieldsDumperExtension()]
     dumper = DocumentsDumper(extensions=dumper_extensions)
 
     relations = RelationsField(
@@ -107,6 +108,11 @@ class DocumentsRecord(InvenioRecord):
         ),
         degreeGrantors=PIDRelation(
             "metadata.thesis.degreeGrantors",
+            keys=["id", "title", "hierarchy"],
+            pid_field=Vocabulary.pid.with_type_ctx("institutions"),
+        ),
+        institutions=PIDRelation(
+            "syntheticFields.institutions",
             keys=["id", "title", "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),

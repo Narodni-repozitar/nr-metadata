@@ -125,6 +125,9 @@
                 {
                     "import": "invenio_records_resources.records.api.Record",
                     "alias": "InvenioRecord"
+                },
+                {
+                    "import": "nr_metadata.extensions.facets.dumper.SyntheticFieldsDumperExtension"
                 }
             ],
             "extra-code": ""
@@ -174,21 +177,6 @@
             "module": "nr_metadata.common.translations",
             "alias": "common"
         },
-        "multilingual-dumper": {
-            "generate": true,
-            "module": "nr_metadata.common.records.multilingual_dumper",
-            "class": "nr_metadata.common.records.multilingual_dumper.MultilingualSearchDumper",
-            "base-classes": [
-                "MultilingualDumper"
-            ],
-            "extra-code": "",
-            "extensions": [],
-            "imports": [
-                {
-                    "import": "oarepo_runtime.i18n.dumper.MultilingualDumper"
-                }
-            ]
-        },
         "json-schema-settings": {
             "generate": true,
             "alias": "common",
@@ -230,7 +218,10 @@
                 "SearchDumper"
             ],
             "extra-code": "",
-            "extensions": [],
+            "extensions": [
+                "MultilingualSearchDumper()",
+                "SyntheticFieldsDumperExtension()"
+            ],
             "imports": [
                 {
                     "import": "invenio_records.dumpers.SearchDumper"
@@ -344,6 +335,21 @@
             "imports": [
                 {
                     "import": "invenio_records_permissions.RecordPermissionPolicy"
+                }
+            ]
+        },
+        "multilingual-dumper": {
+            "generate": true,
+            "module": "nr_metadata.common.records.multilingual_dumper",
+            "class": "nr_metadata.common.records.multilingual_dumper.MultilingualSearchDumper",
+            "base-classes": [
+                "MultilingualDumper"
+            ],
+            "extra-code": "",
+            "extensions": [],
+            "imports": [
+                {
+                    "import": "oarepo_runtime.i18n.dumper.MultilingualDumper"
                 }
             ]
         },
